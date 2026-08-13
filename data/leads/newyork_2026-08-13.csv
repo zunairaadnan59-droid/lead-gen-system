@@ -1,51 +1,40 @@
 company,owner,phone,website,email,location,source
-Nike - New York,,+12122438560,,,"New York, NY",yellowpages
-Nike - New York,,+12125351530,,,"New York, NY",yellowpages
-Nike - New York,,+12129250300,,,"New York, NY",yellowpages
-Nike - New York,,+16468377750,,,"New York, NY",yellowpages
-Nike - New York,,+12128916453,,,"New York, NY",yellowpages
-Baci Fashion Boutique,,+12127751100,,,"New York, NY",yellowpages
-Crave Boutique,,+12127946000,,,"New York, NY",yellowpages
-Mystique Boutique,,+12122740645,,,"New York, NY",yellowpages
-Monaco Couture,,+16465590660,,,"New York, NY",yellowpages
-Chopard,,+12122232304,,,"New York, NY",yellowpages
-Zara,,+12125644433,,,"New York, NY",yellowpages
-CHANEL Boutique,,+12123555050,,,"New York, NY",yellowpages
-Taroo,,+12128615343,,,"New York, NY",yellowpages
-Eileen Fisher Boutique,,+12125295715,,,"New York, NY",yellowpages
-Komune,,+19173645787,,,"New York, NY",yellowpages
-Zoila's Sample Room,,+12125640108,,,"New York, NY",yellowpages
-Dolce & Gabbana USA Inc,,+12127500055,,,"New York, NY",yellowpages
-Breguet Boutique 5th,,+16466926469,,,"New York, NY",yellowpages
-"Hermes of Paris, Inc",,+12127597585,,,"New York, NY",yellowpages
-Henri Bendel Inc,,+12122471100,,,"New York, NY",yellowpages
-Yves Salomon,,+12129888145,,,"New York, NY",yellowpages
-JL & Company Limited,,+12128889797,,,"New York, NY",yellowpages
-Dolce & Gabbana,,+12122494100,,,"New York, NY",yellowpages
-Emilio Pucci Boutique,,+12127524777,,,"New York, NY",yellowpages
-Vivaldi Boutique,,+12127342805,,,"New York, NY",yellowpages
-7-Eleven,,+12124100375,,,"New York, NY",yellowpages
-The SPAaaht,,+19174982814,,,"New York, NY",yellowpages
-Design,,+12129669651,,,"New York, NY",yellowpages
-The Silk Shop,,+12125713130,,,"New York, NY",yellowpages
-88 Spa Inc,,+12127790888,,,"New York, NY",yellowpages
-Longines Boutique,,+12122672397,,,"New York, NY",yellowpages
-Peacock Boutiques,,+12123492441,,,"New York, NY",yellowpages
-Pak Car Boutique Corp,,+12129626931,,,"New York, NY",yellowpages
-Gary Graham,,+12122748940,,,"New York, NY",yellowpages
-Style USA LTD,,+12124325782,,,"New York, NY",yellowpages
-Valley Tribeca,,+12122190695,,,"New York, NY",yellowpages
-Amsterdam Boutique,,+12122267116,,,"New York, NY",yellowpages
-Canal Street Designs dba Mystic Boutique,,+12122267142,,,"New York, NY",yellowpages
-The New Cruelty,,+12122198777,,,"New York, NY",yellowpages
-185 Fashion incorporated,,+16468526578,,,"New York, NY",yellowpages
-Lalibelo Ltd,,+12129252779,,,"New York, NY",yellowpages
-Omega Boutique,,+12129452200,,,"New York, NY",yellowpages
-Amsterdam Boutique,,+12129250422,,,"New York, NY",yellowpages
-Osswald,,+12126253111,,,"New York, NY",yellowpages
-If Soho New York,,+12123344964,,,"New York, NY",yellowpages
-Gigik,,+12126771122,,,"New York, NY",yellowpages
-Alc & Co,,+12122192410,,,"New York, NY",yellowpages
-And More Service Inc,,+12129660115,,,"New York, NY",yellowpages
-3 Ny,,+12129416500,,,"New York, NY",yellowpages
-Iro Inc,,+12129252290,,,"New York, NY",yellowpages
+Nike - New York,,+12122438560,http://www.nike.com,,"New York, NY",yellowpages
+Baci Fashion Boutique,,+12127751100,http://bacifashion.com,,"New York, NY",yellowpages
+Crave Boutique,,+12127946000,http://craveboutique4333877.localsearch.com,,"New York, NY",yellowpages
+Mystique Boutique,,+12122740645,http://mystiqueboutiquenyc.com,,"New York, NY",yellowpages
+Monaco Couture,,+16465590660,http://monacocouture.com,,"New York, NY",yellowpages
+Chopard,,+12122232304,https://www.chopard.com/en-us/store-locator/allstores/northamerica/united-states-of-america/new-york/2116-16-163010950.html,,"New York, NY",yellowpages
+Zara,,+12125644433,http://zara472753282.localsearch.com,,"New York, NY",yellowpages
+CHANEL Boutique,,+12123555050,https://services.chanel.com/en_US/storelocator/store/chanel+new+york+57th+street-60867.html,,"New York, NY",yellowpages
+Taroo,,+12128615343,http://www.taroonyc.com,,"New York, NY",yellowpages
+Eileen Fisher Boutique,,+12125295715,http://www.eileenfisher.com,,"New York, NY",yellowpages
+Komune,,+19173645787,https://komune.space,,"New York, NY",yellowpages
+Zoila's Sample Room,,+12125640108,http://zoilassampleroom.localsearch.com,,"New York, NY",yellowpages
+Dolce & Gabbana USA Inc,,+12127500055,http://www.dolcegabbana.it,,"New York, NY",yellowpages
+Breguet Boutique 5th,,+16466926469,https://www.breguet.com/en,,"New York, NY",yellowpages
+Henri Bendel Inc,,+12122471100,http://henribendel.com,,"New York, NY",yellowpages
+Yves Salomon,,+12129888145,https://www.yves-salomon.com/pages/store-locator,,"New York, NY",yellowpages
+JL & Company Limited,,+12128889797,https://www.johnlobb.com,,"New York, NY",yellowpages
+Emilio Pucci Boutique,,+12127524777,https://emiliopucci.com,,"New York, NY",yellowpages
+Vivaldi Boutique,,+12127342805,http://www.vivaldi-ny.com,,"New York, NY",yellowpages
+7-Eleven,,+12124100375,https://www.7-eleven.com/locations/ny/new-york/1642-lexington-ave-37104,,"New York, NY",yellowpages
+The SPAaaht,,+19174982814,http://www.thespaaaht.com,,"New York, NY",yellowpages
+Design,,+12129669651,http://frcdesign.com,,"New York, NY",yellowpages
+The Silk Shop,,+12125713130,http://thesilkshop.localsearch.com,,"New York, NY",yellowpages
+88 Spa Inc,,+12127790888,http://oasisdayspanyc.com,,"New York, NY",yellowpages
+Longines Boutique,,+12122672397,https://www.longines.com/en-my/store/united-states/new-york/longines-boutique/id/179292,,"New York, NY",yellowpages
+Peacock Boutiques,,+12123492441,http://peacockboutiques.localsearch.com,,"New York, NY",yellowpages
+Pak Car Boutique Corp,,+12129626931,http://pakcarboutiquecorp.localsearch.com,,"New York, NY",yellowpages
+Gary Graham,,+12122748940,http://garygraham.localsearch.com,,"New York, NY",yellowpages
+Valley Tribeca,,+12122190695,http://www.valleytribeca.com,,"New York, NY",yellowpages
+Canal Street Designs dba Mystic Boutique,,+12122267142,http://canalstreetdesignsdbamysticboutique.localsearch.com,,"New York, NY",yellowpages
+The New Cruelty,,+12122198777,http://newcruelty.com,,"New York, NY",yellowpages
+185 Fashion incorporated,,+16468526578,http://185fashionincorporated.localsearch.com,,"New York, NY",yellowpages
+Lalibelo Ltd,,+12129252779,http://lalibeloltd.localsearch.com,,"New York, NY",yellowpages
+Osswald,,+12126253111,http://www.osswaldnyc.com,,"New York, NY",yellowpages
+If Soho New York,,+12123344964,https://ifsohonewyork.com/pages/contact,,"New York, NY",yellowpages
+Alc & Co,,+12122192410,http://alccony.localsearch.com,,"New York, NY",yellowpages
+And More Service Inc,,+12129660115,http://andmoreserviceinc.localsearch.com,,"New York, NY",yellowpages
+3 Ny,,+12129416500,http://3nyny.localsearch.com,,"New York, NY",yellowpages
+Iro Inc,,+12129252290,http://iroincny.localsearch.com,,"New York, NY",yellowpages
