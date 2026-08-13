@@ -1,0 +1,21 @@
+# secrets - never commit
+.env
+.claude/settings.local.json
+
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# local working data: database + scraped page text + work queue stay untracked.
+# exported lead CSVs ARE tracked, so results land in the repo when the Find Leads workflow runs.
+data/leads.db
+data/raw/
+data/work/
+
+# os / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

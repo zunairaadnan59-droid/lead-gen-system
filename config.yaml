@@ -1,0 +1,109 @@
+# =====================================================================================
+# Local Lead Finder - configuration
+#
+# Everything the tool does is driven from this file. The two things you will actually edit:
+#   1. `icp.keywords`  - what kind of business you want (e.g. "plumber", "law firm", "gym")
+#   2. `cities`        - which metros to search, with their area codes
+# No API keys are needed for the default sources. See .env.example for the optional ones.
+# =====================================================================================
+
+# ---- Who counts as a lead -------------------------------------------------------------
+icp:
+  # Search phrases used across YellowPages / Yelp / OpenStreetMap. Add your niche here.
+  keywords:
+    - "boutique"
+    - "online store"
+    - "ecommerce store"
+    - "gift shop"
+    - "clothing boutique"
+    - "home decor store"
+    - "jewelry store"
+    - "specialty retailer"
+  # Titles the Claude owner-extraction pass treats as the decision-maker.
+  decision_titles: [founder, co-founder, owner, ceo, president, principal, partner, managing director]
+  fit_min_score: 0        # export keeps contacts scoring >= this (0-5). 0 = keep everything.
+
+# ---- Discovery behaviour --------------------------------------------------------------
+discover:
+  # Sources are tried in this order until the requested lead count is reached.
+  #   designrush    - human-reviewed agency directory (agencies, not retailers - not used here)
+  #   yellowpages   - broad local coverage, any business type
+  #   yelp          - official Yelp Fusion API (only runs if YELP_API_KEY is set)
+  #   openstreetmap - free & open, no key, universal fallback
+  sources: [yellowpages, yelp, openstreetmap]
+  page_delay_seconds: 2           # polite pause between directory pages
+  yp_max_pages_per_keyword: 8
+  dr_city_max_pages_per_category: 6
+  # DesignRush lists different agencies under each service category; sweeping several
+  # multiplies yield. (Only relevant if you keep `designrush` in `sources`.)
+  dr_categories:
+    - digital-marketing
+    - search-engine-optimization
+    - social-media-marketing
+    - content-marketing
+    - email-marketing
+    - public-relations
+    - video-production
+    - website-design-development
+    - conversion-optimization
+
+# ---- Site fetching (for the /enrich-owners owner-name pass) ---------------------------
+fetch:
+  pages_to_try: ["", "about", "about-us", "team", "our-team", "contact", "contact-us", "company"]
+  request_timeout_seconds: 10
+  delay_seconds: 0.6              # polite delay between requests to one host
+  max_pages_per_site: 3
+  workers: 12                     # concurrent sites (different hosts, so this is safe & polite)
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+
+# ---- Target cities --------------------------------------------------------------------
+# area_codes drive local-presence matching (a lead is kept only if its phone is in one of
+# these codes). `dr_slug` is the DesignRush URL path (state-name/city-name); leave it out and
+# the other three sources still cover the city. `display` is only needed when the key is not
+# already a clean city name. Add any US city by copying a block and filling in the area codes.
+cities:
+  # --- Texas ---
+  houston:      { state: TX, area_codes: [713, 281, 832, 346], dr_slug: "texas/houston" }
+  dallas:       { state: TX, area_codes: [214, 469, 972], dr_slug: "texas/dallas" }
+  austin:       { state: TX, area_codes: [512, 737], dr_slug: "texas/austin" }
+  sanantonio:   { state: TX, area_codes: [210, 726], dr_slug: "texas/san-antonio", display: "San Antonio" }
+  # --- Florida ---
+  miami:        { state: FL, area_codes: [305, 786], dr_slug: "florida/miami" }
+  orlando:      { state: FL, area_codes: [321, 407, 689], dr_slug: "florida/orlando" }
+  tampa:        { state: FL, area_codes: [813, 656], dr_slug: "florida/tampa" }
+  # --- California ---
+  losangeles:   { state: CA, area_codes: [213, 323, 310, 818, 424, 747], dr_slug: "california/los-angeles", display: "Los Angeles" }
+  sandiego:     { state: CA, area_codes: [619, 858, 760], dr_slug: "california/san-diego", display: "San Diego" }
+  sanfrancisco: { state: CA, area_codes: [415, 628], dr_slug: "california/san-francisco", display: "San Francisco" }
+  sacramento:   { state: CA, area_codes: [916, 279], dr_slug: "california/sacramento" }
+  # --- North Carolina ---
+  charlotte:    { state: NC, area_codes: [704, 980], dr_slug: "north-carolina/charlotte" }
+  raleigh:      { state: NC, area_codes: [919, 984], dr_slug: "north-carolina/raleigh" }
+  durham:       { state: NC, area_codes: [919, 984], dr_slug: "north-carolina/durham" }
+  # --- Ohio ---
+  columbus:     { state: OH, area_codes: [614, 380], dr_slug: "ohio/columbus" }
+  cleveland:    { state: OH, area_codes: [216, 440], dr_slug: "ohio/cleveland" }
+  cincinnati:   { state: OH, area_codes: [513, 283], dr_slug: "ohio/cincinnati" }
+  # --- Other major metros (area codes verified; dr_slug best-effort) ---
+  newyork:      { state: NY, area_codes: [212, 646, 332, 917, 718, 347, 929], dr_slug: "new-york/new-york-city", display: "New York" }
+  chicago:      { state: IL, area_codes: [312, 773, 872, 224, 847], dr_slug: "illinois/chicago" }
+  atlanta:      { state: GA, area_codes: [404, 470, 678, 770], dr_slug: "georgia/atlanta" }
+  phoenix:      { state: AZ, area_codes: [602, 480, 623], dr_slug: "arizona/phoenix" }
+  denver:       { state: CO, area_codes: [303, 720], dr_slug: "colorado/denver" }
+  seattle:      { state: WA, area_codes: [206, 425, 253], dr_slug: "washington/seattle" }
+  boston:       { state: MA, area_codes: [617, 857, 781], dr_slug: "massachusetts/boston" }
+  philadelphia: { state: PA, area_codes: [215, 267, 445], dr_slug: "pennsylvania/philadelphia" }
+  nashville:    { state: TN, area_codes: [615, 629], dr_slug: "tennessee/nashville" }
+  portland:     { state: OR, area_codes: [503, 971], dr_slug: "oregon/portland" }
+  lasvegas:     { state: NV, area_codes: [702, 725], dr_slug: "nevada/las-vegas", display: "Las Vegas" }
+  detroit:      { state: MI, area_codes: [313, 248], dr_slug: "michigan/detroit" }
+  # --- High-buying-power enclaves (highest household income / luxury retail spend metros) ---
+  beverlyhills: { state: CA, area_codes: [310, 424], display: "Beverly Hills" }
+  paloalto:     { state: CA, area_codes: [650], display: "Palo Alto" }
+  greenwich:    { state: CT, area_codes: [203, 475], display: "Greenwich" }
+  naples:       { state: FL, area_codes: [239], display: "Naples" }
+  scottsdale:   { state: AZ, area_codes: [480, 602], dr_slug: "arizona/scottsdale", display: "Scottsdale" }
+  bocaraton:    { state: FL, area_codes: [561], display: "Boca Raton" }
+  aspen:        { state: CO, area_codes: [970], display: "Aspen" }
+  napa:         { state: CA, area_codes: [707], display: "Napa" }
+  southampton:  { state: NY, area_codes: [631], display: "Southampton" }

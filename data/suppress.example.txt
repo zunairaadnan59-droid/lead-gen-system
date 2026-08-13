@@ -1,0 +1,6 @@
+# Optional do-not-contact list. Copy to data/suppress.txt and add one phone number per line.
+# Any number here is excluded from every exported CSV. Use it to honour opt-outs and to keep
+# numbers you have already called or that asked not to be contacted out of future runs.
+# Lines starting with # are ignored. Format is flexible: +14155551234, (415) 555-1234, etc.
+#
+# +14155551234

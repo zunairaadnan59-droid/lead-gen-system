@@ -1,0 +1,57 @@
+name: Find Leads
+
+# Runs the discovery pipeline on GitHub's own runners, which have open internet access to
+# YellowPages / Yelp / OpenStreetMap (this repo's sandboxed dev environments may not). Triggers
+# manually with a city list and a target count per city, then commits the resulting CSV(s) back
+# to the repo under data/leads/.
+
+on:
+  workflow_dispatch:
+    inputs:
+      cities:
+        description: "Comma-separated city keys from config.yaml"
+        required: true
+        default: "beverlyhills,paloalto,greenwich,naples,scottsdale,bocaraton,sanfrancisco,newyork,miami,boston"
+      count:
+        description: "Leads to find per city"
+        required: true
+        default: "50"
+
+permissions:
+  contents: write
+
+jobs:
+  find-leads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Discover + export leads for each city
+        run: |
+          IFS=',' read -ra CITIES <<< "${{ github.event.inputs.cities }}"
+          for c in "${CITIES[@]}"; do
+            c_trimmed=$(echo "$c" | xargs)
+            echo "::group::$c_trimmed"
+            python run.py find --city "$c_trimmed" --count "${{ github.event.inputs.count }}" || true
+            echo "::endgroup::"
+          done
+
+      - name: Commit leads
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/leads
+          git diff --cached --quiet || git commit -m "Add leads for ${{ github.event.inputs.cities }}"
+          git push
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: leads-${{ github.run_id }}
+          path: data/leads/*.csv
