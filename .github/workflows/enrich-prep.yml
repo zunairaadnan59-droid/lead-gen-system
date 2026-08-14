@@ -1,0 +1,60 @@
+name: Enrich Prep
+
+# Discovers a fresh batch of leads and fetches each business site's key pages, all in one job so
+# the database is alive for both steps (it isn't committed between fetch and read otherwise).
+# Commits the DB, fetched page text, and the Claude read-queue back to the repo; a Claude Code
+# session then reads data/work/needs_claude.jsonl and writes data/work/claude_results.jsonl,
+# which `python run.py apply` + `export` merge back in - no internet needed for that half.
+
+on:
+  workflow_dispatch:
+    inputs:
+      cities:
+        description: "Comma-separated city keys from config.yaml"
+        required: true
+        default: "beverlyhills,paloalto,greenwich,naples,scottsdale,bocaraton,sanfrancisco,newyork,miami,boston"
+      count_per_city:
+        description: "Leads to discover per city"
+        required: true
+        default: "15"
+      fetch_limit:
+        description: "Max sites to fetch + queue for the Claude read pass"
+        required: true
+        default: "60"
+
+permissions:
+  contents: write
+
+jobs:
+  enrich-prep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Discover leads for each city
+        run: |
+          IFS=',' read -ra CITIES <<< "${{ github.event.inputs.cities }}"
+          for c in "${CITIES[@]}"; do
+            c_trimmed=$(echo "$c" | xargs)
+            echo "::group::discover $c_trimmed"
+            python run.py find --city "$c_trimmed" --count "${{ github.event.inputs.count_per_city }}" || true
+            echo "::endgroup::"
+          done
+
+      - name: Fetch sites + build Claude read-queue
+        run: python run.py enrich-prep --limit "${{ github.event.inputs.fetch_limit }}"
+
+      - name: Commit database, fetched text, and read-queue
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/leads.db data/leads data/raw data/work/needs_claude.jsonl
+          git diff --cached --quiet || git commit -m "Enrich-prep: discover + fetch for ${{ github.event.inputs.cities }}"
+          git push

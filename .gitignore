@@ -8,11 +8,11 @@ venv/
 __pycache__/
 *.pyc
 
-# local working data: database + scraped page text + work queue stay untracked.
-# exported lead CSVs ARE tracked, so results land in the repo when the Find Leads workflow runs.
-data/leads.db
-data/raw/
-data/work/
+# The database, fetched page text, and work queue ARE tracked (not the usual practice for a
+# sqlite file, but there is no other persistent storage between a GitHub Actions run that
+# discovers/fetches leads and the Claude Code session that reads them - GitHub itself is the
+# only shared disk both sides have). Only Claude's per-run scratch file stays untracked.
+data/work/claude_results.jsonl
 
 # os / editor cruft
 .DS_Store
