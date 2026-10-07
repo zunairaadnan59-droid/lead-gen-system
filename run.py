@@ -6,6 +6,7 @@ call these subcommands for you. You can also run them directly:
 
   python run.py find --city austin --count 200      # discover + export a call sheet (fast, free)
   python run.py discover --city austin --count 200  # discovery only
+  python run.py load-csv --city austin               # re-load exported CSVs into the database
   python run.py enrich-prep [--limit 100]           # fetch sites + queue them for the Claude pass
   python run.py apply                               # merge Claude's owner-extraction results
   python run.py export --city austin [--count 200]  # (re)write the CSV
@@ -53,6 +54,26 @@ def cmd_enrich_prep(args):
     print("=" * 64)
 
 
+def cmd_load_csv(args):
+    """Load a city's exported CSVs back into the DB, so leads from a run whose DB wasn't kept
+    (the Find Leads workflow only commits CSVs) can still go through enrichment."""
+    import csv
+    from lead_finder.common import ROOT, insert_business, load_config
+    cfg = load_config()
+    city = args.city.lower().replace(" ", "")
+    state = (cfg.get("cities", {}).get(city) or {}).get("state")
+    conn = get_db()
+    added = 0
+    for path in sorted((ROOT / "data" / "leads").glob(f"{city}_*.csv")):
+        for row in csv.DictReader(open(path, encoding="utf-8")):
+            added += insert_business(conn, {"name": row.get("company"), "website": row.get("website"),
+                                            "phone": row.get("phone")}, city, state,
+                                     row.get("source") or "csv")
+    conn.commit()
+    conn.close()
+    print(f"[load-csv] {city}: +{added} businesses")
+
+
 def cmd_apply(args):
     from lead_finder import apply
     apply.run(args.results)
@@ -98,6 +119,9 @@ def main():
     ep = sub.add_parser("enrich-prep", help="fetch sites + queue them for the Claude owner pass")
     ep.add_argument("--limit", type=int)
 
+    lc = sub.add_parser("load-csv", help="load a city's exported CSVs back into the database")
+    lc.add_argument("--city", required=True)
+
     ap = sub.add_parser("apply", help="merge Claude owner-extraction results")
     ap.add_argument("--results")
 
@@ -111,6 +135,7 @@ def main():
 
     args = p.parse_args()
     {"find": cmd_find, "discover": cmd_discover, "enrich-prep": cmd_enrich_prep,
+     "load-csv": cmd_load_csv,
      "apply": cmd_apply, "export": cmd_export, "status": cmd_status}[args.cmd](args)
 
 

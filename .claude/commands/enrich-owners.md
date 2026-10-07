@@ -19,7 +19,8 @@ Arguments: `$ARGUMENTS`
    ```
    This downloads each business site's key pages (home / about / team / contact) to
    `data/raw/<id>/` and writes a work queue to `data/work/needs_claude.jsonl`. Each line has:
-   `business_id, name, website, city, state, text_paths, regex_email, regex_phone`.
+   `business_id, name, website, city, state, text_paths, regex_email, regex_phone, regex_linkedin,
+   regex_owner_linkedin`.
 
 2. **Read and judge.** Read `data/work/needs_claude.jsonl`. For **each** business, open the files
    listed in its `text_paths` and determine:
@@ -33,13 +34,17 @@ Arguments: `$ARGUMENTS`
      Fall back to `regex_email` if the pages have nothing better.
    - `direct_phone` - a direct/owner phone if present, else leave null (the listed phone is
      already captured).
+   - `linkedin_url` - the business's own LinkedIn page if linked (lines starting `LINKEDIN:`),
+     else `regex_linkedin`. Never guess a URL.
+   - `owner_linkedin` - the owner's personal `linkedin.com/in/` profile, only if the site links it
+     AND it plausibly belongs to `owner_name`.
    - `fit_score` - 0-5: how well this is an owner-led small/mid business you could actually reach
      the decision-maker at (5 = clear owner name + small team signals; 0 = faceless or huge corp).
    - `notes` - one short line of evidence ("Founder named on /about", "only a contact form", ...).
 
 3. **Write results.** Append **one JSON object per line** to `data/work/claude_results.jsonl`:
    ```json
-   {"business_id": 12, "owner_name": "Jane Smith", "owner_title": "Founder", "email": "jane@acme.com", "direct_phone": null, "fit_score": 4, "notes": "Founder named on /about"}
+   {"business_id": 12, "owner_name": "Jane Smith", "owner_title": "Founder", "email": "jane@acme.com", "direct_phone": null, "linkedin_url": null, "owner_linkedin": null, "fit_score": 4, "notes": "Founder named on /about"}
    ```
    Process every queued business. For big queues, work in batches and keep appending. You may
    spawn parallel subagents to read batches of sites and return these JSON lines - just make sure

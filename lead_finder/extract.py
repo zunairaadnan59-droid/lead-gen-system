@@ -1,6 +1,6 @@
 """Regex pre-extraction (free) + build the Claude Code extraction queue.
 
-Pulls the easy wins (emails, phones) from saved page text. Owner identity is a judgment call,
+Pulls the easy wins (emails, phones, LinkedIn links) from saved page text. Owner identity is a judgment call,
 so instead of guessing it with brittle regex, every business with page text is queued to
 data/work/needs_claude.jsonl for the Claude Code pass (see /enrich-owners) to read and decide.
 """
@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 
 from lead_finder.common import (
-    find_emails, find_phones, get_db, load_config, now_stamp, WORK_DIR,
+    find_emails, find_linkedin, find_phones, get_db, load_config, now_stamp, WORK_DIR,
 )
 
 
@@ -35,17 +35,21 @@ def run() -> tuple[int, int]:
         emails = find_emails(text, prefer_domain=b["domain"]) if text else []
         phones = find_phones(text) if text else []
         email = emails[0] if emails else None
+        li_company, li_person = find_linkedin(text)
         needs_claude = 1 if text else 0        # only worth a Claude read if we have page text
 
         conn.execute(
-            """INSERT INTO contacts (business_id, email, email_source, direct_phone, method, needs_claude)
-               VALUES (?,?,?,?,?,?)
+            """INSERT INTO contacts (business_id, email, email_source, direct_phone,
+                                       linkedin_url, owner_linkedin, method, needs_claude)
+               VALUES (?,?,?,?,?,?,?,?)
                ON CONFLICT(business_id) DO UPDATE SET
                  email=COALESCE(contacts.email, excluded.email),
                  direct_phone=COALESCE(contacts.direct_phone, excluded.direct_phone),
+                 linkedin_url=COALESCE(contacts.linkedin_url, excluded.linkedin_url),
+                 owner_linkedin=COALESCE(contacts.owner_linkedin, excluded.owner_linkedin),
                  needs_claude=excluded.needs_claude""",
-            (b["id"], email, "regex" if email else None,
-             phones[0] if phones else None, "regex", needs_claude),
+            (b["id"], email, "regex" if email else None, phones[0] if phones else None,
+             li_company, li_person, "regex", needs_claude),
         )
         conn.execute("UPDATE businesses SET status='extracted' WHERE id=?", (b["id"],))
 
@@ -57,6 +61,7 @@ def run() -> tuple[int, int]:
                 "business_id": b["id"], "name": b["name"], "website": b["website"],
                 "city": b["city"], "state": b["state"], "text_paths": paths,
                 "regex_email": email, "regex_phone": phones[0] if phones else None,
+                "regex_linkedin": li_company, "regex_owner_linkedin": li_person,
             })
         else:
             resolved += 1

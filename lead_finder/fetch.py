@@ -13,7 +13,7 @@ from lead_finder.common import get_db, http_client, load_config, now_stamp, poli
 
 def _clean(html: str) -> str:
     soup = BeautifulSoup(html, "lxml")
-    # Capture tel:/mailto: hrefs before stripping - sites often expose the phone/email only in
+    # Capture tel:/mailto:/LinkedIn hrefs before stripping - sites often expose the phone/email only in
     # a link, not visible text. Surface them so regex + Claude see them.
     contacts = []
     for a in soup.find_all("a", href=True):
@@ -22,6 +22,8 @@ def _clean(html: str) -> str:
             contacts.append("PHONE: " + href[4:])
         elif href.lower().startswith("mailto:"):
             contacts.append("EMAIL: " + href[7:].split("?")[0])
+        elif "linkedin.com/" in href.lower():
+            contacts.append("LINKEDIN: " + href.split("?")[0])
     for tag in soup(["script", "style", "noscript", "svg"]):
         tag.decompose()
     lines = [ln.strip() for ln in soup.get_text(separator="\n").splitlines()]
@@ -58,10 +60,12 @@ def _fetch_site(client, cfg, business) -> list[tuple[str, str]]:
 def run(limit: int | None = None) -> int:
     cfg = load_config()
     conn = get_db()
+    skip = tuple(cfg["fetch"].get("skip_domains", []))
     rows = [dict(r) for r in conn.execute(
         "SELECT * FROM businesses WHERE status='discovered' AND website IS NOT NULL"
-        + (f" LIMIT {int(limit)}" if limit else "")
-    ).fetchall()]
+    ).fetchall() if not (skip and (r["domain"] or "").endswith(skip))]
+    if limit:
+        rows = rows[:int(limit)]
     total = len(rows)
     workers = int(cfg["fetch"].get("workers", 10))
     print(f"[fetch] {total} sites, {workers} workers - {now_stamp()}")

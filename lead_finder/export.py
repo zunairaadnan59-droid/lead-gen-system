@@ -1,7 +1,8 @@
 """Export the finished call sheet: dedupe, optional local-area-code filter, drop anything
 already delivered on a previous run, apply an optional suppression list, and write a clean CSV.
 
-Columns: company, owner, phone, website, email, location, source.
+Columns: company, owner, owner_title, email, owner_linkedin, company_linkedin, phone, website,
+location, source.
 """
 from __future__ import annotations
 
@@ -13,7 +14,8 @@ from lead_finder.common import (
 )
 from lead_finder.sources.base import city_display
 
-COLUMNS = ["company", "owner", "phone", "website", "email", "location", "source"]
+COLUMNS = ["company", "owner", "owner_title", "email", "owner_linkedin", "company_linkedin",
+           "phone", "website", "location", "source"]
 
 
 def _load_suppress() -> set[str]:
@@ -41,9 +43,12 @@ def _row(d: dict, cfg: dict) -> dict:
     return {
         "company": d.get("name"),
         "owner": d.get("owner_name"),
+        "owner_title": d.get("owner_title"),
+        "email": d.get("email"),
+        "owner_linkedin": d.get("owner_linkedin"),
+        "company_linkedin": d.get("linkedin_url"),
         "phone": d.get("direct_phone") or d.get("business_phone"),
         "website": d.get("website"),
-        "email": d.get("email"),
         "location": ", ".join(p for p in (city, state) if p),
         "source": d.get("source"),
     }
@@ -67,7 +72,8 @@ def run(city: str | None = None, count: int | None = None, local: bool = True,
     rows = conn.execute(
         f"""SELECT b.id AS business_id, b.name, b.city, b.state, b.website,
                    b.phone AS business_phone, b.source,
-                   c.owner_name, c.email, c.direct_phone, c.fit_score
+                   c.owner_name, c.owner_title, c.email, c.direct_phone, c.fit_score,
+                   c.linkedin_url, c.owner_linkedin
             FROM businesses b LEFT JOIN contacts c ON c.business_id=b.id
             {where}""",
         params,

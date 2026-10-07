@@ -55,6 +55,11 @@ def get_db() -> sqlite3.Connection:
     conn.execute("PRAGMA foreign_keys = ON")
     with open(SCHEMA_PATH, "r", encoding="utf-8") as f:
         conn.executescript(f.read())
+    # CREATE TABLE IF NOT EXISTS won't add columns to a DB made by an older schema.
+    have = {r[1] for r in conn.execute("PRAGMA table_info(contacts)")}
+    for col in ("linkedin_url", "owner_linkedin"):
+        if col not in have:
+            conn.execute(f"ALTER TABLE contacts ADD COLUMN {col} TEXT")
     return conn
 
 
@@ -139,6 +144,8 @@ def existing_phones(conn) -> set:
 # --- text + identity helpers ---
 
 _EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}")
+_LINKEDIN_RE = re.compile(
+    r"https?://(?:[a-z]{2,3}\.)?linkedin\.com/(?:company|in|school)/[A-Za-z0-9_%\-\.]+", re.I)
 _PHONE_RE = re.compile(r"(?:\+?1[\s.\-]?)?\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4}")
 
 _GENERIC_EMAIL_PREFIXES = {
@@ -214,3 +221,15 @@ def find_phones(text: str) -> list[str]:
             seen.add(norm)
             out.append(norm)
     return out
+
+
+def find_linkedin(text: str) -> tuple[str | None, str | None]:
+    """(company page, first personal /in/ profile) linked from the text, normalised."""
+    company = person = None
+    for url in _LINKEDIN_RE.findall(text or ""):
+        url = re.sub(r"^https?://(?:[a-z]{2,3}\.)?linkedin", "https://www.linkedin", url).rstrip("/.")
+        if "/in/" in url:
+            person = person or url
+        else:
+            company = company or url
+    return company, person

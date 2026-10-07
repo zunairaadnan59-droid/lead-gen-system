@@ -53,6 +53,9 @@ fetch:
   request_timeout_seconds: 10
   delay_seconds: 0.6              # polite delay between requests to one host
   max_pages_per_site: 3
+  # YellowPages-hosted placeholder sites: a template with the listing's own phone/address and
+  # nothing about the owner, so fetching them only wastes time.
+  skip_domains: ["localsearch.com"]
   workers: 12                     # concurrent sites (different hosts, so this is safe & polite)
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 

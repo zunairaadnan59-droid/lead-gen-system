@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS contacts (
     email         TEXT,
     email_source  TEXT,                        -- regex | site
     direct_phone  TEXT,
+    linkedin_url  TEXT,                        -- the business's LinkedIn page
+    owner_linkedin TEXT,                       -- the owner's personal /in/ profile
     fit_score     INTEGER,                     -- 0-5, how well it matches your ICP
     method        TEXT,                        -- regex | claude
     needs_claude  INTEGER DEFAULT 0,           -- 1 = queued for the Claude Code extraction pass

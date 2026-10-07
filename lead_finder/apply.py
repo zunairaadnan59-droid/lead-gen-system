@@ -3,7 +3,8 @@
 The Claude pass (see .claude/commands/enrich-owners.md) reads data/work/needs_claude.jsonl,
 opens each page's text, and writes data/work/claude_results.jsonl with one JSON object per line:
   {"business_id": 12, "owner_name": "...", "owner_title": "...", "email": "...",
-   "direct_phone": "...", "fit_score": 4, "notes": "..."}
+   "direct_phone": "...", "linkedin_url": "...", "owner_linkedin": "...", "fit_score": 4,
+   "notes": "..."}
 This script applies those results to the contacts table.
 """
 from __future__ import annotations
@@ -41,13 +42,16 @@ def run(results_path: str | None = None) -> int:
                  email        = COALESCE(?, email),
                  email_source = CASE WHEN ? IS NOT NULL THEN 'site' ELSE email_source END,
                  direct_phone = COALESCE(?, direct_phone),
+                 linkedin_url = COALESCE(?, linkedin_url),
+                 owner_linkedin = COALESCE(?, owner_linkedin),
                  fit_score    = COALESCE(?, fit_score),
                  method       = 'claude',
                  needs_claude = 0,
                  notes        = ?
                WHERE business_id = ?""",
             (r.get("owner_name"), r.get("owner_title"), r.get("email"), r.get("email"),
-             normalize_phone(r.get("direct_phone")), r.get("fit_score"), r.get("notes"), bid),
+             normalize_phone(r.get("direct_phone")), r.get("linkedin_url"), r.get("owner_linkedin"),
+             r.get("fit_score"), r.get("notes"), bid),
         )
         applied += 1
     conn.commit()
