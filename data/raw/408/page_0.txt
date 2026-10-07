@@ -1,0 +1,12 @@
+URL: http://inuitblanche.com
+
+Site ready
+This site is ready
+Nothing has been published here yet. Please check back soon.
+Is this your site?
+Upload your files, with an
+index.html
+(or
+index.php
+) in the top folder, using the File Manager or SFTP.
+This page disappears automatically as soon as that file is there.

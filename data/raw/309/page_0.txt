@@ -1,0 +1,138 @@
+URL: https://phoenixfood.us/pages/order
+
+Order Now - Phoenix Food & Dessert
+Skip to content
+MENUS
+LOCATIONS
+CATERING
+ORDER NOW
+OUR STORY
+Sign In
+Order
+Home
+/
+Order Now
+Order Now
+Select a location below to place an order for takeout or delivery
+Los Angeles Chinatown
+Chinese Cuisine
+301 Ord St, Los Angeles, CA 90012
+Order from Los Angeles Chinatown
+Alhambra
+Chinese Cuisine
+208 E. Valley Blvd, Alhambra, CA 91801
+Order from Alhambra
+Arcadia
+Food Boutique
+1108 S Baldwin Ave, Arcadia, CA 91007
+Order from Arcadia
+South Pasadena
+Food Boutique
+456 Fair Oaks Ave, South Pasadena, CA 91030
+Order from South Pasadena
+Rowland Heights
+Food Boutique
+1709 Nogales St #102, Rowland Heights, CA 91748
+Order from Rowland Heights
+Temple City
+Food Boutique
+9225 E Las Tunas Dr, Temple City, CA 91780
+Order from Temple City
+Connect with us!
+Join Our Team
+Contact Us
+Accessibility
+Facebook
+Instagram
+TikTok
+Copyright © 2026
+Phoenix Food
+.
+data-options='{
+"enabled": false,
+"showOnce": false,
+"blockTabNavigation": true
+}'
+tabindex="-1" role="dialog" aria-modal="true"
+style="display:none"
+>
+Select pickup location
+My Store
+Free
+.
+Usually ready in 24 hrs
+123 John Doe Street
+Your Town, YT 12345
+Store Hours
+Sun: Closed
+Mon-Fri: 9:00 - 17:00
+Sat: 10:00 - 13:00
+What to expect at pickup
+Get directions
+Closed
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 1pm
+My Store
+Free
+.
+Usually ready in 24 hrs
+123 John Doe Street
+Your Town, YT 12345
+Store Hours
+Sun: Closed
+Mon-Fri: 9:00 - 17:00
+Sat: 10:00 - 13:00
+What to expect at pickup
+Get directions
+Closed
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 1pm
+Phoenix Food Boutique - Arcadia
+Free
+.
+Usually ready in 24 hrs
+123 John Doe Street
+Your Town, YT 12345
+Store Hours
+Sun: Closed
+Mon-Fri: 9:00 - 17:00
+Sat: 10:00 - 13:00
+What to expect at pickup
+Get directions
+Closed
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 1pm
+My Store
+Free
+.
+Usually ready in 24 hrs
+123 John Doe Street
+Your Town, YT 12345
+Store Hours
+Sun: Closed
+Mon-Fri: 9:00 - 17:00
+Sat: 10:00 - 13:00
+What to expect at pickup
+Get directions
+Closed
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 5pm
+Closing at 1pm
+Set as my store
+Change preferred store
+Go to top

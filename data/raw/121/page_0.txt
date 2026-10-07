@@ -1,0 +1,247 @@
+URL: https://www.shoptheboutique.com/pages/accessibility
+
+Accessibility
+– The Boutique
+trending
+Tops
+Swim
+Active wear
+Sets
+naminos
+dinterdum
+Popular Products
+0
+Customer Login
+×
+×
+Email
+*
+Password
+*
+Forgot your password?
+Create An Account
+0
+Shop
+❯
+❮
+Shop
+BACK IN STOCK
+NEW ARRIVALS
+SALE
+SETS
+TOPS
+DRESSES
+BOTTOMS
+ROMPERS
+JUMPSUITS
+SWIMWEAR
+UNDER $20!
+ACCESSORIES
+LinkListDrop -- kmk
+LinkDropLinkDropLinkDropLinkDropLinkDropLinkDropLinkDropLinkDropLinkDropLinkDropLinkDropLinkDrop -- kmk2
+New Arrivals
+Best Sellers
+Dresses
+Sets
+Sale
+Gift Certificate
+0
+0
+trending
+Tops
+Swim
+Active wear
+Sets
+naminos
+dinterdum
+Popular Products
+Shop
+New Arrivals
+Best Sellers
+Dresses
+Sets
+Sale
+Gift Certificate
+ACCESSIBILITY
+STB ACCESSIBILITY STATEMENT
+Updated: August 2020.
+GENERAL
+shoptheboutique.com strives to ensure that its services are accessible to people with disabilities. shoptheboutique.com has invested a significant amount of resources to help ensure that its website is made easier to use and more accessible for people with disabilities, with the strong belief that every person has the right to live with dignity, equality, comfort and independence. shoptheboutique.com is taking measures to ensure that all of the pages on its website meet W3C WAI’s most recent Web Content Accessibility Guidelines, Levels A and AA.
+DISCLAIMER
+shoptheboutique.com continues its efforts to constantly improve the accessibility of its site and services in the belief that it is our collective moral obligation to allow seamless, accessible and unhindered use also for those of us with disabilities.
+Despite our efforts to make all pages and content on shoptheboutique.com fully accessible, this is a work in progress. To the extent any content is not fully accessible, this may be a result of shoptheboutique.com not having found or identified the most appropriate technological solution. Under such circumstances, we will work diligently to remedy any inaccessibility.
+HERE FOR YOU
+If you are experiencing difficulty with any content on www.shoptheboutique.com or require assistance with any part of our site, please contact us during normal business hours as detailed below and we will be happy to assist.
+PRIVACY
+SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?
+When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.
+When you browse our store, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.
+Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.
+SECTION 2 - CONSENT
+How do you get my consent?
+When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.
+If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.
+How do I withdraw my consent?
+If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at info@shoptheboutique.com or mailing us at:
+The Boutique
+7142 SW 117th Ave Miami Florida US 33183
+SECTION 3 - DISCLOSURE
+We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.
+SECTION 4 - SHOPIFY
+Our store is hosted on Shopify Inc. They provide us with the online e-commerce platform that allows us to sell our products and services to you.
+Your data is stored through Shopify’s data storage, databases and the general Shopify application. They store your data on a secure server behind a firewall.
+Payment:
+If you choose a direct payment gateway to complete your purchase, then Shopify stores your credit card data. It is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction data is stored only as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is deleted.
+All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.
+PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.
+For more insight, you may also want to read Shopify’s Terms of Service (http://www.shopify.com/legal/terms) or Privacy Statement (http://www.shopify.com/legal/privacy).
+SECTION 5 - THIRD-PARTY SERVICES
+In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.
+However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.
+For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.
+In particular, remember that certain providers may be located in or have facilities that are located a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.
+As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.
+Once you leave our store’s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website’s Terms of Service.
+Links
+When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.
+SECTION 6 - SECURITY
+To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.
+If you provide us with your credit card information, the information is encrypted using secure socket layer technology (SSL) and stored with a AES-256 encryption. Although no method of transmission over the Internet or electronic storage is 100% secure, we follow all PCI-DSS requirements and implement additional generally accepted industry standards.
+SECTION 7 - COOKIES
+Here is a list of cookies that we use. We’ve listed them here so you that you can choose if you want to opt-out of cookies or not.
+_session_id, unique token, sessional, Allows Shopify to store information about your session (referrer, landing page, etc).
+_shopify_visit, no data held, Persistent for 30 minutes from the last visit, Used by our website provider’s internal stats tracker to record the number of visits
+_shopify_uniq, no data held, expires midnight (relative to the visitor) of the next day, Counts the number of visits to a store by a single customer.
+cart, unique token, persistent for 2 weeks, Stores information about the contents of your cart.
+_secure_session_id, unique token, sessional
+storefront_digest, unique token, indefinite If the shop has a password, this is used to determine if the current visitor has access.
+SECTION 8 - AGE OF CONSENT
+By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.
+SECTION 9 - CHANGES TO THIS PRIVACY POLICY
+We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.
+If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
+QUESTIONS AND CONTACT INFORMATION
+If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at info@shoptheboutique.com or by mail at
+The Boutique
+[Re: Privacy Compliance Officer]
+7142 SW 117th Ave Miami Florida US 33183
+Homepage
+Accessibility
+SIGN UP & GET WEEKLY ACCESS TO OUR LATEST DROPS, SALES, & MORE!
+THE BOUTIQUE
+Careers
+Collaborations
+Store Location
+Legal Terms
+Privacy Policy
+MEMBERSHIP
+Sign In
+Create Account
+Order Status
+Order History
+CUSTOMER CARE
+Accessibility ♿️
+Contact Us
+Order Status
+Return Policy
+Shipping  & Returns
+Terms & Conditions
+© 2026 THE BOUTIQUE. ALL RIGHTS RESERVED. |
+PRIVACY POLICY
+|
+TERMS OF USE
+|  $USD
+trending
+Tops
+Swim
+Active wear
+Sets
+naminos
+dinterdum
+Popular Products
+NEW ARRIVALS
+DRESSES
+SETS
+TOPS
+BOTTOMS
+ROMPERS
+JUMPSUITS
+SWIMWEAR
+SALE
+BEST SELLERS
+Start a Return
+Track Order
+Wishlist
+Accessibility
+Shipping Guidelines
+trending
+Tops
+Swim
+Active wear
+Sets
+naminos
+dinterdum
+Popular Products
+SHOPPING BAG
+(
+0
+)
+×
+Your bag is empty.
+Fill it with something cute!
+SHOP DRESSES
+SHOP SETS
+SHOP ALL
+pay later with
+Regular price
+Size:
+Edit
+Remove
+Error
+|
+Move to wishlist
+You'll also love...
+New
+CAN'T HURRY LOVE JUMPSUIT
+$ 40.00
+Add
+IRRESISTIBLY YOURS DRESS
+$ 88.00
+Add
+Sold out
+PERFECTLY PLAID TOP
+$ 64.00
+restock notification
+EDGE OF TOWN JACKET
+$ 70.00
+Add
+Sold out
+A SWEET SOIREE DRESS
+$ 66.00
+restock notification
+Discount:
+-
+Subtotal
+$ 0.00 USD
+view our
+in store pick up policy
+Error
+test
+test
+test
+Continue shopping
+×
+Quantity
+Price
+Error
+×
+Add more
+Error
+Quantity must be 1 or more
+Add to Bag
+Video PopUp
+×
+×
+Join Our Mailing List
+Be the first to know about our new collections, exclusive promotions and more.
+This email address is already registered!
