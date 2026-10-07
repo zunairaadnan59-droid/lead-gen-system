@@ -14,7 +14,7 @@ on:
         required: true
         default: "beverlyhills,paloalto,greenwich,naples,scottsdale,bocaraton,sanfrancisco,newyork,miami,boston"
       count_per_city:
-        description: "Leads to discover per city"
+        description: "Leads to discover per city (0 = skip discovery and enrich the city's existing data/leads CSVs)"
         required: true
         default: "15"
       fetch_limit:
@@ -38,13 +38,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Discover leads for each city
+      - name: Discover leads (or load existing CSVs) for each city
         run: |
           IFS=',' read -ra CITIES <<< "${{ github.event.inputs.cities }}"
           for c in "${CITIES[@]}"; do
             c_trimmed=$(echo "$c" | xargs)
-            echo "::group::discover $c_trimmed"
-            python run.py find --city "$c_trimmed" --count "${{ github.event.inputs.count_per_city }}" || true
+            echo "::group::$c_trimmed"
+            if [ "${{ github.event.inputs.count_per_city }}" = "0" ]; then
+              python run.py load-csv --city "$c_trimmed"
+            else
+              python run.py find --city "$c_trimmed" --count "${{ github.event.inputs.count_per_city }}" || true
+            fi
             echo "::endgroup::"
           done
 
