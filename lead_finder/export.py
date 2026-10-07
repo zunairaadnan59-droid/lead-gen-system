@@ -82,6 +82,8 @@ def run(city: str | None = None, count: int | None = None, local: bool = True,
     delivered = {r[0] for r in conn.execute("SELECT domain FROM delivered WHERE domain IS NOT NULL")}
     delivered_ph = {r[0] for r in conn.execute("SELECT phone FROM delivered WHERE phone IS NOT NULL")}
 
+    # Rank before de-duping so that when two listings share a site, the enriched one survives.
+    rows = sorted(rows, key=lambda r: (-(r["fit_score"] or 0), 0 if r["owner_name"] else 1))
     out, seen = [], set()
     dropped = {"fit": 0, "no_phone": 0, "non_local": 0, "suppressed": 0, "dupe": 0, "delivered": 0}
     for r in rows:
