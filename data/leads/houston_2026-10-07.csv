@@ -1,43 +1,43 @@
-company,owner,phone,website,email,location,source
-Pet City Houston Inc,,+12815872336,http://www.petcityhouston.com,,"Houston, TX",yellowpages
-Carmen's Boutique,,+17137991300,http://www.carmensboutique.com,,"Houston, TX",yellowpages
-Lola G Boutique,,+17135212624,http://lolagboutique.localsearch.com,,"Houston, TX",yellowpages
-Muse,,+17135206873,http://www.musehouston.com,,"Houston, TX",yellowpages
-Melodrama Boutique,,+17135231608,http://www.melodramaboutiqueonline.com,,"Houston, TX",yellowpages
-Boutique on the Go,,+12818553488,http://boutiqueonthegotx.localsearch.com,,"Houston, TX",yellowpages
-Style Boutique,,+17136677895,,,"Houston, TX",yellowpages
-Secret Garden Dress Boutique,,+17138959997,http://secretgardendressboutique.localsearch.com,,"Houston, TX",yellowpages
-Marchel's Hair Studio,,+18322534670,http://marchelshairstudio.localsearch.com,,"Houston, TX",yellowpages
-Vickie Lynn's,,+12818598006,http://vickielynnstx.localsearch.com,,"Houston, TX",yellowpages
-Tossini,,+17136225516,http://tossini.localsearch.com,,"Houston, TX",yellowpages
-Rose Boutique,,+17137836559,http://bollywoodbydolly.com,,"Houston, TX",yellowpages
-AVS Business Inc,,+17137801300,http://shabusinessinc.localsearch.com,,"Houston, TX",yellowpages
-Houston Wellness Boutique,,+17135227465,http://www.houstonwellnessboutique.com,,"Houston, TX",yellowpages
-St. John Boutique,,+17138719900,http://stjohnboutique30187424.localsearch.com,,"Houston, TX",yellowpages
-Muzzie's,,+12812515000,https://www.muzzies.com,,"Houston, TX",yellowpages
-Copperfield Embroidery,,+18322365762,http://copperfieldembroidery.vpweb.com,,"Houston, TX",yellowpages
-Texas Divas Boutique,,+17134435414,http://texasdivasboutique.net,,"Houston, TX",yellowpages
-Katz Boutique 5 Inc,,+17136623000,http://www.katzstores.com,,"Houston, TX",yellowpages
-Pampered Whiskers,,+17133773869,http://www.pamperedwhiskers.com,,"Houston, TX",yellowpages
-Layered Stitch Boutique,,+18325252629,http://layeredstitchboutique.localsearch.com,,"Houston, TX",yellowpages
-B'dazzled,,+17133872525,http://bdazzledtx.localsearch.com,,"Houston, TX",yellowpages
-Y2 Beauty Mart,,+17134341896,http://y2beautymart.localsearch.com,,"Houston, TX",yellowpages
-Monkee's of Houston,,+12819742491,http://monkeesofhoustontx.localsearch.com,,"Houston, TX",yellowpages
-Abejas,,+17135223025,http://www.abejasboutique.com,,"Houston, TX",yellowpages
-Scout & Molly's West U,,+18328310092,http://westu.scoutandmollys.com,,"Houston, TX",yellowpages
-Connie's Boutique,,+17135152901,http://conniesboutiquetx.localsearch.com,,"Houston, TX",yellowpages
-Carol Designs,,+17135328488,http://caroldesignstx.localsearch.com,,"Houston, TX",yellowpages
-Black Rose Boutique,,+17138576803,http://blackroseboutique.localsearch.com,,"Houston, TX",yellowpages
-Eye Candy,,+17132225274,http://eyecandyinc.com,,"Houston, TX",yellowpages
-Dyi,,+12815013051,http://shopdyi.com,,"Houston, TX",yellowpages
-Haute Mess,,+17132286377,http://hautemess512016076.localsearch.com,,"Houston, TX",yellowpages
-Chloe + Isabel,,+12817431901,http://chloeisabeltx.localsearch.com,,"Houston, TX",yellowpages
-All Things Boss Lady Cout,,+18326236702,http://allthingsbossladycout.localsearch.com,,"Houston, TX",yellowpages
-Collins Boutique,,+17136599018,http://collinsboutique.localsearch.com,,"Houston, TX",yellowpages
-Le Reve,,+18324720783,http://lereve503761927.localsearch.com,,"Houston, TX",yellowpages
-Precious Boutique,,+12817668312,http://preciousboutiquetx.localsearch.com,,"Houston, TX",yellowpages
-Sabrak Boutique,,+17135261511,http://sabrakboutiquetx.localsearch.com,,"Houston, TX",yellowpages
-Hannon Designs,,+17134637725,http://hannondesigns.com,,"Houston, TX",yellowpages
-Harvard Blvd,,+12815019537,http://harvardblvd.localsearch.com,,"Houston, TX",yellowpages
-Salt Studio Boutique,,+18328048404,http://www.saltstudioboutique.com,,"Houston, TX",yellowpages
-Haute Dimensions Boutique,,+18326495835,http://hautedimensionsboutique.localsearch.com,,"Houston, TX",yellowpages
+company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,source
+Muse,,,shop@musehouston.com,,,+17135206873,http://www.musehouston.com,"Houston, TX",yellowpages
+Melodrama Boutique,,,,,,+17135231608,http://www.melodramaboutiqueonline.com,"Houston, TX",yellowpages
+Rose Boutique,,,bollywoodbydolly@gmail.com,,,+17137836559,http://bollywoodbydolly.com,"Houston, TX",yellowpages
+Muzzie's,,,,,,+12812515000,https://www.muzzies.com,"Houston, TX",yellowpages
+Eye Candy,,,,,,+17138022639,http://eyecandyinc.com,"Houston, TX",yellowpages
+Dyi,,,,,,+12815013051,http://shopdyi.com,"Houston, TX",yellowpages
+Hannon Designs,,,,,,+17132407254,http://hannondesigns.com,"Houston, TX",yellowpages
+Pet City Houston Inc,,,,,,+12815872336,http://www.petcityhouston.com,"Houston, TX",yellowpages
+Scout & Molly's West U,,,customer@scoutandmollys.com,,https://www.linkedin.com/company/scout-and-molly%27s,+16107680114,http://westu.scoutandmollys.com,"Houston, TX",yellowpages
+Carmen's Boutique,,,,,,+17137991300,http://www.carmensboutique.com,"Houston, TX",yellowpages
+Lola G Boutique,,,,,,+17135212624,http://lolagboutique.localsearch.com,"Houston, TX",yellowpages
+Boutique on the Go,,,,,,+12818553488,http://boutiqueonthegotx.localsearch.com,"Houston, TX",yellowpages
+Style Boutique,,,,,,+17136677895,,"Houston, TX",yellowpages
+Secret Garden Dress Boutique,,,,,,+17138959997,http://secretgardendressboutique.localsearch.com,"Houston, TX",yellowpages
+Marchel's Hair Studio,,,,,,+18322534670,http://marchelshairstudio.localsearch.com,"Houston, TX",yellowpages
+Vickie Lynn's,,,,,,+12818598006,http://vickielynnstx.localsearch.com,"Houston, TX",yellowpages
+Tossini,,,,,,+17136225516,http://tossini.localsearch.com,"Houston, TX",yellowpages
+AVS Business Inc,,,,,,+17137801300,http://shabusinessinc.localsearch.com,"Houston, TX",yellowpages
+Houston Wellness Boutique,,,,,,+17135227465,http://www.houstonwellnessboutique.com,"Houston, TX",yellowpages
+St. John Boutique,,,,,,+17138719900,http://stjohnboutique30187424.localsearch.com,"Houston, TX",yellowpages
+Copperfield Embroidery,,,,,,+18322365762,http://copperfieldembroidery.vpweb.com,"Houston, TX",yellowpages
+Texas Divas Boutique,,,,,,+17134435414,http://texasdivasboutique.net,"Houston, TX",yellowpages
+Katz Boutique 5 Inc,,,,,,+17136623000,http://www.katzstores.com,"Houston, TX",yellowpages
+Pampered Whiskers,,,,,,+17133773869,http://www.pamperedwhiskers.com,"Houston, TX",yellowpages
+Layered Stitch Boutique,,,,,,+18325252629,http://layeredstitchboutique.localsearch.com,"Houston, TX",yellowpages
+B'dazzled,,,,,,+17133872525,http://bdazzledtx.localsearch.com,"Houston, TX",yellowpages
+Y2 Beauty Mart,,,,,,+17134341896,http://y2beautymart.localsearch.com,"Houston, TX",yellowpages
+Monkee's of Houston,,,,,,+12819742491,http://monkeesofhoustontx.localsearch.com,"Houston, TX",yellowpages
+Abejas,,,,,,+17135223025,http://www.abejasboutique.com,"Houston, TX",yellowpages
+Connie's Boutique,,,,,,+17135152901,http://conniesboutiquetx.localsearch.com,"Houston, TX",yellowpages
+Carol Designs,,,,,,+17135328488,http://caroldesignstx.localsearch.com,"Houston, TX",yellowpages
+Black Rose Boutique,,,,,,+17138576803,http://blackroseboutique.localsearch.com,"Houston, TX",yellowpages
+Haute Mess,,,,,,+17132286377,http://hautemess512016076.localsearch.com,"Houston, TX",yellowpages
+Chloe + Isabel,,,,,,+12817431901,http://chloeisabeltx.localsearch.com,"Houston, TX",yellowpages
+All Things Boss Lady Cout,,,,,,+18326236702,http://allthingsbossladycout.localsearch.com,"Houston, TX",yellowpages
+Collins Boutique,,,,,,+17136599018,http://collinsboutique.localsearch.com,"Houston, TX",yellowpages
+Le Reve,,,,,,+18324720783,http://lereve503761927.localsearch.com,"Houston, TX",yellowpages
+Precious Boutique,,,,,,+12817668312,http://preciousboutiquetx.localsearch.com,"Houston, TX",yellowpages
+Sabrak Boutique,,,,,,+17135261511,http://sabrakboutiquetx.localsearch.com,"Houston, TX",yellowpages
+Harvard Blvd,,,,,,+12815019537,http://harvardblvd.localsearch.com,"Houston, TX",yellowpages
+Salt Studio Boutique,,,,,,+18328048404,http://www.saltstudioboutique.com,"Houston, TX",yellowpages
+Haute Dimensions Boutique,,,,,,+18326495835,http://hautedimensionsboutique.localsearch.com,"Houston, TX",yellowpages

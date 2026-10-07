@@ -55,7 +55,7 @@ def _row(d: dict, cfg: dict) -> dict:
 
 
 def run(city: str | None = None, count: int | None = None, local: bool = True,
-        record_delivered: bool = True) -> dict:
+        record_delivered: bool = True, include_delivered: bool = False) -> dict:
     cfg = load_config()
     conn = get_db()
     city = city.lower().replace(" ", "") if city else None
@@ -93,14 +93,16 @@ def run(city: str | None = None, count: int | None = None, local: bool = True,
         if not phone:
             dropped["no_phone"] += 1
             continue
-        if codes and area_code(phone) not in codes:
+        # Locality is a property of the listing, not of a number scraped off the site (often HQ).
+        listed = normalize_phone(d.get("business_phone")) or phone
+        if codes and area_code(listed) not in codes:
             dropped["non_local"] += 1
             continue
         if phone in suppress:
             dropped["suppressed"] += 1
             continue
         domain = _domain_of_row(d)
-        if (domain and domain in delivered) or phone in delivered_ph:
+        if not include_delivered and ((domain and domain in delivered) or phone in delivered_ph):
             dropped["delivered"] += 1
             continue
         key = (domain, "" if domain else phone)

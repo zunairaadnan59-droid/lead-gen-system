@@ -82,7 +82,7 @@ def cmd_apply(args):
 def cmd_export(args):
     from lead_finder import export
     export.run(city=args.city, count=args.count, local=not args.no_local,
-               record_delivered=not args.keep)
+               record_delivered=not args.keep, include_delivered=args.include_delivered)
 
 
 def cmd_status(_):
@@ -130,6 +130,8 @@ def main():
     e.add_argument("--count", type=int)
     e.add_argument("--no-local", action="store_true", dest="no_local")
     e.add_argument("--keep", action="store_true")
+    e.add_argument("--include-delivered", action="store_true", dest="include_delivered",
+                   help="re-export leads already delivered (e.g. after enrichment)")
 
     sub.add_parser("status", help="summarize the database")
 
