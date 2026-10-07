@@ -1,43 +1,43 @@
-company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,source
-Mine Boutique,,,,,,+12145224700,http://minedallas.com,"Dallas, TX",yellowpages
-Iris T,,,iristaccessories@gmail.com,,,+12146340988,http://iristaccessories.com,"Dallas, TX",yellowpages
-Collective,,,info@thecollectivedallas.com,,,+12142137331,https://thecollectivedallas.com,"Dallas, TX",yellowpages
-My Secret Closet Inc,,,,,,+19722671144,http://www.mysecretclosetinc.com,"Dallas, TX",yellowpages
-Sofie Grey Boutique,,,,,,+12142347511,https://sofiegrey.com,"Dallas, TX",yellowpages
-Passion of Essense,,,,,,+14693210954,https://passionofessence.com/pages/contact-us,"Dallas, TX",yellowpages
-Adeline,,,,,,+14698686200,https://www.adelinestores.com/pages/contact-us-1,"Dallas, TX",yellowpages
-Epiphany Boutique,,,support@epiphanyboutique.com,,,+12149464411,http://www.epiphanyboutique.com,"Dallas, TX",yellowpages
-Womens Health Boutique,,,,,,+19037589904,http://www.mywhb.com,"Dallas, TX",yellowpages
-Forty-Five Ten,,,help@fortyfiveten.com,,,+12145594510,https://fortyfiveten.com,"Dallas, TX",yellowpages
-Impeccable Pig,,,pig@theimpeccablepig.com,,,+12143460536,https://www.theimpeccablepig.com/pages/contact-us,"Dallas, TX",yellowpages
-Lady Bug Boutique,,,,,,+14694079190,http://ladybugboutique.localsearch.com,"Dallas, TX",yellowpages
-Flirt Boutique,,,,,,+12147547001,http://flirtboutiquetx.localsearch.com,"Dallas, TX",yellowpages
-Bodacious Boutique,,,,,,+19727630779,http://bodaciousboutique.localsearch.com,"Dallas, TX",yellowpages
-Primrose Boutique,,,,,,+12143521333,http://www.primroseboutique.com,"Dallas, TX",yellowpages
-Cusp Boutique,,,,,,+12143638311,http://cusp.com,"Dallas, TX",yellowpages
-Apricot Lane,,,,,,+19723866070,http://apricotlane457417060.localsearch.com,"Dallas, TX",yellowpages
-Dazzle Me By Mo,,,,,,+12145860103,http://dazzlemebymo.localsearch.com,"Dallas, TX",yellowpages
-Milk and Honey Boutique,,,,,,+12148261700,http://milkandhoneyboutique.localsearch.com,"Dallas, TX",yellowpages
-Amillion lookz boutique,,,,,,+19729877300,http://amillionlookzboutique.localsearch.com,"Dallas, TX",yellowpages
-Exotic Sisters Boutique,,,,,,+12148560717,http://www.exoticsistersboutique.com,"Dallas, TX",yellowpages
-Sara's Secret,,,,,,+12143779463,https://www.sarassecret.com,"Dallas, TX",yellowpages
-Beautyfirst Blo Bar,,,,,,+12147500040,http://beautyfirstblobar.localsearch.com,"Dallas, TX",yellowpages
-HoneyHive Shoe Boutique,,,,,,+12144125435,http://honeyhiveshoeboutique.localsearch.com,"Dallas, TX",yellowpages
-Dallas Workshop,,,,,,+12147549994,http://dallasworkshop.localsearch.com,"Dallas, TX",yellowpages
-Elishion Boutique,,,,,,+12145735055,http://elishionboutique.localsearch.com,"Dallas, TX",yellowpages
-Blank Canvas,,,,,,+12147491924,http://blankcanvas.fr,"Dallas, TX",yellowpages
-Calculus Boutique,,,,,,+19727739004,http://calculusboutique.localsearch.com,"Dallas, TX",yellowpages
-Boutique,,,,,,+12147580554,http://boutique549408455.localsearch.com,"Dallas, TX",yellowpages
-Haven Boutique,,,,,,+12149691005,http://havenboutiquetx.localsearch.com,"Dallas, TX",yellowpages
-Pink Lucy,,,,,,+12146136117,http://pinklucy480289012.localsearch.com,"Dallas, TX",yellowpages
-Lashattitude Boutique Lash Extention,,,,,,+12149289979,http://lashattitudeboutiquelashextention.localsearch.com,"Dallas, TX",yellowpages
-Treehouse Edit,,,,,,+12147548004,http://treehouseedit.com,"Dallas, TX",yellowpages
-Soy La Ruth Boutique,,,,,,+19727795518,http://soylaruthboutique.localsearch.com,"Dallas, TX",yellowpages
-Little Bo Teek,,,,,,+18175583224,http://www.littletykechildcare.com,"Dallas, TX",yellowpages
-The Baller Baby Boutique,,,,,,+14697962411,http://theballerbabyboutique.localsearch.com,"Dallas, TX",yellowpages
-Glitz Dallas,,,,,,+12148245489,http://glitzdallas.localsearch.com,"Dallas, TX",yellowpages
-Urban Owl,,,,,,+19728639377,https://todaysdfw.wordpress.com/2021/12/30/urban-owl,"Dallas, TX",yellowpages
-Sistha's Glam Boutique,,,,,,+12147829920,http://sisthasglamboutique.localsearch.com,"Dallas, TX",yellowpages
-Coco Xoxo Boutique,,,,,,+14693474990,http://cocoxoxoboutique.localsearch.com,"Dallas, TX",yellowpages
-Millennium,,,,,,+12142382006,http://millennium524593513.localsearch.com,"Dallas, TX",yellowpages
-Lab Boutique,,,,,,+14696716377,http://labboutique.localsearch.com,"Dallas, TX",yellowpages
+company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,fit_score,notes,source
+Mine Boutique,,,,,,+12145224700,http://minedallas.com,"Dallas, TX",3,"Locally owned, owner not named",yellowpages
+Iris T,,,iristaccessories@gmail.com,,,+12146340988,http://iristaccessories.com,"Dallas, TX",3,Store email,yellowpages
+Collective,,,info@thecollectivedallas.com,,,+12142137331,https://thecollectivedallas.com,"Dallas, TX",3,Generic email,yellowpages
+My Secret Closet Inc,,,,,,+19722671144,http://www.mysecretclosetinc.com,"Dallas, TX",2,"Consignment, no owner or email",yellowpages
+Sofie Grey Boutique,,,,,,+12142347511,https://sofiegrey.com,"Dallas, TX",2,No content,yellowpages
+Passion of Essense,,,,,,+14693210954,https://passionofessence.com/pages/contact-us,"Dallas, TX",2,No owner or email,yellowpages
+Adeline,,,,,,+14698686200,https://www.adelinestores.com/pages/contact-us-1,"Dallas, TX",2,No owner or email,yellowpages
+Epiphany Boutique,,,support@epiphanyboutique.com,,,+12149464411,http://www.epiphanyboutique.com,"Dallas, TX",2,Support email,yellowpages
+Womens Health Boutique,,,,,,+12143731045,http://www.mywhb.com,"Dallas, TX",1,"Medical supply boutique chain, no owner named",yellowpages
+Forty-Five Ten,,,help@fortyfiveten.com,,,+12145594510,https://fortyfiveten.com,"Dallas, TX",1,Large luxury retailer,yellowpages
+Impeccable Pig,,,pig@theimpeccablepig.com,,,+12143460536,https://www.theimpeccablepig.com/pages/contact-us,"Dallas, TX",1,"Multi-location franchise brand; named staff emails, roles not stated",yellowpages
+Lady Bug Boutique,,,,,,+14694079190,http://ladybugboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Flirt Boutique,,,,,,+12147547001,http://flirtboutiquetx.localsearch.com,"Dallas, TX",,,yellowpages
+Bodacious Boutique,,,,,,+19727630779,http://bodaciousboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Primrose Boutique,,,,,,+12143521333,http://www.primroseboutique.com,"Dallas, TX",,,yellowpages
+Cusp Boutique,,,,,,+12143638311,http://cusp.com,"Dallas, TX",,,yellowpages
+Apricot Lane,,,,,,+19723866070,http://apricotlane457417060.localsearch.com,"Dallas, TX",,,yellowpages
+Dazzle Me By Mo,,,,,,+12145860103,http://dazzlemebymo.localsearch.com,"Dallas, TX",,,yellowpages
+Milk and Honey Boutique,,,,,,+12148261700,http://milkandhoneyboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Amillion lookz boutique,,,,,,+19729877300,http://amillionlookzboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Exotic Sisters Boutique,,,,,,+12148560717,http://www.exoticsistersboutique.com,"Dallas, TX",,,yellowpages
+Sara's Secret,,,,,,+12143779463,https://www.sarassecret.com,"Dallas, TX",,,yellowpages
+Beautyfirst Blo Bar,,,,,,+12147500040,http://beautyfirstblobar.localsearch.com,"Dallas, TX",,,yellowpages
+HoneyHive Shoe Boutique,,,,,,+12144125435,http://honeyhiveshoeboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Dallas Workshop,,,,,,+12147549994,http://dallasworkshop.localsearch.com,"Dallas, TX",,,yellowpages
+Elishion Boutique,,,,,,+12145735055,http://elishionboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Blank Canvas,,,,,,+12147491924,http://blankcanvas.fr,"Dallas, TX",,,yellowpages
+Calculus Boutique,,,,,,+19727739004,http://calculusboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Boutique,,,,,,+12147580554,http://boutique549408455.localsearch.com,"Dallas, TX",,,yellowpages
+Haven Boutique,,,,,,+12149691005,http://havenboutiquetx.localsearch.com,"Dallas, TX",,,yellowpages
+Pink Lucy,,,,,,+12146136117,http://pinklucy480289012.localsearch.com,"Dallas, TX",,,yellowpages
+Lashattitude Boutique Lash Extention,,,,,,+12149289979,http://lashattitudeboutiquelashextention.localsearch.com,"Dallas, TX",,,yellowpages
+Treehouse Edit,,,,,,+12147548004,http://treehouseedit.com,"Dallas, TX",,,yellowpages
+Soy La Ruth Boutique,,,,,,+19727795518,http://soylaruthboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Little Bo Teek,,,,,,+12147490613,http://www.littletykechildcare.com,"Dallas, TX",0,"Website is a childcare chain, does not match listing",yellowpages
+The Baller Baby Boutique,,,,,,+14697962411,http://theballerbabyboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Glitz Dallas,,,,,,+12148245489,http://glitzdallas.localsearch.com,"Dallas, TX",,,yellowpages
+Urban Owl,,,,,,+19728639377,https://todaysdfw.wordpress.com/2021/12/30/urban-owl,"Dallas, TX",0,"Website is a blog post about the store, not its site",yellowpages
+Sistha's Glam Boutique,,,,,,+12147829920,http://sisthasglamboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Coco Xoxo Boutique,,,,,,+14693474990,http://cocoxoxoboutique.localsearch.com,"Dallas, TX",,,yellowpages
+Millennium,,,,,,+12142382006,http://millennium524593513.localsearch.com,"Dallas, TX",,,yellowpages
+Lab Boutique,,,,,,+14696716377,http://labboutique.localsearch.com,"Dallas, TX",,,yellowpages

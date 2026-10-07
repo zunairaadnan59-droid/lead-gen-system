@@ -1,39 +1,39 @@
-company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,source
-Spitfire Girl Mr Incognito,Kristin Scott,Founder,,,,+15126450405,https://www.spitfiregirl.com,"Austin, TX",yellowpages
-Blue Elephant Boutique,,,blue.elephant.boutique@gmail.com,,,+15123713259,https://www.shopblueelephant.com/pages/contact-us,"Austin, TX",yellowpages
-Magpie Blossom Boutique,,,,,,+15124946198,https://www.magpieblossoms.com,"Austin, TX",yellowpages
-Feathers,,,info@feathersboutiquevintage.com,,,+15129129779,https://feathersboutiquevintage.com/pages/contact-us,"Austin, TX",yellowpages
-Limbo Jewelry,,,,,,+15129946878,http://www.limbojewelry.com,"Austin, TX",yellowpages
-Pause & Imagine,,,,,,+15125204125,http://www.pauseandimagine.com,"Austin, TX",yellowpages
-Adelante Boutique,,,,,,+15124525322,https://www.adelanteaustin.com/service/privacy-policy,"Austin, TX",yellowpages
-Spring Frost,,,,,,+15124679100,http://www.springfrost.com,"Austin, TX",yellowpages
-Arts & Passions,,,,,,+15124610566,https://www.artsandpassions.com,"Austin, TX",yellowpages
-Private Stock Premium Boutique,,,,,,+15128048763,https://www.privatestockonline.com/service/general-terms-conditions,"Austin, TX",yellowpages
-Meri Jaan Boutique,,,,,,+15128503063,https://merijaan27.com/contact-us,"Austin, TX",yellowpages
-Shape Method,,,info@shapemethodpilates.com,,,+15123829150,http://www.shapemethodpilates.com,"Austin, TX",yellowpages
-Raven & Lily,,,info@ravenandlily.com,,,+15128354777,http://ravenandlily.com,"Austin, TX",yellowpages
-Creatures Boutique,,,,,,+15127072500,http://creaturesboutique.localsearch.com,"Austin, TX",yellowpages
-Designer Exchange,,,,,,+15124520606,http://designerexchange16819631.localsearch.com,"Austin, TX",yellowpages
-The Divas Closet,,,,,,+15124336643,http://thedivascloset.localsearch.com,"Austin, TX",yellowpages
-Mana Culture,,,,,,+15123911555,http://www.manacultureboutique.com,"Austin, TX",yellowpages
-Elles Boutique,,,,,,+15125519915,http://ellesboutique.localsearch.com,"Austin, TX",yellowpages
-Olive,,,,,,+15125240582,http://inuitblanche.com,"Austin, TX",yellowpages
-Parts & Labour,,,,,,+13038930552,http://partsandlabour.com,"Austin, TX",yellowpages
-Longhorn Fashions,,,,,,+15125848001,https://www.longhornfashions.com/pages/Contact-Us.html,"Austin, TX",yellowpages
-The Katz Meow,,,,,,+15125801500,http://thekatzmeowtx.localsearch.com,"Austin, TX",yellowpages
-Bird Boutique,,,,,,+15123232024,http://birdboutique.localsearch.com,"Austin, TX",yellowpages
-Lotus Boutique,,,,,,+15124549700,http://lotusboutiquetx.localsearch.com,"Austin, TX",yellowpages
-Magic Caravan,,,,,,+15123053968,,"Austin, TX",yellowpages
-Boutique Laia's,,,,,,+17372356159,http://boutiquelaias.localsearch.com,"Austin, TX",yellowpages
-Bre'ja Boutique,,,,,,+15126075838,http://brejaboutique.localsearch.com,"Austin, TX",yellowpages
-Rose And Violets Boutique,,,,,,+15128400101,http://roseandvioletsboutique.com,"Austin, TX",yellowpages
-Unique Stone Boutique,,,,,,+15125998979,http://uniquestoneboutique.localsearch.com,"Austin, TX",yellowpages
-Ja'zy's Boutique,,,,,,+15127920032,http://jazysboutique.localsearch.com,"Austin, TX",yellowpages
-Lan's Studio & Boutique,,,,,,+15124528400,http://lansstudioboutique.localsearch.com,"Austin, TX",yellowpages
-Apricot Lane,,,,,,+15122638445,http://www.apricotlaneusa.com/page/home.html,"Austin, TX",yellowpages
-Plenty Boutique,,,,,,+15122635683,http://www.hillcountrygalleria.com/store/plenty-boutique/2137047298/2138832916,"Austin, TX",yellowpages
-Sheek Lash Boutique,,,,,,+15129479165,http://www.sinsationallashes.com,"Austin, TX",yellowpages
-Maria & Kyndals,,,,,,+15123299855,http://mariakyndalstx.localsearch.com,"Austin, TX",yellowpages
-Grace,,,,,,+15128528602,https://www.kimanasanctuary.com,"Austin, TX",yellowpages
-Wear Art Thou,,,,,,+15123239500,http://wearartthoutx.localsearch.com,"Austin, TX",yellowpages
-Rabiosa Fashion Footwear,,,,,,+15123693543,http://rabiosafashionfootwear.localsearch.com,"Austin, TX",yellowpages
+company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,fit_score,notes,source
+Spitfire Girl Mr Incognito,Kristin Scott,Founder,,,,+15126450405,https://www.spitfiregirl.com,"Austin, TX",3,Homepage: founded in LA 2001 by artist Kristin Scott; based in LA not Austin,yellowpages
+Blue Elephant Boutique,,,blue.elephant.boutique@gmail.com,,,+15123713259,https://www.shopblueelephant.com/pages/contact-us,"Austin, TX",3,Store email,yellowpages
+Magpie Blossom Boutique,,,,,,+15124946198,https://www.magpieblossoms.com,"Austin, TX",3,"Family owned florist and gifts, no names",yellowpages
+Feathers,,,info@feathersboutiquevintage.com,,,+15129129779,https://feathersboutiquevintage.com/pages/contact-us,"Austin, TX",3,Generic email,yellowpages
+Limbo Jewelry,,,,,,+15129946878,http://www.limbojewelry.com,"Austin, TX",2,No owner or email,yellowpages
+Pause & Imagine,,,,,,+15125204125,http://www.pauseandimagine.com,"Austin, TX",2,No content,yellowpages
+Adelante Boutique,,,,,,+15124525322,https://www.adelanteaustin.com/service/privacy-policy,"Austin, TX",2,Policy page only,yellowpages
+Spring Frost,,,,,,+15124679100,http://www.springfrost.com,"Austin, TX",2,No content,yellowpages
+Arts & Passions,,,,,,+15123400330,https://www.artsandpassions.com,"Austin, TX",2,"Artist-run scarf brand, maker not named on these pages",yellowpages
+Private Stock Premium Boutique,,,,,,+15128048763,https://www.privatestockonline.com/service/general-terms-conditions,"Austin, TX",2,Terms page only,yellowpages
+Meri Jaan Boutique,,,,,,+15122762434,https://merijaan27.com/contact-us,"Austin, TX",1,"Template site, placeholder email",yellowpages
+Shape Method,,,info@shapemethodpilates.com,,,+15123829150,http://www.shapemethodpilates.com,"Austin, TX",1,"Pilates studio, not retail",yellowpages
+Raven & Lily,,,info@ravenandlily.com,,,+15128354777,http://ravenandlily.com,"Austin, TX",1,Ethical brand with stores; generic emails,yellowpages
+Creatures Boutique,,,,,,+15127072500,http://creaturesboutique.localsearch.com,"Austin, TX",,,yellowpages
+Designer Exchange,,,,,,+15124520606,http://designerexchange16819631.localsearch.com,"Austin, TX",,,yellowpages
+The Divas Closet,,,,,,+15124336643,http://thedivascloset.localsearch.com,"Austin, TX",,,yellowpages
+Mana Culture,,,,,,+15123911555,http://www.manacultureboutique.com,"Austin, TX",,,yellowpages
+Elles Boutique,,,,,,+15125519915,http://ellesboutique.localsearch.com,"Austin, TX",,,yellowpages
+Olive,,,,,,+15125240582,http://inuitblanche.com,"Austin, TX",0,Website does not match listing,yellowpages
+Parts & Labour,,,,,,+15123261648,http://partsandlabour.com,"Austin, TX",0,Parked domain,yellowpages
+Longhorn Fashions,,,,,,+15125848001,https://www.longhornfashions.com/pages/Contact-Us.html,"Austin, TX",,,yellowpages
+The Katz Meow,,,,,,+15125801500,http://thekatzmeowtx.localsearch.com,"Austin, TX",,,yellowpages
+Bird Boutique,,,,,,+15123232024,http://birdboutique.localsearch.com,"Austin, TX",,,yellowpages
+Lotus Boutique,,,,,,+15124549700,http://lotusboutiquetx.localsearch.com,"Austin, TX",,,yellowpages
+Magic Caravan,,,,,,+15123053968,,"Austin, TX",,,yellowpages
+Boutique Laia's,,,,,,+17372356159,http://boutiquelaias.localsearch.com,"Austin, TX",,,yellowpages
+Bre'ja Boutique,,,,,,+15126075838,http://brejaboutique.localsearch.com,"Austin, TX",,,yellowpages
+Rose And Violets Boutique,,,,,,+15128400101,http://roseandvioletsboutique.com,"Austin, TX",,,yellowpages
+Unique Stone Boutique,,,,,,+15125998979,http://uniquestoneboutique.localsearch.com,"Austin, TX",,,yellowpages
+Ja'zy's Boutique,,,,,,+15127920032,http://jazysboutique.localsearch.com,"Austin, TX",,,yellowpages
+Lan's Studio & Boutique,,,,,,+15124528400,http://lansstudioboutique.localsearch.com,"Austin, TX",,,yellowpages
+Apricot Lane,,,,,,+15122638445,http://www.apricotlaneusa.com/page/home.html,"Austin, TX",,,yellowpages
+Plenty Boutique,,,,,,+15122635683,http://www.hillcountrygalleria.com/store/plenty-boutique/2137047298/2138832916,"Austin, TX",,,yellowpages
+Sheek Lash Boutique,,,,,,+15129479165,http://www.sinsationallashes.com,"Austin, TX",,,yellowpages
+Maria & Kyndals,,,,,,+15123299855,http://mariakyndalstx.localsearch.com,"Austin, TX",,,yellowpages
+Grace,,,,,,+15128528602,https://www.kimanasanctuary.com,"Austin, TX",0,Website does not match listing,yellowpages
+Wear Art Thou,,,,,,+15123239500,http://wearartthoutx.localsearch.com,"Austin, TX",,,yellowpages
+Rabiosa Fashion Footwear,,,,,,+15123693543,http://rabiosafashionfootwear.localsearch.com,"Austin, TX",,,yellowpages

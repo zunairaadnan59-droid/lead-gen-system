@@ -1,42 +1,42 @@
-company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,source
-Junkman's Daughter,Pam,Founder,orders@thejunkmansdaughter.com,,,+14045773188,http://www.thejunkmansdaughter.com,"Atlanta, GA",yellowpages
-Pink Lemon Salon and Boutique,Amy Jones,Owner,,,,+14045493238,https://www.pinklemonsalon.com,"Atlanta, GA",yellowpages
-Abbey Glass Boutique Atlanta,Abigail Glass,Founder & CEO,aglass@abbey-glass.com,https://www.linkedin.com/in/abbey-glass,,+14044647854,https://abbey-glass.com/pages/visit-our-atlanta-georgia-location,"Atlanta, GA",yellowpages
-Tags Boutique,,,hello@lexinfifth.com,,,+16783989680,http://tagsatl.com,"Atlanta, GA",yellowpages
-Range Clothing Boutique,,,info@rangeboutique.com,,,+14048168230,https://rangeboutique.com/pages/contact,"Atlanta, GA",yellowpages
-Seven Seventy Four Boutique,,,,,,+14045240540,http://www.seven74accessoriesonline.com,"Atlanta, GA",yellowpages
-Nina's Couture,,,,,,+14043500054,http://www.ninascouture.com,"Atlanta, GA",yellowpages
-Pink Sky Boutique,,,,,,+14045497047,http://www.pinkskyboutique.com,"Atlanta, GA",yellowpages
-Wish,,,press@wishatl.com,,,+14048800748,http://wishatl.com/store,"Atlanta, GA",yellowpages
-Frolic Boutique,,,,,,+14048418800,https://frolicboutiqueatlanta.com,"Atlanta, GA",yellowpages
-Tulipano,,,,,,+14048163550,https://www.shoptulipano.com,"Atlanta, GA",yellowpages
-Labels Resale Boutique,,,,,,+14049868812,http://labelsrb.com,"Atlanta, GA",yellowpages
-Ginger Howard Selections,,,,,,+14048690115,http://gingerhowardselectionsga.localsearch.com,"Atlanta, GA",yellowpages
-Girlfriendz Boutique,,,,,,+14043439032,http://girlfriendzboutique.localsearch.com,"Atlanta, GA",yellowpages
-Festivity,,,,,,+14048418051,http://festivity.localsearch.com,"Atlanta, GA",yellowpages
-Elements of Style,,,,,,+14048462182,http://www.elementsofstyleatl.com,"Atlanta, GA",yellowpages
-N Joy Boutique,,,,,,+14048120005,http://njoyboutiquega.localsearch.com,"Atlanta, GA",yellowpages
-Only For You Boutique,,,,,,+16787493217,http://onlyforyouboutique.localsearch.com,"Atlanta, GA",yellowpages
-Treasure Box Boutique,,,,,,+14045072377,http://treasureboxboutiquega.localsearch.com,"Atlanta, GA",yellowpages
-Patravachi Boutique,,,,,,+14043964820,http://patravachiboutique.localsearch.com,"Atlanta, GA",yellowpages
-Fly Nation,,,,,,+14044316780,http://flynationga.localsearch.com,"Atlanta, GA",yellowpages
-American Mountain,,,,,,+17704321623,http://americanmountain.localsearch.com,"Atlanta, GA",yellowpages
-Dazzl Jewelry Boutique,,,,,,+14048833461,http://dazzljewelryboutique.localsearch.com,"Atlanta, GA",yellowpages
-Vittoria,,,,,,+14047281912,http://vittoria.com,"Atlanta, GA",yellowpages
-Melissa Fashion,,,,,,+17744604400,https://www.cagnow.org,"Atlanta, GA",yellowpages
-My Boutiques,,,,,,+14047615005,http://shopmyglam.com,"Atlanta, GA",yellowpages
-Balboa Boutique,,,,,,+17704365636,http://balboaboutique.localsearch.com,"Atlanta, GA",yellowpages
-Unique Boutique,,,,,,+14042305600,http://uniqueboutique16031847.localsearch.com,"Atlanta, GA",yellowpages
-Dem Vinni Boys,,,,,,+14045492176,http://demvinniboys.localsearch.com,"Atlanta, GA",yellowpages
-Jettas Boutique,,,,,,+14046847114,http://jettasboutique.localsearch.com,"Atlanta, GA",yellowpages
-Flip Burger Boutique,,,,,,+14045493298,http://www.flipburgerboutique.com,"Atlanta, GA",yellowpages
-Gretchen's Children's Shop,,,,,,+14042378020,http://gretchenschildrensshop.localsearch.com,"Atlanta, GA",yellowpages
-Girl Crush Boutique,,,,,,+14046036844,http://girlcrushboutique.localsearch.com,"Atlanta, GA",yellowpages
-Bridget John Clothing and Accessories,,,,,,+17707975918,http://bridgetjohnclothingandaccessories.localsearch.com,"Atlanta, GA",yellowpages
-Tame,,,,,,+16784317900,http://www.tameaccessories.etsy.com,"Atlanta, GA",yellowpages
-Dot Willis Boutique,,,,,,+14046593290,https://willisboutique.com,"Atlanta, GA",yellowpages
-Elaine Breedlove Fashion,,,,,,+14044647754,http://www.elainebreedlovefashion.com,"Atlanta, GA",yellowpages
-The Byrd's Box,,,,,,+14047910489,http://thebyrdsbox.localsearch.com,"Atlanta, GA",yellowpages
-Sassy & Unique Chics Boutique,,,,,,+14043308301,http://sassyuniquechicsboutique.localsearch.com,"Atlanta, GA",yellowpages
-Wildflag,,,,,,+14048151890,http://wildflag.localsearch.com,"Atlanta, GA",yellowpages
-Tameka Boutique,,,,,,+14047815751,http://tamekaboutique.localsearch.com,"Atlanta, GA",yellowpages
+company,owner,owner_title,email,owner_linkedin,company_linkedin,phone,website,location,fit_score,notes,source
+Junkman's Daughter,Pam,Founder,orders@thejunkmansdaughter.com,,,+14045773188,http://www.thejunkmansdaughter.com,"Atlanta, GA",3,Founded 1982 by the store's namesake Pam (first name only),yellowpages
+Pink Lemon Salon and Boutique,Amy Jones,Owner,,,,+14045493238,https://www.pinklemonsalon.com,"Atlanta, GA",3,About: Owner/Colorist Amy Jones; salon with boutique,yellowpages
+Abbey Glass Boutique Atlanta,Abigail Glass,Founder & CEO,aglass@abbey-glass.com,https://www.linkedin.com/in/abbey-glass,,+14044647854,https://abbey-glass.com/pages/visit-our-atlanta-georgia-location,"Atlanta, GA",3,Founder and Creative Director; LinkedIn + verified email via Crustdata,yellowpages
+Tags Boutique,,,hello@lexinfifth.com,,,+14048833836,http://tagsatl.com,"Atlanta, GA",3,Owner known only as Peaches from reviews; email points to Lexi on Fifth,yellowpages
+Range Clothing Boutique,,,info@rangeboutique.com,,,+14048168230,https://rangeboutique.com/pages/contact,"Atlanta, GA",3,Generic email,yellowpages
+Seven Seventy Four Boutique,,,,,,+14045190042,http://www.seven74accessoriesonline.com,"Atlanta, GA",2,Instagram only,yellowpages
+Nina's Couture,,,,,,+14043500054,http://www.ninascouture.com,"Atlanta, GA",2,Alterations shop; staff first name in a review,yellowpages
+Pink Sky Boutique,,,,,,+14045497047,http://www.pinkskyboutique.com,"Atlanta, GA",2,No owner or email,yellowpages
+Wish,,,press@wishatl.com,,,+14048800748,http://wishatl.com/store,"Atlanta, GA",2,Press email only,yellowpages
+Frolic Boutique,,,,,,+14048468002,https://frolicboutiqueatlanta.com,"Atlanta, GA",2,No owner or email,yellowpages
+Tulipano,,,,,,+14048163550,https://www.shoptulipano.com,"Atlanta, GA",2,"Instagram only, multiple locations",yellowpages
+Labels Resale Boutique,,,,,,+14044503143,http://labelsrb.com,"Atlanta, GA",2,"Resale shop, no owner or email",yellowpages
+Ginger Howard Selections,,,,,,+14048690115,http://gingerhowardselectionsga.localsearch.com,"Atlanta, GA",,,yellowpages
+Girlfriendz Boutique,,,,,,+14043439032,http://girlfriendzboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Festivity,,,,,,+14048418051,http://festivity.localsearch.com,"Atlanta, GA",,,yellowpages
+Elements of Style,,,,,,+14048462182,http://www.elementsofstyleatl.com,"Atlanta, GA",,,yellowpages
+N Joy Boutique,,,,,,+14048120005,http://njoyboutiquega.localsearch.com,"Atlanta, GA",,,yellowpages
+Only For You Boutique,,,,,,+16787493217,http://onlyforyouboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Treasure Box Boutique,,,,,,+14045072377,http://treasureboxboutiquega.localsearch.com,"Atlanta, GA",,,yellowpages
+Patravachi Boutique,,,,,,+14043964820,http://patravachiboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Fly Nation,,,,,,+14044316780,http://flynationga.localsearch.com,"Atlanta, GA",,,yellowpages
+American Mountain,,,,,,+17704321623,http://americanmountain.localsearch.com,"Atlanta, GA",,,yellowpages
+Dazzl Jewelry Boutique,,,,,,+14048833461,http://dazzljewelryboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Vittoria,,,,,,+14047281912,http://vittoria.com,"Atlanta, GA",0,"Website is an Italian bike-tire brand, does not match listing",yellowpages
+Melissa Fashion,,,,,,+17705598296,https://www.cagnow.org,"Atlanta, GA",0,Website does not match listing,yellowpages
+My Boutiques,,,,,,+14047615005,http://shopmyglam.com,"Atlanta, GA",,,yellowpages
+Balboa Boutique,,,,,,+17704365636,http://balboaboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Unique Boutique,,,,,,+14042305600,http://uniqueboutique16031847.localsearch.com,"Atlanta, GA",,,yellowpages
+Dem Vinni Boys,,,,,,+14045492176,http://demvinniboys.localsearch.com,"Atlanta, GA",,,yellowpages
+Jettas Boutique,,,,,,+14046847114,http://jettasboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Flip Burger Boutique,,,,,,+14045493298,http://www.flipburgerboutique.com,"Atlanta, GA",,,yellowpages
+Gretchen's Children's Shop,,,,,,+14042378020,http://gretchenschildrensshop.localsearch.com,"Atlanta, GA",,,yellowpages
+Girl Crush Boutique,,,,,,+14046036844,http://girlcrushboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Bridget John Clothing and Accessories,,,,,,+17707975918,http://bridgetjohnclothingandaccessories.localsearch.com,"Atlanta, GA",,,yellowpages
+Tame,,,,,,+16784317900,http://www.tameaccessories.etsy.com,"Atlanta, GA",,,yellowpages
+Dot Willis Boutique,,,,,,+14046593290,https://willisboutique.com,"Atlanta, GA",,,yellowpages
+Elaine Breedlove Fashion,,,,,,+14044647754,http://www.elainebreedlovefashion.com,"Atlanta, GA",,,yellowpages
+The Byrd's Box,,,,,,+14047910489,http://thebyrdsbox.localsearch.com,"Atlanta, GA",,,yellowpages
+Sassy & Unique Chics Boutique,,,,,,+14043308301,http://sassyuniquechicsboutique.localsearch.com,"Atlanta, GA",,,yellowpages
+Wildflag,,,,,,+14048151890,http://wildflag.localsearch.com,"Atlanta, GA",,,yellowpages
+Tameka Boutique,,,,,,+14047815751,http://tamekaboutique.localsearch.com,"Atlanta, GA",,,yellowpages

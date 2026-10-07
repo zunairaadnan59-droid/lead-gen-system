@@ -2,7 +2,7 @@
 already delivered on a previous run, apply an optional suppression list, and write a clean CSV.
 
 Columns: company, owner, owner_title, email, owner_linkedin, company_linkedin, phone, website,
-location, source.
+location, fit_score, notes, source.
 """
 from __future__ import annotations
 
@@ -12,10 +12,10 @@ import re
 from lead_finder.common import (
     area_code, get_db, load_config, normalize_phone, now_stamp, ROOT, today,
 )
-from lead_finder.sources.base import city_display
+from lead_finder.sources.base import NON_BUSINESS_DOMAINS, city_display
 
 COLUMNS = ["company", "owner", "owner_title", "email", "owner_linkedin", "company_linkedin",
-           "phone", "website", "location", "source"]
+           "phone", "website", "location", "fit_score", "notes", "source"]
 
 
 def _load_suppress() -> set[str]:
@@ -47,9 +47,11 @@ def _row(d: dict, cfg: dict) -> dict:
         "email": d.get("email"),
         "owner_linkedin": d.get("owner_linkedin"),
         "company_linkedin": d.get("linkedin_url"),
-        "phone": d.get("direct_phone") or d.get("business_phone"),
+        "phone": normalize_phone(d.get("business_phone")) or d.get("direct_phone"),
         "website": d.get("website"),
         "location": ", ".join(p for p in (city, state) if p),
+        "fit_score": d.get("fit_score"),
+        "notes": d.get("notes"),
         "source": d.get("source"),
     }
 
@@ -73,7 +75,7 @@ def run(city: str | None = None, count: int | None = None, local: bool = True,
         f"""SELECT b.id AS business_id, b.name, b.city, b.state, b.website,
                    b.phone AS business_phone, b.source,
                    c.owner_name, c.owner_title, c.email, c.direct_phone, c.fit_score,
-                   c.linkedin_url, c.owner_linkedin
+                   c.linkedin_url, c.owner_linkedin, c.notes
             FROM businesses b LEFT JOIN contacts c ON c.business_id=b.id
             {where}""",
         params,
@@ -107,7 +109,9 @@ def run(city: str | None = None, count: int | None = None, local: bool = True,
         if not include_delivered and ((domain and domain in delivered) or phone in delivered_ph):
             dropped["delivered"] += 1
             continue
-        key = (domain, "" if domain else phone)
+        # Many listings "link" to a directory or social page; that host says nothing about identity.
+        shared = domain in NON_BUSINESS_DOMAINS or domain.endswith(tuple("." + d for d in NON_BUSINESS_DOMAINS))
+        key = (d.get("city"),) + (("", phone) if (not domain or shared) else (domain, ""))
         if key in seen:
             dropped["dupe"] += 1
             continue
