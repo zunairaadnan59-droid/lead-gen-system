@@ -1,0 +1,66 @@
+name: Send Outreach
+
+# Sends the due cold emails + follow-ups from the Hostinger mailbox once each weekday, then
+# commits data/outreach/state.json so the next run knows who was emailed, replied or bounced.
+#
+# Safety: scheduled runs are DRY RUNS until the repo variable OUTREACH_LIVE is set to "true"
+# (Settings > Secrets and variables > Actions > Variables). Manual runs pick dry-run or send.
+# Needs the secret OUTREACH_PASSWORD (the mailbox password). OUTREACH_EMAIL is optional.
+
+on:
+  schedule:
+    - cron: "43 13 * * 1-5"   # weekdays ~9:43am US Eastern (8:43 after DST ends)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run (show what would send) or send"
+        required: true
+        default: "dry-run"
+        type: choice
+        options: [dry-run, send]
+      cap:
+        description: "Max emails today"
+        required: true
+        default: "20"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: send-outreach
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Send due emails
+        env:
+          OUTREACH_EMAIL: ${{ secrets.OUTREACH_EMAIL || 'zunaira@quixifymedia.com' }}
+          OUTREACH_PASSWORD: ${{ secrets.OUTREACH_PASSWORD }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "${{ vars.OUTREACH_LIVE }}" = "true" ]; then FLAG="--send"; else FLAG=""; fi
+            CAP=20
+          else
+            if [ "${{ github.event.inputs.mode }}" = "send" ]; then FLAG="--send"; else FLAG=""; fi
+            CAP="${{ github.event.inputs.cap }}"
+          fi
+          python run.py outreach $FLAG --cap "$CAP"
+
+      - name: Save sequence state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/outreach/state.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Outreach: update send state"
+          git push

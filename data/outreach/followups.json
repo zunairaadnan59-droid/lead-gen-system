@@ -1,0 +1,20 @@
+{
+  "_comment": "Follow-up templates, sent as replies in the Day 1 thread. Merge fields: {first_name}, {company}. Day offsets count from the Day 1 send.",
+  "steps": [
+    {
+      "step": 2,
+      "day": 3,
+      "body": "Hi {first_name},\n\nQuick follow-up on the free holiday video for {company}.\n\nIf it helps to see how we work first, here's our paid social portfolio: https://drive.google.com/file/d/1IGIYt1fk7qlcFYgHbWXH48fI3DDCGk9Y/view?usp=sharing. It covers Meta campaigns we've run for online stores in the US, UK and Asia.\n\nStill happy to record your 5 minute teardown. Just reply 'yes'.\n\nZunaira\nQuixify Media | zunaira@quixifymedia.com\n\nP.S. Not relevant? Reply 'no' and I won't email again."
+    },
+    {
+      "step": 3,
+      "day": 7,
+      "body": "Hi {first_name},\n\nOne thing worth knowing: Meta ads need about 2 weeks to learn before they perform well. To be ready for Black Friday on 27 Nov, setup has to start by 10 Nov.\n\nIf you want help this season, the risk is on us. If our Holiday Sales Sprint doesn't earn its fee back in sales within 2 months, January is on us.\n\nWant the free video first so you can judge for yourself?\n\nZunaira\nQuixify Media | zunaira@quixifymedia.com\n\nP.S. Not relevant? Reply 'no' and I won't email again."
+    },
+    {
+      "step": 4,
+      "day": 14,
+      "body": "Hi {first_name},\n\nI'll stop here so I'm not cluttering your inbox.\n\nIf holiday sales become a priority, reply 'video' any time and I'll send the free teardown for {company}.\n\nWishing you a busy December.\n\nZunaira\nQuixify Media | zunaira@quixifymedia.com"
+    }
+  ]
+}

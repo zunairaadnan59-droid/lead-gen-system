@@ -11,6 +11,7 @@ call these subcommands for you. You can also run them directly:
   python run.py apply                               # merge Claude's owner-extraction results
   python run.py export --city austin [--count 200]  # (re)write the CSV
   python run.py status                              # what's in the database
+  python run.py outreach [--send]                   # send due cold emails (dry-run by default)
 """
 from __future__ import annotations
 
@@ -85,6 +86,11 @@ def cmd_export(args):
                record_delivered=not args.keep, include_delivered=args.include_delivered)
 
 
+def cmd_outreach(args):
+    from lead_finder import outreach
+    outreach.run(send=args.send, cap=args.cap)
+
+
 def cmd_status(_):
     conn = get_db()
     print("Businesses by status:")
@@ -135,10 +141,15 @@ def main():
 
     sub.add_parser("status", help="summarize the database")
 
+    o = sub.add_parser("outreach", help="send due cold emails + follow-ups (dry-run unless --send)")
+    o.add_argument("--send", action="store_true", help="actually send (default is a dry run)")
+    o.add_argument("--cap", type=int, default=20, help="max emails per day")
+
     args = p.parse_args()
     {"find": cmd_find, "discover": cmd_discover, "enrich-prep": cmd_enrich_prep,
      "load-csv": cmd_load_csv,
-     "apply": cmd_apply, "export": cmd_export, "status": cmd_status}[args.cmd](args)
+     "apply": cmd_apply, "export": cmd_export, "status": cmd_status,
+     "outreach": cmd_outreach}[args.cmd](args)
 
 
 if __name__ == "__main__":
