@@ -1,0 +1,481 @@
+{
+  "name": "Quixify Holiday Sprint outreach",
+  "nodes": [
+    {
+      "id": "a1",
+      "name": "Every weekday 9:45am ET",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "45 9 * * 1-5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a2",
+      "name": "Read outreach sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        220,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "1jjELdaXwB4u9jRgb1yU4I9T3v-v2-mFEH4S_PdZDxPE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "outreach",
+          "mode": "name"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "a3",
+      "name": "Plan today's emails",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Decides who gets an email today. Follow-ups first, then new Day 1 emails, max CAP per day.\n// Status column: blank = not started, active = in sequence, done = all 4 sent,\n// replied / bounced = stopped automatically, anything else (e.g. \"skip\") = never email.\nconst CAP = 20;\nconst OFFSETS = { 2: 3, 3: 7, 4: 14 };   // follow-up step -> days after Day 1\nconst ZONE = 'America/New_York';\nconst PORTFOLIO = 'https://drive.google.com/file/d/1IGIYt1fk7qlcFYgHbWXH48fI3DDCGk9Y/view?usp=sharing';\nconst SIGN = 'Zunaira\\nQuixify Media | zunaira@quixifymedia.com';\nconst OPTOUT = \"\\n\\nP.S. Not relevant? Reply 'no' and I won't email again.\";\n\nconst today = DateTime.now().setZone(ZONE).startOf('day');\nconst todayStr = today.toISODate();\nconst rows = $input.all().map(i => i.json);\n\nconst firstName = body => { const m = /^Hi ([^,\\n]+),/.exec(String(body || '')); return m ? m[1].trim() : 'there'; };\nconst company = c => String(c || '').replace(/\\s*\\(.*?\\)/g, '').trim();\nconst followup = (step, fn, co) => {\n  if (step === 2) return `Hi ${fn},\\n\\nQuick follow-up on the free holiday video for ${co}.\\n\\nIf it helps to see how we work first, here's our paid social portfolio: ${PORTFOLIO}. It covers Meta campaigns we've run for online stores in the US, UK and Asia.\\n\\nStill happy to record your 5 minute teardown. Just reply 'yes'.\\n\\n${SIGN}${OPTOUT}`;\n  if (step === 3) return `Hi ${fn},\\n\\nOne thing worth knowing: Meta ads need about 2 weeks to learn before they perform well. To be ready for Black Friday on 27 Nov, setup has to start by 10 Nov.\\n\\nIf you want help this season, the risk is on us. If our Holiday Sales Sprint doesn't earn its fee back in sales within 2 months, January is on us.\\n\\nWant the free video first so you can judge for yourself?\\n\\n${SIGN}${OPTOUT}`;\n  return `Hi ${fn},\\n\\nI'll stop here so I'm not cluttering your inbox.\\n\\nIf holiday sales become a priority, reply 'video' any time and I'll send the free teardown for ${co}.\\n\\nWishing you a busy December.\\n\\n${SIGN}`;\n};\n\nlet budget = CAP - rows.filter(r => String(r['Last sent'] || '').trim() === todayStr).length;\nconst out = [];\n\nfor (const r of rows) {\n  if (budget <= 0) break;\n  if (String(r['Status'] || '').trim().toLowerCase() !== 'active') continue;\n  const next = Number(r['Step'] || 0) + 1;\n  if (!OFFSETS[next]) continue;\n  const d1 = DateTime.fromISO(String(r['Day 1 sent'] || '').trim(), { zone: ZONE });\n  if (!d1.isValid || today.diff(d1.startOf('day'), 'days').days < OFFSETS[next]) continue;\n  out.push({ json: {\n    email: String(r['Email']).trim(), subject: 'Re: ' + r['Subject'],\n    body: followup(next, firstName(r['Email (Day 1)']), company(r['Company'])),\n    step: next, day1: String(r['Day 1 sent']).trim(), status: next === 4 ? 'done' : 'active', today: todayStr } });\n  budget--;\n}\nfor (const r of rows) {\n  if (budget <= 0) break;\n  if (String(r['Status'] || '').trim() !== '' || !r['Email']) continue;\n  out.push({ json: {\n    email: String(r['Email']).trim(), subject: r['Subject'], body: r['Email (Day 1)'],\n    step: 1, day1: todayStr, status: 'active', today: todayStr } });\n  budget--;\n}\nreturn out;\n"
+      }
+    },
+    {
+      "id": "a4",
+      "name": "One at a time",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      }
+    },
+    {
+      "id": "a5",
+      "name": "Send via Hostinger",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        880,
+        100
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "REPLACE",
+          "name": "Hostinger SMTP"
+        }
+      },
+      "parameters": {
+        "fromEmail": "Zunaira | Quixify Media <zunaira@quixifymedia.com>",
+        "toEmail": "={{ $json.email }}",
+        "subject": "={{ $json.subject }}",
+        "emailFormat": "text",
+        "text": "={{ $json.body }}",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    },
+    {
+      "id": "a6",
+      "name": "Mark as sent",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1100,
+        100
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1jjELdaXwB4u9jRgb1yU4I9T3v-v2-mFEH4S_PdZDxPE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "outreach",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $('One at a time').item.json.email }}",
+            "Status": "={{ $('One at a time').item.json.status }}",
+            "Step": "={{ $('One at a time').item.json.step }}",
+            "Day 1 sent": "={{ $('One at a time').item.json.day1 }}",
+            "Last sent": "={{ $('One at a time').item.json.today }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Step",
+              "displayName": "Step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Day 1 sent",
+              "displayName": "Day 1 sent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Last sent",
+              "displayName": "Last sent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      }
+    },
+    {
+      "id": "a7",
+      "name": "Pause 75s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1320,
+        100
+      ],
+      "parameters": {
+        "amount": 75,
+        "unit": "seconds"
+      },
+      "webhookId": "b7c1e2d4-0000-4000-8000-000000000a07"
+    },
+    {
+      "id": "b1",
+      "name": "New email in inbox",
+      "type": "n8n-nodes-base.emailReadImap",
+      "typeVersion": 2,
+      "position": [
+        0,
+        400
+      ],
+      "credentials": {
+        "imap": {
+          "id": "REPLACE",
+          "name": "Hostinger IMAP"
+        }
+      },
+      "parameters": {
+        "mailbox": "INBOX",
+        "postProcessAction": "nothing",
+        "format": "simple",
+        "options": {
+          "customEmailConfig": "[\"ALL\"]"
+        }
+      }
+    },
+    {
+      "id": "b2",
+      "name": "Reply or bounce?",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        400
+      ],
+      "parameters": {
+        "jsCode": "// Turns new inbox messages into sheet updates: replies stop the sequence, bounces mark the address.\nconst EMAIL = /[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}/g;\nconst out = [];\nfor (const it of $input.all()) {\n  const j = it.json;\n  const from = (String(j.from || '').toLowerCase().match(EMAIL) || [])[0];\n  if (!from || from.endsWith('@quixifymedia.com')) continue;\n  const subject = String(j.subject || '');\n  const isBounce = /mailer-daemon|postmaster/.test(from) || /undeliver|delivery status|failure notice|returned mail/i.test(subject);\n  if (isBounce) {\n    const text = (String(j.textPlain || j.text || '') + ' ' + String(j.textHtml || '')).toLowerCase();\n    const addrs = [...new Set(text.match(EMAIL) || [])]\n      .filter(a => !a.endsWith('quixifymedia.com') && !/mailer-daemon|postmaster/.test(a));\n    for (const a of addrs) out.push({ json: { email: a, status: 'bounced', note: 'Bounced: ' + subject.slice(0, 80) } });\n    continue;\n  }\n  out.push({ json: { email: from, status: 'replied', note: 'Replied: ' + subject.slice(0, 80) } });\n}\nreturn out;\n"
+      }
+    },
+    {
+      "id": "b3",
+      "name": "Is it a prospect?",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        400
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "1jjELdaXwB4u9jRgb1yU4I9T3v-v2-mFEH4S_PdZDxPE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "outreach",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Email",
+              "lookupValue": "={{ $json.email }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b4",
+      "name": "Stop their sequence",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        660,
+        400
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE",
+          "name": "Google Sheets account"
+        }
+      },
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1jjELdaXwB4u9jRgb1yU4I9T3v-v2-mFEH4S_PdZDxPE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "outreach",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $json.Email }}",
+            "Status": "={{ $('Reply or bounce?').item.json.status }}",
+            "Reply/notes": "={{ $('Reply or bounce?').item.json.note }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reply/notes",
+              "displayName": "Reply/notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every weekday 9:45am ET": {
+      "main": [
+        [
+          {
+            "node": "Read outreach sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read outreach sheet": {
+      "main": [
+        [
+          {
+            "node": "Plan today's emails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Plan today's emails": {
+      "main": [
+        [
+          {
+            "node": "One at a time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One at a time": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Send via Hostinger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send via Hostinger": {
+      "main": [
+        [
+          {
+            "node": "Mark as sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as sent": {
+      "main": [
+        [
+          {
+            "node": "Pause 75s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pause 75s": {
+      "main": [
+        [
+          {
+            "node": "One at a time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New email in inbox": {
+      "main": [
+        [
+          {
+            "node": "Reply or bounce?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reply or bounce?": {
+      "main": [
+        [
+          {
+            "node": "Is it a prospect?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is it a prospect?": {
+      "main": [
+        [
+          {
+            "node": "Stop their sequence",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/New_York"
+  },
+  "pinData": {},
+  "active": false
+}
