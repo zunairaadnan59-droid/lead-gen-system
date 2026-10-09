@@ -89,7 +89,10 @@ sequence done ~3 weeks after first send. Simulated run: 250 emails total, cap he
 
 ---
 
-## 8. Sending setup - n8n (self-hosted)
+## 8. Sending setup - n8n
+
+- **Live on n8n Cloud** (2026-10-09): workflow "Quixify Holiday Sprint outreach", id `exOCtiPSOR0P2xyO`, https://quixifymedia.app.n8n.cloud/workflow/exOCtiPSOR0P2xyO (personal project, timezone America/New_York, created OFF). n8n is connected to Claude as an MCP connector. Credentials still to be created by Zunaira: Hostinger SMTP, Hostinger IMAP, Google Sheets account.
+- `outreach` tab also has column W "Test group (A = Sprint line)": 32 Day 1 emails carry the Holiday Sales Sprint line (A), 32 don't (B).
 
 - Files: `n8n/quixify-outreach-workflow.json` (import into n8n) and `n8n/SETUP.md` (step-by-step guide). Both were sent to Zunaira.
 - **Part 1** (schedule, weekdays 9:45am ET): read `outreach` tab, Code node plans follow-ups first then new Day 1s (cap 20), loop one at a time: Send Email (SMTP) -> update sheet row (Status, Step, Day 1 sent, Last sent) -> wait 75s.
