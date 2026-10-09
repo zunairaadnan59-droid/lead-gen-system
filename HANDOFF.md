@@ -78,12 +78,12 @@ list (lash/hair salons, fitness/Pilates studios, flooring, events cafe) got book
 
 | Step | When | Content |
 |---|---|---|
-| 1 | Day 1 | Personal email per prospect (sheet `outreach` col N, subject col M), 41-92 words, hook from their own site |
+| 1 | Day 1 | Personal email per prospect (sheet `outreach` col N, subject col M), rewritten 2026-10-09 to hook, problem, deadline, free video, yes/no ask (75-115 words) |
 | 2 | Day 3 | Follow-up + portfolio Drive link ("Re: <subject>") |
 | 3 | Day 7 | Black Friday 10 Nov setup deadline + guarantee |
 | 4 | Day 14 | Short break-up, no P.S. |
 
-Templates also in `data/outreach/followups.json` and inside the n8n workflow's "Plan today's emails" code.
+Per-prospect follow-ups live in sheet `outreach` cols O-Q as formulas over the `outreach offer` templates (B32-B34); n8n sends those cells, falling back to its built-in template if a cell is empty. Templates also in `data/outreach/followups.json`.
 Max 20 emails/day, weekdays 9:45am US Eastern (6:45pm Pakistan). 64 leads: all Day 1s in ~4 weekdays,
 sequence done ~3 weeks after first send. Simulated run: 250 emails total, cap held, replies/bounces stopped.
 
@@ -94,7 +94,7 @@ sequence done ~3 weeks after first send. Simulated run: 250 emails total, cap he
 - Files: `n8n/quixify-outreach-workflow.json` (import into n8n) and `n8n/SETUP.md` (step-by-step guide). Both were sent to Zunaira.
 - **Part 1** (schedule, weekdays 9:45am ET): read `outreach` tab, Code node plans follow-ups first then new Day 1s (cap 20), loop one at a time: Send Email (SMTP) -> update sheet row (Status, Step, Day 1 sent, Last sent) -> wait 75s.
 - **Part 2** (IMAP trigger, always on): new inbox mail -> Code node classifies reply vs bounce (ignores own address) -> look up row by Email -> set Status `replied`/`bounced` + Reply/notes.
-- **Sheet control columns added to `outreach` tab, O-S:** Status, Step, Day 1 sent, Last sent, Reply/notes (formatted as plain text). Status: blank = not started, `active`, `done`, `replied`, `bounced`, anything else (e.g. `skip`) = never email.
+- **Sheet control columns on `outreach` tab, R-V** (were O-S before the follow-up columns were added): Status, Step, Day 1 sent, Last sent, Reply/notes (formatted as plain text). Status: blank = not started, `active`, `done`, `replied`, `bounced`, anything else (e.g. `skip`) = never email.
 - Code nodes were tested in Node.js with luxon over a simulated calendar using the real 64 rows. **Not tested:** the import into a real n8n, credential logins, real sending.
 - Known limits: sent mail isn't copied to Hostinger "Sent" (sheet is the record); follow-ups thread by "Re:" subject only (n8n Send Email node can't set In-Reply-To).
 - **Zunaira's to-do:** install n8n (Docker on laptop or Hostinger VPS one-click), import, add 3 credentials inside n8n (Hostinger SMTP, Hostinger IMAP, Google Sheets OAuth2 via Google Cloud), preview via "Plan today's emails > Execute step", toggle Active. Also check SPF/DKIM/DMARC for quixifymedia.com in hPanel and Hostinger daily send limit > 20.

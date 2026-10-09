@@ -9,16 +9,19 @@ sheet as its control panel.
 **Part 1 - every weekday at 9:45am US Eastern (6:45pm Pakistan time):**
 1. Reads the `outreach` tab.
 2. Picks today's emails: follow-ups that are due first, then new Day 1 emails. Max 20 a day.
-   - Day 1: the personal email in column N.
-   - Day 3, 7 and 14: follow-ups (portfolio link, Black Friday deadline + guarantee, break-up),
-     sent with "Re: <same subject>".
+   - Day 1: the personal email in column N ("Email (Day 1)").
+   - Day 3, 7 and 14: the follow-ups in columns O, P and Q (portfolio link, Black Friday
+     deadline + guarantee, break-up), sent with "Re: <same subject>". These cells are formulas
+     that fill each prospect's name into the templates on the `outreach offer` tab, so editing a
+     template there updates every row. Type over a cell to give one prospect a custom follow-up.
+     If a cell is empty, n8n falls back to its built-in copy of the template.
 3. Sends them one by one, 75 seconds apart.
 4. Writes back to the sheet: Status, Step, Day 1 sent, Last sent.
 
 **Part 2 - all the time:** watches your inbox. When a prospect replies, their Status becomes
 `replied` and they get nothing more. Bounce notices set Status to `bounced`.
 
-## You control it from the sheet (columns O to S)
+## You control it from the sheet (columns R to V)
 
 | Status | Meaning |
 |---|---|
