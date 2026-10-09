@@ -1,0 +1,386 @@
+<title>Quixify Outreach Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single operations column. Summary strip, then campaigns, then the two things you act on (replies, inboxes), then the launch checklist. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#18202b; --muted:#5a6573; --line:#dfe4ea; --soft:#eef2f5;
+  --accent:#0d6e6e; --accent-soft:#e1f1f0;
+  --good:#2b7a4b; --good-soft:#e3f2e8; --warn:#a8650f; --warn-soft:#fbefdc; --bad:#b4302b; --bad-soft:#f8e3e1; --idle:#7b8594; --idle-soft:#eceff3;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161d; --surface:#18202a; --ink:#e7ecf2; --muted:#9aa6b4; --line:#2a3542; --soft:#1e2833;
+  --accent:#4fb8b3; --accent-soft:#163331;
+  --good:#5cc187; --good-soft:#173123; --warn:#e3a54f; --warn-soft:#352813; --bad:#ef7a73; --bad-soft:#3a1d1b; --idle:#8d98a6; --idle-soft:#232d38; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161d; --surface:#18202a; --ink:#e7ecf2; --muted:#9aa6b4; --line:#2a3542; --soft:#1e2833;
+  --accent:#4fb8b3; --accent-soft:#163331;
+  --good:#5cc187; --good-soft:#173123; --warn:#e3a54f; --warn-soft:#352813; --bad:#ef7a73; --bad-soft:#3a1d1b; --idle:#8d98a6; --idle-soft:#232d38; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:24px 56px;display:grid;gap:28px}
+h1,h2{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(26px,4vw,34px);font-weight:700}
+h2{font-size:19px;font-weight:600}
+.eyebrow{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+header.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end;justify-content:space-between}
+.top .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:13px}
+button{font:inherit;font-size:13px;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid transparent;border-radius:8px;padding:7px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+.banner{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.banner p{margin:0;max-width:70ch}
+.banner.err{border-color:var(--bad);background:var(--bad-soft)}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stat{background:var(--surface);padding:16px 18px;display:grid;gap:4px;min-width:0}
+.stat .v{font-family:var(--f-mono);font-size:28px;font-weight:500;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .s{font-size:12.5px;color:var(--muted)}
+section{display:grid;gap:12px;min-width:0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-head p{margin:0;color:var(--muted);font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:14px;min-width:0}
+.card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.card-head h3{margin:0;font-size:16.5px;font-family:var(--f-display);font-weight:600}
+.card-head .sub{color:var(--muted);font-size:13px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.p-good{color:var(--good);background:var(--good-soft)} .p-warn{color:var(--warn);background:var(--warn-soft)}
+.p-bad{color:var(--bad);background:var(--bad-soft)} .p-idle{color:var(--idle);background:var(--idle-soft)} .p-acc{color:var(--accent);background:var(--accent-soft)}
+.funnel{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--soft)}
+.funnel span{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted)}
+.legend b{color:var(--ink);font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.kv div{background:var(--soft);border-radius:8px;padding:10px 12px;display:grid;gap:2px}
+.kv span{font-size:12px;color:var(--muted)} .kv b{font-family:var(--f-mono);font-weight:500;font-size:18px;font-variant-numeric:tabular-nums}
+.ab{display:grid;gap:8px}
+.ab-row{display:grid;grid-template-columns:120px 1fr 92px;gap:10px;align-items:center;font-size:13px}
+.ab-bar{height:8px;background:var(--soft);border-radius:4px;overflow:hidden}
+.ab-bar span{display:block;height:100%;background:var(--accent);border-radius:4px}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--soft)}
+tr:last-child td{border-bottom:0}
+td.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.warm{display:grid;gap:4px;min-width:110px}
+.warm .bar{height:6px;background:var(--soft);border-radius:3px;overflow:hidden}
+.warm .bar span{display:block;height:100%;background:var(--warn)}
+.warm .bar span.ok{background:var(--good)}
+.empty{padding:20px;color:var(--muted);font-size:13.5px}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.check li{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:start;padding:12px 16px;border-bottom:1px solid var(--line)}
+.check li:last-child{border-bottom:0}
+.tick{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;border:2px solid var(--line);color:transparent;margin-top:1px}
+.tick.done{background:var(--good);border-color:var(--good);color:var(--surface)}
+.check .t{font-weight:600}
+.check .d{font-size:13px;color:var(--muted)}
+.check .st{font-size:12.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.sec-err{font-size:13px;color:var(--bad);background:var(--bad-soft);border-radius:8px;padding:10px 12px}
+@media (max-width:520px){.ab-row{grid-template-columns:90px 1fr 70px}.stat .v{font-size:24px}}
+@media (prefers-reduced-motion:no-preference){.funnel span,.ab-bar span,.warm .bar span{transition:width .4s ease}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Quixify Media · cold email</div>
+      <h1>Outreach Desk</h1>
+    </div>
+    <div class="meta">
+      <span id="updated">Waiting for your Google Sheet</span>
+      <button id="refresh" type="button">Refresh now</button>
+    </div>
+  </header>
+
+  <div id="pageMsg" class="banner" hidden></div>
+
+  <div class="strip" aria-label="Totals across all campaigns">
+    <div class="stat"><span class="eyebrow">Emails sent</span><span class="v" id="sSent">–</span><span class="s" id="sSentSub">all steps, all campaigns</span></div>
+    <div class="stat"><span class="eyebrow">Sent today</span><span class="v" id="sToday">–</span><span class="s">US Eastern day</span></div>
+    <div class="stat"><span class="eyebrow">Replies</span><span class="v" id="sReplies">–</span><span class="s" id="sReplyRate">reply rate –</span></div>
+    <div class="stat"><span class="eyebrow">Bounced</span><span class="v" id="sBounced">–</span><span class="s" id="sBounceRate">keep under 2%</span></div>
+    <div class="stat"><span class="eyebrow">Daily capacity</span><span class="v" id="sCap">–</span><span class="s" id="sCapSub">live inboxes × limit</span></div>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Campaigns</h2><p>From the Campaigns tab. Add a row there to add a campaign here.</p></div>
+    <div class="cards" id="campaigns"><div class="card empty">Campaigns load from your sheet once Google Sheets is allowed for this page.</div></div>
+  </section>
+
+  <div class="two">
+    <section>
+      <div class="sec-head"><h2>Replies to handle</h2><p>Status set to replied</p></div>
+      <div class="tbl"><table><thead><tr><th>Prospect</th><th>Campaign</th><th>Note</th></tr></thead><tbody id="replies"><tr><td colspan="3" class="empty">No replies yet. They appear here as soon as a prospect answers.</td></tr></tbody></table></div>
+    </section>
+    <section>
+      <div class="sec-head"><h2>Inboxes</h2><p id="inboxSummary">From the Inboxes tab</p></div>
+      <div class="tbl"><table><thead><tr><th>Inbox</th><th>Status</th><th>Warm-up</th><th>Limit</th><th>DNS</th></tr></thead><tbody id="inboxes"><tr><td colspan="5" class="empty">Inboxes load from your sheet.</td></tr></tbody></table></div>
+    </section>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Launch checklist</h2><p>Ticks itself off from what the sheet says</p></div>
+    <ul class="check" id="checklist"></ul>
+  </section>
+
+  <p class="note">Reads the Lead Database sheet through your own Google Sheets connection and refreshes every few minutes. Change a status, inbox or campaign in the sheet and it shows here.</p>
+</div>
+
+<script>
+(() => {
+  const SHEET = "1jjELdaXwB4u9jRgb1yU4I9T3v-v2-mFEH4S_PdZDxPE";
+  const SERVER = "Google Sheets";
+  const TOOL = "get_values";
+  const ZONE = "America/New_York";
+  const REFRESH_MS = 180000;
+  const WARM_DAYS = 21;
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const quote = tab => "'" + String(tab).replace(/'/g, "''") + "'";
+  const todayET = () => new Intl.DateTimeFormat("en-CA", {timeZone: ZONE}).format(new Date());
+  const pct = (a, b) => b ? (100 * a / b) : 0;
+  const fmtPct = (a, b) => b ? pct(a, b).toFixed(1) + "%" : "–";
+
+  // Each watched range keeps its last good rows so one failing read never blanks the page.
+  const store = {};
+  const errors = {};
+  let mcp = null;
+  const unsubs = {};
+
+  function rowsOf(payload) {
+    const v = payload && (payload.values || (payload.valueRange && payload.valueRange.values));
+    return Array.isArray(v) ? v : [];
+  }
+  function objects(rows) {
+    if (!rows.length) return [];
+    const h = rows[0].map(x => String(x).trim());
+    return rows.slice(1).filter(r => r.some(c => String(c).trim() !== "")).map(r => Object.fromEntries(h.map((k, i) => [k, String(r[i] ?? "").trim()])));
+  }
+
+  function errorCopy(e) {
+    switch (e && e.code) {
+      case "needs_reauth": return "Your Google Sheets connection has expired. Reconnect Google Sheets in claude.ai Settings, Connectors, then refresh.";
+      case "server_not_connected": return "Google Sheets isn't connected for you. Add it in claude.ai Settings, Connectors, then refresh.";
+      case "selection_required": return "You have more than one Google Sheets connection. Choose one when Claude asks, then refresh.";
+      case "not_in_manifest": return "Google Sheets is turned off for this page. Turn it on in the page's Permissions menu.";
+      case "approval_required": return "Reading the sheet needs your approval. Press Refresh now and allow it.";
+      case "blocked_by_policy": return "Your organization blocks Google Sheets for this page.";
+      case "not_granted": case "capability_disabled": case "capability_removed": return "This view can't use connectors. Open the dashboard on claude.ai while signed in.";
+      case "tool_error": return "Google Sheets answered with an error: " + (e.message || "unknown") + ". Check that the tab still exists with the same name.";
+      case "server_unavailable": case "rate_limited": return "Google Sheets is slow to answer right now. The page will try again on the next refresh.";
+      default: return "Couldn't read the sheet (" + esc(e && e.message || "unknown error") + ").";
+    }
+  }
+  const DENIALS = new Set(["needs_reauth","server_not_connected","blocked_by_policy","approval_required","not_in_manifest","selection_required"]);
+
+  function watch(key, range) {
+    if (!mcp || unsubs[key]) return;
+    unsubs[key] = mcp.watchTool(SERVER, TOOL, {spreadsheetId: SHEET, range}, ev => {
+      if (ev.type === "data") {
+        store[key] = {rows: rowsOf(ev.result.payload), at: (ev.result.cache && ev.result.cache.storedAt) || Date.now()};
+        delete errors[key];
+      } else {
+        errors[key] = ev.error;
+        if (DENIALS.has(ev.error && ev.error.code)) delete store[key];
+      }
+      schedule();
+    }, {cache: {staleTime: 60000}, refetchInterval: REFRESH_MS});
+  }
+
+  let pending = false;
+  function schedule() { if (!pending) { pending = true; requestAnimationFrame(() => { pending = false; render(); }); } }
+
+  function campaignRanges(c) {
+    const tab = c["Leads tab"];
+    return tab ? [["leads:" + tab, quote(tab) + "!A1:G600"], ["status:" + tab, quote(tab) + "!R1:W600"]] : [];
+  }
+
+  function leadRows(tab) {
+    const a = store["leads:" + tab], b = store["status:" + tab];
+    if (!a || !b) return null;
+    const left = objects(a.rows), right = objects(b.rows);
+    return left.map((l, i) => ({...l, ...(right[i] || {})}));
+  }
+
+  function statsFor(rows) {
+    const s = {total: 0, emailable: 0, notStarted: 0, active: 0, done: 0, replied: 0, bounced: 0, skipped: 0, sent: 0, today: 0, groups: {}};
+    const t = todayET();
+    for (const r of rows) {
+      if (!r["Company"]) continue;
+      s.total++;
+      const st = (r["Status"] || "").toLowerCase();
+      const step = parseInt(r["Step"], 10) || 0;
+      if (r["Email"]) s.emailable++;
+      s.sent += step;
+      if ((r["Last sent"] || "") === t) s.today++;
+      if (!st) s.notStarted++; else if (st === "active") s.active++; else if (st === "done") s.done++;
+      else if (st === "replied") s.replied++; else if (st === "bounced") s.bounced++; else s.skipped++;
+      const gKey = Object.keys(r).find(k => k.toLowerCase().startsWith("test group"));
+      const g = gKey ? (r[gKey] || "").charAt(0).toUpperCase() : "";
+      if (g) {
+        const G = s.groups[g] = s.groups[g] || {contacted: 0, replied: 0};
+        if (step > 0) G.contacted++;
+        if (st === "replied") G.replied++;
+      }
+    }
+    s.contacted = s.active + s.done + s.replied + s.bounced;
+    return s;
+  }
+
+  function statusPill(status) {
+    const s = (status || "").toLowerCase();
+    if (s === "live") return '<span class="pill p-good">Live</span>';
+    if (s === "ready") return '<span class="pill p-acc">Ready</span>';
+    if (s === "warming") return '<span class="pill p-warn">Warming</span>';
+    if (s === "paused") return '<span class="pill p-warn">Paused</span>';
+    if (s === "done") return '<span class="pill p-idle">Done</span>';
+    if (s === "to buy") return '<span class="pill p-idle">To buy</span>';
+    if (s === "draft" || !s) return '<span class="pill p-idle">' + esc(status || "Draft") + '</span>';
+    return '<span class="pill p-idle">' + esc(status) + '</span>';
+  }
+
+  function renderCampaign(c, s) {
+    const segs = [["Replied", s.replied, "var(--good)"], ["In sequence", s.active, "var(--accent)"], ["Finished", s.done, "var(--idle)"], ["Bounced", s.bounced, "var(--bad)"], ["Not started", s.notStarted, "var(--line)"]];
+    const total = segs.reduce((a, x) => a + x[1], 0) || 1;
+    const groups = Object.keys(s.groups).sort();
+    const maxRate = Math.max(1, ...groups.map(g => pct(s.groups[g].replied, s.groups[g].contacted)));
+    const ab = groups.length > 1 ? `
+      <div class="ab"><div class="eyebrow">A/B reply rate</div>
+      ${groups.map(g => { const G = s.groups[g]; const r = pct(G.replied, G.contacted); return `
+        <div class="ab-row"><span>${g === "A" ? "A · with Sprint line" : g === "B" ? "B · without" : "Group " + esc(g)}</span>
+        <div class="ab-bar"><span style="width:${(r / maxRate * 100).toFixed(1)}%"></span></div>
+        <span class="num">${fmtPct(G.replied, G.contacted)} <span class="note">(${G.replied}/${G.contacted})</span></span></div>`; }).join("")}
+      <p class="note">${groups.every(g => s.groups[g].contacted >= 100) ? "Enough sends to compare." : "Needs about 100 sends per group before the difference means much."}</p></div>` : "";
+    return `<article class="card">
+      <div class="card-head"><div><h3>${esc(c["Campaign"])}</h3><div class="sub">${esc(c["Niche"] || "")} · ${esc(c["Sender"] || "sender not set")}</div></div>${statusPill(c["Status"])}</div>
+      <div class="funnel" role="img" aria-label="Prospects by status">${segs.map(x => x[1] ? `<span style="width:${(x[1] / total * 100).toFixed(2)}%;background:${x[2]}" title="${x[0]}: ${x[1]}"></span>` : "").join("")}</div>
+      <div class="legend">${segs.map(x => `<span><i style="background:${x[2]}"></i>${x[0]} <b>${x[1]}</b></span>`).join("")}</div>
+      <div class="kv">
+        <div><span>Prospects</span><b>${s.total}</b></div>
+        <div><span>Emails sent</span><b>${s.sent}</b></div>
+        <div><span>Reply rate</span><b>${fmtPct(s.replied, s.contacted)}</b></div>
+        <div><span>Daily cap</span><b>${esc(c["Daily cap"] || "–")}</b></div>
+      </div>
+      ${ab}
+      ${c["Notes"] ? `<p class="note">${esc(c["Notes"])}</p>` : ""}
+    </article>`;
+  }
+
+  function render() {
+    const camps = store.campaigns ? objects(store.campaigns.rows).filter(c => c["Campaign"]) : null;
+    const inboxes = store.inboxes ? objects(store.inboxes.rows).filter(r => r["Inbox"]) : null;
+
+    // Page-level problem: every read failed the same way.
+    const errKeys = Object.keys(errors);
+    const msg = $("pageMsg");
+    if (errKeys.length && !store.campaigns && !store.inboxes) {
+      msg.hidden = false; msg.className = "banner err";
+      msg.innerHTML = `<p>${esc(errorCopy(errors[errKeys[0]]))}</p><button type="button" data-act="retry">Try again</button>`;
+    } else if (!mcp && mcpChecked) {
+      msg.hidden = false; msg.className = "banner";
+      msg.innerHTML = "<p>This dashboard reads your Lead Database sheet through your Google Sheets connector. Open it on claude.ai while signed in, and allow Google Sheets when asked.</p>";
+    } else msg.hidden = true;
+
+    if (camps) for (const c of camps) for (const [k, r] of campaignRanges(c)) watch(k, r);
+
+    // Campaign cards + totals
+    let T = {sent: 0, today: 0, replied: 0, bounced: 0, contacted: 0};
+    const replies = [];
+    if (camps) {
+      $("campaigns").innerHTML = camps.length ? camps.map(c => {
+        const tab = c["Leads tab"];
+        const rows = tab ? leadRows(tab) : [];
+        const e = errors["leads:" + tab] || errors["status:" + tab];
+        if (!rows) return `<article class="card"><div class="card-head"><div><h3>${esc(c["Campaign"])}</h3><div class="sub">Tab: ${esc(tab || "not set")}</div></div>${statusPill(c["Status"])}</div>${e ? `<div class="sec-err">${esc(errorCopy(e))}</div>` : '<p class="note">Loading prospects…</p>'}</article>`;
+        const s = statsFor(rows);
+        T.sent += s.sent; T.today += s.today; T.replied += s.replied; T.bounced += s.bounced; T.contacted += s.contacted;
+        for (const r of rows) if ((r["Status"] || "").toLowerCase() === "replied") replies.push({r, camp: c["Campaign"]});
+        return renderCampaign(c, s);
+      }).join("") : '<div class="card empty">No campaigns yet. Add a row to the Campaigns tab.</div>';
+    }
+    if (camps) {
+      $("sSent").textContent = T.sent; $("sToday").textContent = T.today; $("sReplies").textContent = T.replied; $("sBounced").textContent = T.bounced;
+      $("sReplyRate").textContent = "reply rate " + fmtPct(T.replied, T.contacted);
+      $("sBounceRate").textContent = T.contacted ? fmtPct(T.bounced, T.contacted) + " of contacted, keep under 2%" : "keep under 2%";
+    }
+
+    $("replies").innerHTML = replies.length ? replies.map(({r, camp}) => `<tr><td><b>${esc(r["Company"])}</b><br><span class="note">${esc(r["Contact"] || "")} · ${esc(r["Email"] || "")}</span></td><td>${esc(camp)}</td><td>${esc(r["Reply/notes"] || "")}</td></tr>`).join("")
+      : `<tr><td colspan="3" class="empty">${camps ? "No replies yet. They appear here as soon as a prospect answers." : "Waiting for the sheet."}</td></tr>`;
+
+    // Inboxes
+    let liveCap = 0, live = 0, warming = 0, toBuy = 0, dnsOk = 0, warmedDone = 0;
+    if (inboxes) {
+      const now = Date.now();
+      $("inboxes").innerHTML = inboxes.length ? inboxes.map(r => {
+        const st = (r["Status"] || "").toLowerCase();
+        const lim = parseInt(r["Daily cold limit"], 10) || 0;
+        if (st === "live") { live++; liveCap += lim; } else if (st === "warming") warming++; else if (st === "to buy") toBuy++;
+        const ok = ["SPF","DKIM","DMARC"].filter(k => /^(ok|yes|pass|done|✓)$/i.test(r[k] || ""));
+        if (ok.length === 3) dnsOk++;
+        let warm = '<span class="note">–</span>';
+        const started = Date.parse(r["Warm-up started"] || "");
+        if (!isNaN(started)) {
+          const days = Math.max(0, Math.floor((now - started) / 86400000));
+          if (days >= WARM_DAYS) warmedDone++;
+          warm = `<div class="warm"><span class="num" style="font-size:12px">day ${days} of ${WARM_DAYS}</span><div class="bar"><span class="${days >= WARM_DAYS ? "ok" : ""}" style="width:${Math.min(100, days / WARM_DAYS * 100).toFixed(0)}%"></span></div></div>`;
+        }
+        return `<tr><td><b>${esc(r["Inbox"])}</b><br><span class="note">${esc(r["Provider"] || "")}</span></td><td>${statusPill(r["Status"])}</td><td>${warm}</td><td class="mono">${lim || "–"}</td><td class="mono">${ok.length}/3</td></tr>`;
+      }).join("") : '<tr><td colspan="5" class="empty">No inboxes yet. Add them to the Inboxes tab.</td></tr>';
+      $("inboxSummary").textContent = `${live} live · ${warming} warming · ${toBuy} to buy`;
+      $("sCap").textContent = liveCap; $("sCapSub").textContent = `${live} live inbox${live === 1 ? "" : "es"} · ${(liveCap * 5).toLocaleString()} a week`;
+    } else if (errors.inboxes) {
+      $("inboxes").innerHTML = `<tr><td colspan="5"><div class="sec-err">${esc(errorCopy(errors.inboxes))}</div></td></tr>`;
+    }
+
+    // Launch checklist, derived from the sheet
+    const coldBoxes = inboxes ? inboxes.filter(r => !/quixifymedia\.com$/i.test(r["Inbox"] || "")) : [];
+    const instCamp = camps ? camps.find(c => /instantly|smartlead/i.test(c["Sender"] || "")) : null;
+    const steps = [
+      ["Buy the sending domains", "Five lookalike .com domains, each redirecting to quixifymedia.com.", coldBoxes.length && coldBoxes.every(r => (r["Status"] || "").toLowerCase() !== "to buy"), coldBoxes.length ? `${coldBoxes.filter(r => (r["Status"]||"").toLowerCase() !== "to buy").length}/${coldBoxes.length} inboxes past "to buy"` : "add inboxes"],
+      ["Set up SPF, DKIM and DMARC", "Mark each record OK in the Inboxes tab once it verifies.", coldBoxes.length && coldBoxes.every(r => ["SPF","DKIM","DMARC"].every(k => /^(ok|yes|pass|done|✓)$/i.test(r[k] || ""))), `${dnsOk} inbox${dnsOk === 1 ? "" : "es"} fully set`],
+      ["Warm up for three weeks", "Connect the inboxes to the sending tool, turn warm-up on, fill in the start date.", coldBoxes.length && coldBoxes.every(r => { const d = Date.parse(r["Warm-up started"] || ""); return !isNaN(d) && (Date.now() - d) / 86400000 >= WARM_DAYS; }), `${warmedDone} finished`],
+      ["Connect the sending tool to the sheet", "n8n syncs leads out and replies back, so this page stays current.", !!(instCamp && /live/i.test(instCamp["Status"] || "")), instCamp ? esc(instCamp["Status"] || "draft") : "no campaign uses it yet"],
+      ["Launch the first campaign", "Set a campaign's Status to Live.", !!(camps && camps.some(c => /live/i.test(c["Status"] || ""))), camps ? `${camps.filter(c => /live/i.test(c["Status"]||"")).length} live` : ""],
+    ];
+    $("checklist").innerHTML = steps.map(([t, d, done, st]) => `<li><span class="tick ${done ? "done" : ""}" aria-label="${done ? "done" : "not done"}">✓</span><div><div class="t">${t}</div><div class="d">${d}</div></div><span class="st">${st}</span></li>`).join("");
+
+    const ats = Object.values(store).map(x => x.at).filter(Boolean);
+    if (ats.length) $("updated").textContent = "Updated " + new Date(Math.min(...ats)).toLocaleTimeString([], {hour: "numeric", minute: "2-digit"});
+  }
+
+  let mcpChecked = false;
+  async function refreshAll() {
+    if (!mcp) return;
+    try { await mcp.invalidate(SERVER, TOOL); } catch (_) {}
+  }
+  document.addEventListener("click", e => {
+    if (e.target.closest("#refresh") || e.target.closest('[data-act="retry"]')) {
+      if (Object.keys(errors).length) { for (const k of Object.keys(unsubs)) { unsubs[k](); delete unsubs[k]; } for (const k of Object.keys(errors)) delete errors[k]; start(); }
+      else refreshAll();
+    }
+  });
+
+  function start() {
+    watch("campaigns", "Campaigns!A1:I50");
+    watch("inboxes", "Inboxes!A1:K60");
+  }
+
+  render();
+  (window.claude && window.claude.use ? window.claude.use("mcp") : Promise.resolve(null)).then(ns => {
+    mcp = ns; mcpChecked = true;
+    if (mcp) start();
+    render();
+  }, () => { mcpChecked = true; render(); });
+})();
+</script>
