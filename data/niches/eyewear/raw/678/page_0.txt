@@ -1,0 +1,39 @@
+URL: http://www.newenglandeye.org
+
+Test Page for the Apache HTTP Server & InterWorx-CP
+Welcome!
+This page is used to test the proper operation of the
+Apache Web server after it has been installed on this server, with the
+InterWorx
+Web Hosting Control Panel
+. If you can read this page, it means
+that the Apache Web server installed on this server and is
+working properly.
+If you are the server administrator
+Login to InterWorx-CP by navigating to the
+NodeWorx Login Page
+.  If that does not work, try https and port 2443.
+You'll want to bookmark that login page so you can easily
+find it again.  You can also reach NodeWorx by appending
+/nodeworx to the end of any domain hosted on the server or
+any IP mapped to the server.
+Once you are logged into NodeWorx you will be able to
+manage all aspects of your server.
+Your login information should have been provided to you
+by the
+InterWorx Reseller
+Partner
+you purchased your license from or
+the InterWorx-CP team itself if you purchased InterWorx-CP
+from the InterWorx website.
+ABOUT INTERWORX
+InterWorx-CP
+is a dedicated
+server hosting control panel.  It is useful for anyone in charge of managing or maintaining
+a server.  It can be used to setup web hosting accounts and provide website level
+access to webmasters.  InterWorx-CP will also  perform much of
+the routine maintenance needed to keep a server running smoothly.
+For more information regarding InterWorx-CP or any of the
+InterWorx line of tools please visit
+http://www.interworx.com
+.

@@ -1,0 +1,14 @@
+URL: https://www.heb.com/pharmacy/common/landing/about-us
+
+We noticed something unusual
+Something about your browsing behavior made our system think you were a bot.
+Why would this happen?
+You’re browsing or clicking at a speed much faster than typical human speed
+Cookies are disabled in your web browser
+A browser plugin or blocker is preventing JavaScript from running
+You’re using a VPN or privacy tool
+To fix this, make sure cookies and JavaScript are enabled on your browser and
+refresh the page.
+Please stand by
+We're getting everything ready for you. The page is loading, and you'll be on your way in just a few moments.
+Thanks for your patience!

@@ -1,0 +1,114 @@
+URL: http://firstsightvision.net/about
+
+PHONE: 18008412790
+EMAIL: memberservices@abvisionplan.com
+America's Best Vision Plan for California Residents
+bg-dark
+AMERICA'S BEST VISION PLAN FOR CALIFORNIA RESIDENTS.
+text-white
+hero-left-bleed
+XXL
+style
+top-hero
+2 PAIRS FOR $95 INCLUDES YOUR EYE EXAM.
+heading-3
+Americas' Best Vision Plan membership required and exam included.
+*Eye exams provided by independent medical practice.
+false
+addCta
+Learn More
+primary
+columnwidth
+6
+gap
+right-md
+3-YEARS CONTACT LENS EXAM BENEFIT PLAN
+heading-3
+Get 3 years of eye exams and 10% off contacts and glasses for $150.
+false
+addCta
+Learn More
+primary
+columnwidth
+6
+gap
+right-md
+default
+Forms for California Residents ​
+Membership Contract
+|
+Membership Contract (Español)
+Enrollment Form
+|
+Enrollment Form (Español)
+Contact Lens Exam Contract
+|
+Contact Lens Exam Contract (Español)
+HIPAA
+|
+HIPAA (Español)
+Privacy Notice
+Contact Information for California Residents
+Contact Us
+Phone:
+800-841-2790
+Fax: 866-698-7773
+Email Us
+FAQs for California Residents
+Report Provider Directory Inaccuracies
+Corporate Office
+America's Best Vision Plan
+c/o FirstSight Vision Services, Inc.
+1202 Monte Vista, Ave., Suite #17
+Upland, CA 91786
+Provider Directory & Provider Search for California Residents
+Search the Directory
+Full Provider Directory PDF
+Report Provider Directory Inaccuracies
+Patient Education
+Learn About Vision Health
+Learn About Eye Exams
+Learn About Contact Lens Care
+Comments & GRIEVANCE FORM
+Online Grievances Form
+Mail or fax (866-698-7773) your completed form:
+English Printable Form
+Spanish Printable Form
+XXL
+border
+heading-4
+NONDISCRIMINATION NOTICE:
+America’s Best does not discriminate against people because of their race, color, national origin, ancestry, religion, sex, marital status, gender, gender identity, sexual orientation, age, or disability.
+Free interpreter services are available to help you communicate with us. To get an interpreter or to ask about written information in your language, please call us at 1-800-841-2790. If you believe you were discriminated against, you can submit a discrimination grievance to:
+America's Best Vision Plan
+Attn: Grievance Administrator
+1202 Monte Vista Avenue, Suite 17
+Upland, CA 91786
+Fax: 1-866-698-7773
+Email:
+memberservices@abvisionplan.com
+Online:
+Submit Online Grievance Form Here
+.
+You also have the right to file a discrimination complaint with the United States Department of Health and Human Services Office for Civil Rights (OCR) if you have a concern of discrimination based on race, color, national origin, age, disability, or sex. You can file your complaint in writing, by phone, or online as follows:
+By phone: 1-800-368-1019 (TTY 711 or 1-800-537-7697)
+By mail: The complaint form can be accessed at
+https://www.hhs.gov/sites/default/files/ocr-60-day-frn-cr-crf-complaint-forms-508r-11302022.pdf
+The completed form may be submitted to OCR at Centralized Case Management Operations, U.S. Department of Health and Human Services, 200 Independence Avenue, S.W., Room 509F, HHH Bldg, Washington, D.C. 20201
+By email:
+OCRComplaint@hhs.gov.
+Online: Visit the Office of Civil Rights Complaint Portal Assistant at
+https://ocrportal.hhs.gov/ocr/smartscreen/main.jsf
+For more information about the OCR complaint process please visit
+https://www.hhs.gov/civil-rights/filing-a-complaint/complaint-process/index.html
+.
+style
+content-standard
+XL
+style
+content-standard
+Find Your Local America's Best
+We look forward to serving all of your eyewear and eye care needs.
+find-store
+style
+bottom-search

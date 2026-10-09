@@ -1,0 +1,257 @@
+URL: http://www.topdoc.com
+
+Topdoc - AI-powered revenue cycle, built for providers
+Topdoc
+Agents
+Why Topdoc
+Outcomes
+FAQ
+Book a demo
+The first all-in-one AI revenue cycle platform
+Boost earnings by
+$10,000 per physician per month.
+Topdoc has 15 AI agents that work together across the entire revenue cycle, so your team can focus on patients instead of paperwork.
+Book a demo
+Meet the agents
+Pre-built integrations with every leading EHR
+Epic
+ModMed
+eClinicalWorks
+athenahealth
+Cerner
+Your AI revenue cycle team
+Meet the agents
+running your revenue cycle.
+15 purpose-built AI agents, one for every stage. Each is trained on the rules, payer quirks, and clinical context its workflow demands - and each works inside the same Topdoc platform, on the same data.
+01
+Iris
+Patient Intake
+Verifies insurance cards, demographics, and surgical necessity before every visit. No more re-keyed data.
+02
+Eva
+Coverage & Eligibility
+Checks network status, referrals, COB, and computes patient financial responsibility ahead of time.
+03
+Hana
+HPI Collector
+Captures pre-visit history via voice AI for new patients; auto-generates HPI from prior notes for established.
+04
+Nate
+Clinical Notes
+Drafts physician notes from pre-encounter data, conversations, and templates - requires almost no edits.
+05
+Oscar
+Order Generation
+Creates orders from physician intent and customizable templates. Sends them out automatically.
+06
+Carter
+MDM Coding
+Codes encounters using payer-aware MDM logic that lifts defensible code levels.
+07
+Pria
+Prior Auth Checker
+Validates documentation against payer policy before submission to prevent auth denials.
+08
+Aaron
+Prior Auth Submitter
+Submits authorizations, answers clinical queries, polls status, and revalidates reschedules.
+09
+Charlie
+Charge Creation
+Reads op notes and creates surgery charges with the right codes and modifiers, every time.
+10
+Felix
+Fax Triage
+Triages inbound faxes, routes referrals, updates the EHR, and converts to scheduled visits.
+11
+Clara
+Claim Submission
+Scrubs claims with per-provider rules and submits clean the first time - far fewer rejections.
+12
+Dean
+Denials & Appeals
+Investigates denials and writes PubMed-cited appeal letters automatically.
+13
+Penny
+Patient Collections
+Offers pre-pay ACH discounts and collects payment without staff lifting a finger.
+14
+Ana
+Analytics
+Answers any question about your financial health in seconds, in plain English.
+15
+Cal
+Voice Call Center
+Handles patient calls 24/7 - scheduling, billing, care coordination, and FAQs.
+The Topdoc difference
+Revenue cycle is
+15 disconnected workflows.
+Buy the car. Don't build it from parts.
+Stitching together point solutions means owning every integration and every data handoff. It's a second full-time job, with no guaranteed return.
+Building your own RCM
+Buy a tool for each workflow. Then glue them together.
+×
+10-15 integrations to maintain
+×
+You own every data handoff
+×
+Every vendor upgrade is your problem
+×
+No single party accountable
+×
+ROI is a hope, not a contract
+Buying Topdoc
+One platform. 15 pre-integrated agents. Drive it off the lot.
+✓
+Zero integration work
+✓
+One data model across all 15 workflows
+✓
+Upgrades ship with the platform
+✓
+One team accountable end-to-end
+✓
+Guaranteed $10K per physician per month, or your money back
+Nobody assembles their own car from parts. Why do it with your revenue cycle?
+What your practice gets back.
+When 15 workflows become one platform, the savings show up in three places - your cost line, your revenue line, and your team's day.
+−75%
+Lower RCM cost
+From ~10% of collections down to a guaranteed 2.5%
++8%
+Higher collections
+Cleaner coding, fewer denials, faster patient payment
+130+
+Staff hours reclaimed weekly
+Across front desk, providers, MAs and billers - back into patient-facing work
+What doctors say
+400+
+happy physicians.
+Physicians who switched from billing companies, point solutions, and DIY stacks - and stayed.
+★★★★★
+"We tried stitching together an AI scribe, a coding tool, and a billing service. Topdoc replaced all three in two weeks - and the numbers went up, not sideways."
+RM
+Rachel M., MD
+Orthopedic Surgery
+★★★★★
+"Every RCM vendor we evaluated promised outcomes. Topdoc is the only one that put the $10K per physician in the contract."
+DP
+David P., MD
+Gastroenterology
+★★★★★
+"Our denial rate dropped below anything our old billing company ever hit. The appeal letters cite actual literature - payers stopped fighting us."
+PS
+Priya S., MD
+Cardiology
+★★★★★
+"I've demoed every AI scribe on the market. Topdoc's notes are the first I sign without edits - because the same platform already knows the payer rules downstream."
+JL
+James L., MD
+Internal Medicine
+★★★★★
+"Prior auth used to eat 20 staff hours a week. Topdoc submits, follows up, and revalidates reschedules on its own. My MAs got their afternoons back."
+AR
+Angela R., MD
+Dermatology
+★★★★★
+"Switching from our old billing service paid for itself in the first quarter. One platform, one team accountable - no more vendor finger-pointing."
+MT
+Marcus T., MD
+Otolaryngology
+★★★★★
+"Live in two weeks on ModMed - no rip-and-replace, no IT project. Nothing else we looked at came close on implementation."
+EV
+Elena V., MD
+OB/GYN
+★★★★★
+"The front desk finally talks to patients instead of insurance portals. No point solution we tried ever gave us that."
+SH
+Sam H., MD
+Family Medicine
+★★★★★
+"Our in-house biller left and we never replaced the role. Topdoc does more than the three vendors it replaced - for less than any one of them."
+NC
+Nina C., MD
+Pain Management
+★★★★★
+"I ask a question about my collections and get the answer in seconds. Our old analytics vendor needed a week of back-and-forth for the same report."
+OF
+Omar F., MD
+Sports Medicine
+★★★★★
+"Point solutions kept blaming each other when claims fell through the cracks. With one platform, there are no cracks."
+GW
+Grace W., MD
+Rheumatology
+★★★★★
+"Topdoc answers our phones at 7pm on a Friday and actually schedules the patient. Our old answering service just took messages."
+TB
+Tom B., MD
+Urology
+How it works
+Built for providers.
+Run by AI.
+Pre-built integrations with Epic, ModMed, eClinicalWorks, athenahealth, and Cerner mean no rip-and-replace and no custom interface work. You're fully live on Topdoc in
+2 weeks
+.
+1
+We unify the 15 workflows
+Patient intake, coverage checks, HPI, notes, orders, coding, prior auth, charges, fax, claims, denials, patient payments, analytics, and call center - every revenue cycle stage runs inside one interface, on one data model.
+2
+AI agents do the work
+Each workflow is run by a purpose-built AI agent - verifying coverage, drafting notes, submitting prior auths, scrubbing claims, writing appeals. Your team supervises exceptions instead of doing the grunt work.
+3
+Your team focuses on patients
+No more grunt work for the front desk, MAs, and billers. The people you hired to care for patients get to actually care for patients.
+Security & compliance
+Built for PHI from
+day one.
+Topdoc sits inside your revenue cycle, so we hold ourselves to the same standard as your EHR. Every practice gets a signed BAA before a single record moves.
+HIPAA compliant
+A signed Business Associate Agreement with every practice. PHI is handled under the minimum-necessary standard.
+SOC 2 Type II
+Independently audited controls across security, availability, and confidentiality.
+Encrypted everywhere
+Data is encrypted in transit and at rest.
+Access & audit
+Role-based access controls and a complete audit trail of every action an agent takes - human-reviewable, always.
+FAQ
+Questions practices
+actually ask.
+How long does implementation take?
++
+Two weeks to fully live. Pre-built integrations with Epic, ModMed, eClinicalWorks, athenahealth, and Cerner mean no rip-and-replace and no custom interface work.
+Do we have to replace our EHR?
++
+No. Topdoc's agents work inside your existing EHR. Your team keeps the tools they know - the agents take over the grunt work behind them.
+How does the $10,000 per physician guarantee work?
++
+It's contractual, not aspirational. If Topdoc doesn't lift earnings by $10,000 per physician per month, you get your money back.
+What happens to our billing team?
++
+They stop re-keying data and chasing payers, and start supervising exceptions and working with patients. Practices reclaim 130+ staff hours a week across front desk, MAs, and billers.
+Is our patient data safe?
++
+Yes. HIPAA-compliant with a signed BAA, SOC 2 Type II audited, and encrypted in transit and at rest. See
+Security & compliance
+above.
+See it on
+your numbers.
+Bring an AR aging report. We'll walk through exactly where the margin is leaking - and how fast Topdoc gets it back.
+Book a demo
+30-minute walkthrough · No commitment · HIPAA-compliant · SOC 2 Type II
+Topdoc
+Patient Policies
+Provider Policies
+Contact Us
+© 2026 Topdoc · Built for the practices that care
+Book a demo
+×
+Book a slot to schedule a demo
+Pick a time that works for you. A Google Meet link is auto-attached and calendar invites go to both sides.
+View available times
+Opens in a new tab · ~30 min · No commitment
+Prefer email?
+[email protected]
+·
+[email protected]
