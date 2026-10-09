@@ -12,14 +12,23 @@ call these subcommands for you. You can also run them directly:
   python run.py export --city austin [--count 200]  # (re)write the CSV
   python run.py status                              # what's in the database
   python run.py outreach [--send]                   # send due cold emails (dry-run by default)
+
+Add --niche <name> to any command to work on a separate campaign (see niches: in config.yaml).
 """
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+# --niche must take effect before lead_finder.common picks its data folder at import time.
+if "--niche" in sys.argv:
+    _i = sys.argv.index("--niche")
+    os.environ["LEADS_NICHE"] = sys.argv[_i + 1]
+    del sys.argv[_i:_i + 2]
 
 from lead_finder.common import get_db, load_env  # noqa: E402
 
@@ -49,7 +58,8 @@ def cmd_enrich_prep(args):
     fetch.run(limit=args.limit)
     _resolved, needs = extract.run()
     print("=" * 64)
-    print(f"{needs} businesses queued -> data/work/needs_claude.jsonl")
+    from lead_finder.common import WORK_DIR
+    print(f"{needs} businesses queued -> {WORK_DIR / 'needs_claude.jsonl'}")
     print("Next: the /enrich-owners Claude pass reads each item's text_paths and appends one")
     print("      JSON line per business to data/work/claude_results.jsonl, then: python run.py apply")
     print("=" * 64)
@@ -59,13 +69,13 @@ def cmd_load_csv(args):
     """Load a city's exported CSVs back into the DB, so leads from a run whose DB wasn't kept
     (the Find Leads workflow only commits CSVs) can still go through enrichment."""
     import csv
-    from lead_finder.common import ROOT, insert_business, load_config
+    from lead_finder.common import LEADS_DIR, insert_business, load_config
     cfg = load_config()
     city = args.city.lower().replace(" ", "")
     state = (cfg.get("cities", {}).get(city) or {}).get("state")
     conn = get_db()
     added = 0
-    for path in sorted((ROOT / "data" / "leads").glob(f"{city}_*.csv")):
+    for path in sorted(LEADS_DIR.glob(f"{city}_*.csv")):
         for row in csv.DictReader(open(path, encoding="utf-8")):
             added += insert_business(conn, {"name": row.get("company"), "website": row.get("website"),
                                             "phone": row.get("phone")}, city, state,

@@ -17,12 +17,14 @@ def _query(cfg, city_key: str, limit: int) -> list[dict]:
     city_name = city_display(city_key, cfg)
     client = http_client(cfg)
     # shop=* catches storefront retailers likely to also run an ecommerce/online store.
+    shops = cfg.get("icp", {}).get("osm_shops") or (
+        "clothes|fashion|boutique|shoes|jewelry|jewellery|gift|florist|furniture|"
+        "interior_decoration|houseware|electronics|computer|books|toys|art|beauty|cosmetics|"
+        "bag|leather|department_store|variety_store")
     query = (
         f'[out:json][timeout:60];'
         f'area["name"="{city_name}"]["admin_level"="8"]->.a;'
-        f'(nwr["shop"~"clothes|fashion|boutique|shoes|jewelry|jewellery|gift|florist|'
-        f'furniture|interior_decoration|houseware|electronics|computer|books|toys|art|'
-        f'beauty|cosmetics|bag|leather|department_store|variety_store"](area.a););'
+        f'(nwr["shop"~"{shops}"](area.a););'
         f'out center {limit};'
     )
     rows = []

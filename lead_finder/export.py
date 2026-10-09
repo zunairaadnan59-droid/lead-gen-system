@@ -10,7 +10,7 @@ import csv
 import re
 
 from lead_finder.common import (
-    area_code, get_db, load_config, normalize_phone, now_stamp, ROOT, today,
+    area_code, get_db, LEADS_DIR, load_config, normalize_phone, now_stamp, ROOT, today,
 )
 from lead_finder.sources.base import NON_BUSINESS_DOMAINS, city_display
 
@@ -125,7 +125,7 @@ def run(city: str | None = None, count: int | None = None, local: bool = True,
         out = out[:count]
 
     export = [_row(d, cfg) for d in out]
-    out_dir = ROOT / "data" / "leads"
+    out_dir = LEADS_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
     fpath = out_dir / f"{(city or 'all')}_{today()}.csv"
     with open(fpath, "w", encoding="utf-8", newline="") as f:

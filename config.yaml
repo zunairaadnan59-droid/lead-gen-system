@@ -64,6 +64,31 @@ fetch:
 # these codes). `dr_slug` is the DesignRush URL path (state-name/city-name); leave it out and
 # the other three sources still cover the city. `display` is only needed when the key is not
 # already a clean city name. Add any US city by copying a block and filling in the area codes.
+niches:
+  # Separate campaigns. Each keeps its own data under data/niches/<name>/ and overrides the
+  # settings above. Run with: python run.py find --niche eyewear --city greenwich --count 50
+  eyewear:
+    icp:
+      keywords:
+        - "optical boutique"
+        - "eyewear boutique"
+        - "optical store"
+        - "eyewear"
+        - "optician"
+        - "designer eyewear"
+        - "sunglasses"
+        - "optometrist"
+      # Chains and national brands: not owner-run, so never leads for this offer.
+      exclude_names: ["warby parker", "lenscrafters", "pearle vision", "visionworks",
+                      "america's best", "americas best", "eyemart", "eye mart", "costco",
+                      "walmart", "target optical", "sam's club", "sunglass hut", "solstice",
+                      "for eyes", "myeyedr", "my eye dr", "eyeglass world", "national vision",
+                      "stanton optical", "clarkson eyecare", "eye care centers of america",
+                      "jcpenney optical", "macy's", "nordstrom", "luxottica", "specsavers",
+                      "zenni", "glassesusa", "kaiser", "walgreens", "cvs", "bj's optical",
+                      "vision express", "oliver peoples", "ray-ban", "oakley"]
+      osm_shops: "optician"
+
 cities:
   # --- Texas ---
   houston:      { state: TX, area_codes: [713, 281, 832, 346], dr_slug: "texas/houston" }

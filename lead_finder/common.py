@@ -4,6 +4,7 @@ Nothing here needs an API key. Everything is local files + public HTTP.
 """
 from __future__ import annotations
 
+import os
 import re
 import sqlite3
 import subprocess
@@ -15,10 +16,15 @@ from urllib.parse import urlparse
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-DB_PATH = ROOT / "data" / "leads.db"
+# A niche (LEADS_NICHE=eyewear, or run.py --niche eyewear) gets its own database, pages and CSVs,
+# so separate campaigns never mix or dedupe against each other.
+NICHE = os.environ.get("LEADS_NICHE", "").strip().lower()
+DATA_DIR = ROOT / "data" / "niches" / NICHE if NICHE else ROOT / "data"
+DB_PATH = DATA_DIR / "leads.db"
 SCHEMA_PATH = ROOT / "lead_finder" / "db" / "schema.sql"
-RAW_DIR = ROOT / "data" / "raw"
-WORK_DIR = ROOT / "data" / "work"
+RAW_DIR = DATA_DIR / "raw"
+WORK_DIR = DATA_DIR / "work"
+LEADS_DIR = DATA_DIR / "leads"
 
 # A normal desktop browser UA. Every source we hit is a public page; we send a real
 # UA, honour a polite delay, and stop when a site asks us to (see the source modules).
@@ -43,9 +49,28 @@ def load_env() -> None:
         pass
 
 
+_CONFIG: dict | None = None
+
+
 def load_config() -> dict:
-    with open(ROOT / "config.yaml", "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
+    global _CONFIG
+    if _CONFIG is None:
+        with open(ROOT / "config.yaml", "r", encoding="utf-8") as f:
+            cfg = yaml.safe_load(f)
+        if NICHE:
+            overlay = (cfg.get("niches") or {}).get(NICHE)
+            if overlay is None:
+                raise SystemExit(f"Unknown niche '{NICHE}' - add it under niches: in config.yaml")
+            for key, val in overlay.items():
+                cfg[key] = {**cfg.get(key, {}), **val} if isinstance(val, dict) else val
+        _CONFIG = cfg
+    return _CONFIG
+
+
+def is_excluded(name: str) -> bool:
+    """Chains and brands the niche never wants (icp.exclude_names, case-insensitive substrings)."""
+    low = name.lower()
+    return any(x.lower() in low for x in load_config().get("icp", {}).get("exclude_names", []))
 
 
 def get_db() -> sqlite3.Connection:
@@ -111,7 +136,7 @@ def polite_sleep(cfg: dict) -> None:
 def insert_business(conn, row: dict, city: str | None, state: str | None, source: str) -> bool:
     """Insert one business; returns True if a new row was added (False if a dup)."""
     name = (row.get("name") or "").strip()
-    if not name:
+    if not name or is_excluded(name):
         return False
     website = (row.get("website") or "").strip() or None
     before = conn.total_changes

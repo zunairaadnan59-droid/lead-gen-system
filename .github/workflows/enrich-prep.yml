@@ -21,6 +21,10 @@ on:
         description: "Max sites to fetch + queue for the Claude read pass"
         required: true
         default: "60"
+      niche:
+        description: "Optional niche from config.yaml (e.g. eyewear); blank = the main boutique campaign"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -28,6 +32,8 @@ permissions:
 jobs:
   enrich-prep:
     runs-on: ubuntu-latest
+    env:
+      LEADS_NICHE: ${{ github.event.inputs.niche }}
     steps:
       - uses: actions/checkout@v4
 
@@ -60,5 +66,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/leads.db data/leads data/raw data/work/needs_claude.jsonl
-          git diff --cached --quiet || git commit -m "Enrich-prep: discover + fetch for ${{ github.event.inputs.cities }}"
+          if [ -d data/niches ]; then git add data/niches; fi
+          git diff --cached --quiet || git commit -m "Enrich-prep ${{ github.event.inputs.niche }}: discover + fetch for ${{ github.event.inputs.cities }}"
           git push
