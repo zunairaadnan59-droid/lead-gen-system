@@ -24,7 +24,7 @@ I can't see your banner, photo, Featured section or recommendations, so those ar
 `?` and not counted.
 
 ```
-PROFILE SCORE  18 / 72 confirmed   (+ up to 28 unverified)  ->  18-46 / 100
+PROFILE SCORE  30 / 72 confirmed   (+ up to 28 unverified)  ->  30-58 / 100
 
   headline            4/12   two offers in one (eCom/SaaS ads AND personal branding),
                              opens with "Helping", says "1M+ views" while About says 21K,
@@ -36,17 +36,18 @@ PROFILE SCORE  18 / 72 confirmed   (+ up to 28 unverified)  ->  18-46 / 100
   current role        1/10   Quixify Co-Founder has no description at all
   experience depth    4/8    older roles have duty lists with some numbers (35% ROAS);
                              Al Subaiha appears twice with overlapping dates; Cocoon is empty
-  skills              2/6    top 3 are Lead Generation, Market Analysis, "Social Marketing
-                             Fulfillment". Meta Ads, Shopify and CRO aren't listed at all
-  activity            0/10   last original post Mar 15 (0 reactions); 2 reposts Apr/May
-  contact             1/6    URL still has the number suffix (zunaira-adnan-67b860203)
+  skills              4/6    top 3: Audience Segmentation, Conversion Optimization, Google
+                             Analytics. Swap Google Analytics for Meta Advertising
+  activity            7/10   last post Oct 2; 3 posts in early Oct, but nothing Jul 20 - Sep 30
+  contact             3/6    portfolio + site + email listed, but the email is @outlook,
+                             not zunaira@quixifymedia.com; URL has the number suffix
   photo               ?/6    exists; can't judge framing
   featured            ?/8    can't see
   banner              ?/6    can't see
   recommendations     ?/8    can't see
 ```
 
-Also: KUBS is listed twice (BBA 2019-2023 and BBA Marketing 2019-2022). Keep one.
+Also: Karachi University is listed twice (BBA Marketing 2019-2022, twice). Keep one.
 
 ### Rewrites, in order of points lost (all passed through li-human)
 
@@ -94,8 +95,9 @@ Meta ads, site fixes and email for owner-run stores, optical shops and clinics i
 - Grew a client account from 362 to 21,000+ organic views in 30 days
 - Built an in-house lead engine that found 1,700+ US boutiques and optical shops in 2026 and researched the best fits by hand
 ```
-Add one ROAS or revenue line from a real client when you have permission. (The Notion draft
-"0.8x to 2.9x ROAS in 6 weeks" would be perfect if it's a real account. Don't use it if it isn't.)
+Add your published results as bullets: "Took a fashion brand from MYR 923 to MYR 8,500 in
+20 days by fixing the funnel, not the ads" and "Store audit: ROAS 1.2x to 2.9x on 30% less
+budget in 6 weeks".
 
 Older roles: merge the two Al Subaiha entries into one. Give Cocoon one line of scope.
 Roles before 2023 can stay as they are; they're inside ten years.
@@ -115,42 +117,69 @@ calendar below).
 
 ## 2. Content audit (li-audit)
 
-**Evidence available:** 3 posts indexed on LinkedIn + 36 drafts in your Notion Content
-Database. No analytics export, so no impressions. That means no engagement rate or reach
-multiple can be computed. **With 3 posts there is no pattern to find, and I won't invent one.**
+**Evidence:** LinkedIn analytics export, Jul 17 - Oct 14 2026 (90 days), plus the text of your
+last 10 posts. (This replaces my first pass, which relied on an incomplete post index and
+wrongly said you'd been silent since May.)
 
 ```
-AUDIT  ·  3 published posts  ·  Mar 15 - May 14 2026
+AUDIT  ·  90 days  ·  Jul 17 - Oct 14 2026  ·  1,525 followers
 
-  Mar 15  original  "Stop talking about AI like..." (Apify + Claude how-to)   0 reactions, 0 comments
-  Apr 14  repost    "claude is your bff regardless of your niche"            2 reactions, 0 comments
-  May 14  repost    Manus Mail "Emailed a task at 11PM"                     2 reactions, 1 share
+  657 impressions · 259 members reached · 14 engagements · 45 new followers
 
-  Since May 14: nothing. 5 months silent.
+POSTS WITH BOTH NUMBERS IN THE WINDOW   (engagement rate = engagements / impressions)
+  5.1%  Oct 1   Story/Proof  "It's officially Q4... biggest lesson from Q3"   117 imp  6 eng
+  4.0%  Oct 2   Teach        "Rule #1 in sales: follow up on time"             75 imp  3 eng
+  2.2%  Jul 20  Proof        "Numbers that tell you the whole story" (image)   91 imp  2 eng
+  1.3%  Sep 30  Opinion      "HOT TAKE: The world doesn't need another agency" 232 imp 3 eng
+
+  Older posts (Mar-Jun) only show the tail of their impressions inside this window
+  (1-41 each), so they can't be compared fairly.
 ```
 
-What the evidence does say:
+What the data says:
 
-1. **The writing exists; the publishing doesn't.** 36 drafts in Notion (the ones I opened are
-   marked "Draft"), 1 original post live. The bottleneck isn't ideas. It's shipping. That's why
-   the calendar below has every slot pre-assigned and goes to Typefully.
-2. **The live posts talk to marketers, not buyers.** AI-tool posts (Claude, Manus, Apify)
-   attract other marketers. A boutique owner in Scottsdale or an optometrist in Naples
-   doesn't care which AI you use. 8 of the 14 "Informational" drafts are AI or LinkedIn-ads
-   news. Stop those for Q4.
-3. **The drafts are written for Pakistan.** PKR figures and a "Sana" persona. Your Q4 buyers
-   are in the US. Keep the stories and change the framing (or say plainly "a Karachi fashion
-   store", which is honest and still interesting).
-4. **The best drafts already match the Revenue Leak positioning.** "PKR 120,000 in ad spend.
-   Traffic was fine" (store audit, 6 leaks, comment AUDIT), "Ramadan banners still live six
-   weeks after Eid", "ROAS below 1.5x: your ads aren't broken, your funnel is". These get
-   repurposed into the calendar (li-repurpose) instead of starting from zero.
+1. **Posting is the lever, and it isn't close.** Between Jul 20 and Sep 30 you posted nothing,
+   and most days show 0 impressions. The three posts on Sep 30 - Oct 2 produced **406 of the
+   657 impressions (62%)** and 12 of the 45 new followers within five days. The hour and the
+   format matter much less than whether something went out.
+2. **The opinion post travels; the story and teach posts convert.** The hot take got the most
+   reach (232) and the lowest rate (1.3%). The Q4 lesson, a specific money story with a
+   takeaway, got half the reach and 4x the rate. Only 4 posts, so treat this as a lead, not a
+   rule. Re-check it on Nov 13.
+3. **Your audience is in Pakistan, and your Q4 buyers are in the US.** Followers: Karachi 46%,
+   Lahore 8%, Islamabad 2%, Dubai 1%. The US doesn't appear. Top follower industries are IT
+   services, marketing and advertising (peers, not buyers). Owners and founders are 6-9%.
+   So in Q4, **posts won't reach US boutique owners on their own.** LinkedIn does two jobs
+   instead: (a) it's what US prospects see when they look you up after a cold email, so it
+   must look active and on-topic; (b) your engage list and connection requests to US owners
+   (li-comment, li-dm) are how US buyers start seeing you. That routine is now as important
+   as the posts.
+4. **Your existing Pakistani audience is still a buyer audience.** Founders and owners of
+   11-200 person companies, many in D2C and e-commerce. The PKR case studies suit them. Keep
+   one in four posts for them, and frame US-offer posts so a Karachi brand owner gets value
+   too (the leaks are the same).
+5. **Your strongest proof is already published.** MYR 923 to MYR 8,500 in 20 days (6 to 75
+   orders), and the store audit (ROAS 1.2x to 2.9x on 30% less budget). The calendar can
+   reuse both instead of waiting for new results.
 
-**STOP:** AI-tool news, reposts without thoughts, PKR-only framing.
-**DO MORE:** leaks you actually found, with a number, aimed at an owner.
+Fixes from reading the posts:
+- Post 2 (Q4 lesson) promised "results in the next post". If they haven't gone out, that's
+  the next post.
+- One CTA keyword and one asset for every leak-themed post (you've used AUDIT, GROWTH,
+  "drop your score" and "download below"). Use **AUDIT** and the 25-point store audit.
+- The MYR post: orders rose 12.5x but conversion rate about 3x, so sessions roughly
+  quadrupled. Say traffic grew too, so nobody can poke a hole in it.
+- The store audit exists in two versions (PKR 120,000 / 0.8x in Notion, PKR 300,000 / 1.2x
+  live). Keep the live one.
+- Max 3 hashtags (the first-client post had 6).
 
-Re-run li-audit with a LinkedIn analytics export (Analytics > Content > Export) on **Nov 13**
-and **Dec 11**. By then there'll be 12-20 posts, enough to see something real.
+**STOP:** posts aimed at marketers and agencies (LinkedIn tips for B2B founders, client
+retention), AI-tool news.
+**DO MORE:** money stories with one lesson, leak teardowns with a number, and post at least
+3 times a week, every week.
+
+Re-run li-audit with a fresh export on **Nov 13** and **Dec 11**. Export per post if you can
+(open a post > View analytics) so older posts aren't cut off by the 90-day window.
 
 ---
 
@@ -173,7 +202,7 @@ sheet, Notion drafts, profile). If a slot needs a result you don't have yet, it 
 | Date | Type | Hook | Angle | Format / skill |
 |---|---|---|---|---|
 | **Wed Oct 14** | | | No post. Fix profile: headline, About, Featured, skills, URL | li-profile |
-| **Thu Oct 15** | Story | #3 Mistake Confession | "I wrote 36 LinkedIn posts this year. I published 1." What that cost, and who I'm writing for from now on (shop owners, not marketers) | text, li-post |
+| **Thu Oct 15** | Proof | #10 The Receipt | The Q3 results your Oct 1 post promised (if they exist). Otherwise: what you're working on for Q4 and who for, told through the one-product lesson | text, li-post |
 | **Tue Oct 20** | Teach | #15 The Warning | Meta ads need ~2 weeks to learn. Boutiques that start on Black Friday pay full price for the learning phase. Work back from Nov 27: set up by Nov 10 | text |
 | **Wed Oct 21** | Proof | #2 Number Reveal | "We read 178 boutique websites in 21 US cities before Black Friday. 5 leaks kept showing up." (pull counts from the research notes in the `outreach` tab) | **carousel**, li-carousel |
 | **Thu Oct 22** | Opinion | #7 The Callout | "If your holiday plan is 'post more on Instagram and hope the regulars come back', stop." Walk-ins and regulars aren't a growth plan | text |
@@ -223,7 +252,7 @@ That's 29 posts (27 through Typefully, 2 native), 4 carousels and 5 offer posts.
 | Daily, 20 min **before** posting | Comment on 2-3 posts from the engage list. Before they have 20 comments. Never pitch in a comment | li-comment |
 | First 60 min **after** each post | Reply to every comment; turn "AUDIT"/"leak" comments into a DM with the asset | li-reply |
 | Fridays | Inbox triage: connection requests and DMs sorted into leads / peers / spam | li-inbox |
-| Week of Oct 19 | Connection requests (no-ask, under 200 characters) to the buyers below | li-dm |
+| Every weekday from Oct 19 | 10 connection requests a day (no ask, under 200 characters) to US owners from the lead sheets, starting with the buyers below. Your followers are 60%+ Pakistan, so this is how US buyers start seeing your posts | li-dm |
 | Every draft | li-human scripts, then linkedin-post-editor as the final gate, then save to Notion (linkedin-to-notion) and Typefully as a draft | li-human, li-post |
 | Nov 13, Dec 11 | Re-run the audit with the analytics export; adjust the remaining weeks | li-audit |
 
