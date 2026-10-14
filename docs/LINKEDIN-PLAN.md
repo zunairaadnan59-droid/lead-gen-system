@@ -1,19 +1,24 @@
 # LinkedIn: profile, audit and Q4 content calendar
 
-For Zunaira Adnan (Quixify Media). Written 2026-10-13 using the 11 LinkedIn skills
-(li-profile, li-audit, li-plan, li-post, li-carousel, li-repurpose, li-human, li-comment,
-li-reply, li-dm, li-inbox). Built on three live campaigns:
+For Zunaira Adnan (Quixify Media). Written 2026-10-13, revised 2026-10-14, using the 11
+LinkedIn skills (li-profile, li-audit, li-plan, li-post, li-carousel, li-repurpose, li-human,
+li-comment, li-reply, li-dm, li-inbox).
 
-| Campaign | Who | Free first step | Deadline | Price / guarantee |
+**The experiment (Oct 15 - Dec 31, review on Jan 1):** for these 11 weeks LinkedIn targets only
+**boutique and online store owners who want to outsell last year this holiday season**, in any
+e-commerce niche: clothing, jewellery, activewear, kids clothing, toys, flower shops, gifts.
+Optical shops and clinics are out of the LinkedIn plan (their cold email campaigns are
+untouched). On Jan 1 we compare engagement, pipeline and deals against the baseline below.
+
+| Offer | When it leads | Free first step | Deadline | Price / guarantee |
 |---|---|---|---|---|
-| **Holiday Sales Sprint** | Owner-run US boutiques (848 found, 64 emailed) | 5-min Holiday Revenue Teardown video | Setup by **Tue Nov 10** (Black Friday Nov 27) | Up to $1,899/mo. "If the Sprint doesn't earn its fee back in sales within 2 months, January is on us." |
-| **Year-End Benefits Sprint** (FSA/HSA) | Independent optical boutiques and OD-owned shops (61 emails written) | 5-min video on where the site loses year-end benefit shoppers + 3 ad ideas | Setup by **Tue Nov 17**. FSA money expires **Dec 31** | **Price and guarantee not set yet** (sheet tab `eyewear offer`) |
-| **Revenue Leak Sprint** | US dental, clinics, medspas | "The three biggest leaks I can see", free | Evergreen; push for a **January start** | $1,999/mo for 60 days. If it doesn't earn its fee back in 60 days, month 3 is free |
+| **Holiday Sales Sprint** | Oct 15 - Nov 10 | 5-min Holiday Revenue Teardown video | Setup by **Tue Nov 10** (Black Friday Nov 27) | Up to $1,899/mo. "If the Sprint doesn't earn its fee back in sales within 2 months, January is on us." |
+| **Revenue Leak Sprint** | Nov 11 - Nov 25 (fix leaks before BFCM) | "The 3 biggest leaks I can see", free | Fixes need ~2 weeks, so by **Nov 13** | $1,999/mo for 60 days, month 3 free if it doesn't earn its fee back. **Confirm this price applies to stores** |
+| **Revenue Leak Sprint, Year-End Growth edge** | Dec 1 - Dec 31 | Year-end growth audit: 5 numbers from your own store | Start **Jan 5** | Same as above |
 
-Why LinkedIn matters here even though boutique owners aren't heavy LinkedIn users: every
-cold email is signed "Zunaira, Quixify Media". Prospects who are interested will look you up.
-Right now they'd find a profile selling personal branding to SaaS companies, with no posts
-since spring. The profile is the landing page for your cold email, so it gets fixed first.
+Why LinkedIn matters even though most store owners aren't heavy LinkedIn users: every cold
+email is signed "Zunaira, Quixify Media", so interested prospects look you up. The profile and
+the last few posts are the landing page for the cold email.
 
 ---
 
@@ -28,7 +33,7 @@ PROFILE SCORE  30 / 72 confirmed   (+ up to 28 unverified)  ->  30-58 / 100
 
   headline            4/12   two offers in one (eCom/SaaS ads AND personal branding),
                              opens with "Helping", says "1M+ views" while About says 21K,
-                             nothing about boutiques, optical shops or clinics
+                             nothing about store owners or holiday sales
   about first 2 lines 2/10   "I've always believed marketing isn't about selling..." is
                              about you, not the reader's problem
   about body          4/10   has real numbers (good) but ~1,900 chars, checkmark list of
@@ -53,12 +58,11 @@ Also: Karachi University is listed twice (BBA Marketing 2019-2022, twice). Keep 
 
 **1. Headline** (pick one; char counts shown)
 
-- **A (recommended, 179):** `I find where boutiques, optical shops and clinics lose sales, then fix it with Meta ads and site fixes | Fee earned back or the next month is free | Free 5-min teardown: DM "leak"`
-- **B (162):** `Meta ads + Shopify fixes for owner-run US boutiques and optical shops | Holiday and year-end benefit campaigns that pay for themselves | Co-founder, Quixify Media`
-- **C (170):** `Revenue leak fixer for owner-run stores and clinics | Ads, site, offer and follow-up in one 60-day sprint | Co-founder @ Quixify Media | Ask for your free 3-leak teardown`
+- **A (recommended):** `I find where boutiques and online stores lose sales, then fix it with Meta ads and store fixes | Fee earned back or the next month is free | Free 5-min teardown: DM "teardown"`
+- **B:** `Meta ads + Shopify fixes for owner-run boutiques and online stores | Holiday campaigns that pay for themselves | Co-founder, Quixify Media`
+- **C:** `Revenue leak fixer for boutique and e-commerce owners | Ads, store, offer and follow-up in one 60-day sprint | Co-founder @ Quixify Media | Ask for your free 3-leak teardown`
 
-Only use A's guarantee line once the eyewear guarantee is set, or it promises something that
-offer doesn't have.
+A's guarantee line matches both store offers.
 
 **2 + 3. About** (1,355 chars; li-human score 95.7 PASS)
 
@@ -66,7 +70,7 @@ offer doesn't have.
 Your shop pays for ads and a website, then loses buyers somewhere between the click and the checkout.
 I find the three biggest leaks, fix them, and run the Meta ads that fill the gap.
 
-Most owner-run stores and practices I look at aren't short on traffic. They're short on a path that turns it into sales. A Ramadan banner still up in May. One photo per product. A booking page that hides the price. No email when someone leaves a cart. Each one is small. Together they eat the ad budget.
+Most owner-run stores I look at aren't short on traffic. They're short on a path that turns it into sales. A Ramadan banner still up in May. One photo per product. A size guide nobody can find. No email when someone leaves a cart. Each one is small. Together they eat the ad budget.
 
 Here's what working with me looks like:
 - First, a free 5-minute video. I go through your site and ads like a first-time customer and show you where the money leaks, plus three ad ideas built on your own photos. Yours to keep.
@@ -75,25 +79,25 @@ Here's what working with me looks like:
 
 I've run campaigns for 12+ brands at a time across the US, UK, UAE and Pakistan, and grew one account from 362 to 21,000 organic views in 30 days.
 
-Right now I'm booking holiday sprints for boutiques (setup by Nov 10) and year-end FSA/HSA campaigns for optical shops (setup by Nov 17).
+Right now I'm booking Holiday Sales Sprints for store owners (setup by Nov 10), then Year-End Growth sprints starting in January.
 
-Want your teardown? Message me "leak" or email zunaira@quixifymedia.com with your store's link.
+Want your teardown? Message me "teardown" or email zunaira@quixifymedia.com with your store's link.
 ```
 
 Update the "Right now" line on Nov 18 to the Revenue Leak Sprint (January start).
 
 **4. Featured** (3 items)
-1. Best post: the Oct 21 carousel "178 boutique sites, 5 holiday leaks" once it's live. Until then, the Oct 15 relaunch post.
+1. Best post: the Oct 1 Q4 lesson (your best engagement rate) until the Oct 21 carousel beats it.
 2. Proof: the portfolio PDF (Drive link already shared publicly in the Day 3 email).
 3. Contact: link to quixifymedia.com/contact-us titled "Get your free 5-minute teardown".
 
 **5. Experience: Quixify Media, Co-Founder (Dec 2023 - present)**
 
 ```
-Meta ads, site fixes and email for owner-run stores, optical shops and clinics in the US, UAE and Pakistan.
+Meta ads, store fixes and email for owner-run boutiques and online stores in the US, UAE, Malaysia and Pakistan.
 - Managed campaigns for 12+ brands at once without dropping reporting
 - Grew a client account from 362 to 21,000+ organic views in 30 days
-- Built an in-house lead engine that found 1,700+ US boutiques and optical shops in 2026 and researched the best fits by hand
+- Built an in-house lead engine that found 1,700+ US stores in 2026 and researched the best fits by hand
 ```
 Add your published results as bullets: "Took a fashion brand from MYR 923 to MYR 8,500 in
 20 days by fixing the funnel, not the ads" and "Store audit: ROAS 1.2x to 2.9x on 30% less
@@ -183,103 +187,150 @@ Re-run li-audit with a fresh export on **Nov 13** and **Dec 11**. Export per pos
 
 ---
 
-## 3. Content calendar, Oct 14 - Dec 31 (li-plan)
+## 3. Content plan, Oct 15 - Dec 31 (li-plan)
 
-**Cadence:** 3 posts a week, Tue/Wed/Thu at **8:30am US Eastern**. That's 5:30pm Pakistan
-time until Nov 1, then **6:30pm** after the US clocks change. The first line matters far more
-than the hour.
+### Pillars
 
-**Typefully quota:** your free plan publishes 10 posts a month. This plan uses 7 in Oct, 10 in
-Nov and 10 in Dec, plus 2 marked *native*. Post those two straight on LinkedIn, or upgrade.
+| Pillar | Share | Job | Day |
+|---|---|---|---|
+| **Teach** | ~30% | One thing a store owner can do this week (leaks, holiday setup, BFCM, shipping cut-offs) | Tue |
+| **Proof** | ~25% | A real result with a number: your MYR and store-audit cases, the 178-store research, experiment results as they come | Wed |
+| **Opinion / Story / Offer** | ~20% | A position that could lose followers, a scene with a cost, or the offer said plainly (offer every other week) | Thu |
+| **Experiment Log** (new) | ~25% | Build in public. Every Friday: the week's real numbers, what we tried, what we learned, one question asking for feedback. The offer is mentioned passively ("the teardown is free if you want to be part of it"), never pitched | Fri |
 
-**Mix:** Proof weekly, Opinion weekly, Teach weekly, Story every other week, Offer every other
-week, never two of the same type back to back. Hook numbers refer to `li-post/hooks.json`.
-**Real numbers only.** Every number below comes from your own data (lead database, outreach
-sheet, Notion drafts, profile). If a slot needs a result you don't have yet, it says so.
+**Cadence:** 4 posts a week. Tue/Wed/Thu at **8:30am US Eastern** (5:30pm Pakistan until Nov 1,
+6:30pm after). Friday's Experiment Log at **9:00am ET**. Your Oct 1-2 posts showed that showing
+up is the lever: 62% of 90 days' impressions came from three days of posting.
 
-### Phase 1. Relaunch + Holiday Sales Sprint (deadline Nov 10)
+**Typefully quota:** the free plan publishes 10 a month. Tue-Thu posts go through Typefully
+(7 in Oct, 10 in Nov, 10 in Dec). Post the Friday Experiment Logs natively on LinkedIn, which
+also lets you use LinkedIn polls for the feedback questions. Upgrading Typefully removes the
+split.
 
-| Date | Type | Hook | Angle | Format / skill |
-|---|---|---|---|---|
-| **Wed Oct 14** | | | No post. Fix profile: headline, About, Featured, skills, URL | li-profile |
-| **Thu Oct 15** | Proof | #10 The Receipt | The Q3 results your Oct 1 post promised (if they exist). Otherwise: what you're working on for Q4 and who for, told through the one-product lesson | text, li-post |
-| **Tue Oct 20** | Teach | #15 The Warning | Meta ads need ~2 weeks to learn. Boutiques that start on Black Friday pay full price for the learning phase. Work back from Nov 27: set up by Nov 10 | text |
-| **Wed Oct 21** | Proof | #2 Number Reveal | "We read 178 boutique websites in 21 US cities before Black Friday. 5 leaks kept showing up." (pull counts from the research notes in the `outreach` tab) | **carousel**, li-carousel |
-| **Thu Oct 22** | Opinion | #7 The Callout | "If your holiday plan is 'post more on Instagram and hope the regulars come back', stop." Walk-ins and regulars aren't a growth plan | text |
-| **Tue Oct 27** | Teach | #21 Direct Value | The 25-point store audit (Homepage, Product pages, Offers, Trust, Checkout). Comment AUDIT for the sheet | text, li-repurpose of Notion "PKR 120,000" draft |
-| **Wed Oct 28** | Story | #9 Story Cold Open | "Your Ramadan sale is still on the homepage." Six weeks after Eid. What a stale banner tells a new customer, with a US version: Halloween promo up in December | text, li-repurpose of Notion "Ramadan banners" draft |
-| **Thu Oct 29** | **Offer** | #21 Direct Value | Holiday Sales Sprint said plainly: free 5-min teardown, the stack (ads, 5 site fixes, cart flow, 12 creatives, gift guide, weekly report), guarantee, Nov 10 setup. No "limited spots" (you take everyone) | text |
-| **Tue Nov 3** | Teach | #15 The Warning | *Eyewear starts.* "Your patients have FSA money that expires Dec 31, and the chain down the road is reminding them first." (many plans; some have a grace period, so say "many") | text |
-| **Wed Nov 4** | Proof | #10 The Receipt | A/B test: Day 1 emails with vs without the "Holiday Sales Sprint" line, reply rates from the Outreach Desk. **Only if the boutique campaign has sent by then;** otherwise swap with the Nov 12 slot | text + screenshot |
-| **Thu Nov 5** | Opinion | #1 Contrarian Take | "Everyone says Black Friday starts on Black Friday. For ads it starts Nov 10." Last call for boutique setup | text |
+**One CTA system for the whole experiment:**
+- Teach and proof posts: comment **AUDIT** for the 25-point store audit (the free asset).
+- Offer posts and Experiment Logs: DM **TEARDOWN** for the free 5-minute video (the sales conversation).
 
-### Phase 2. Year-End Benefits Sprint (deadline Nov 17) + Black Friday
+**Niche rotation:** every teach or proof post names one niche in its example, rotating
+clothing, jewellery, activewear, kids clothing, toys, flowers and gifts, so each kind of owner
+sees themselves at least twice.
 
-| Date | Type | Hook | Angle | Format / skill |
-|---|---|---|---|---|
-| **Tue Nov 10** | **Offer** | #15 The Warning | Year-End Benefits Sprint for optical shops: free video, Meta ads to FSA/HSA holders nearby, insurance/FSA page fix, past-patient reminder email, setup by Nov 17. **Set price/guarantee first** | text |
-| **Wed Nov 11** | Teach | #2 Number Reveal | "We looked at 61 independent optical shops before benefit season. Here's where they lose FSA shoppers." (insurance pages and FSA wording come up in most of the research notes; count them properly before posting) | **carousel**, li-carousel |
-| **Thu Nov 12** | Story | #17 Time Anchor | Behind the scenes: how ~900 optical shops became 61 personal emails, and how long it used to take you by hand (your real before/after time). Shows the care behind each teardown, not the AI tools | text |
-| **Tue Nov 17** | Opinion | #11 Myth Bust | "Glasses are the easiest FSA purchase there is. They're also the worst-marketed." Eyewear deadline day | text |
-| **Wed Nov 18** | Teach | #21 Direct Value | For boutiques that missed the deadline: a do-it-yourself BFCM checklist (one banner, one offer, one cart email, one retargeting ad). Value only, no pitch | text |
-| **Thu Nov 19** | Proof | #6 Insider Secret | What actually goes into a 5-minute teardown video, one anonymised example (with permission) | text or short video |
-| **Tue Nov 24** | Proof | #10 The Receipt | Pre-BFCM numbers from live accounts. **Only if real; otherwise skip the slot** | text |
-| Wed Nov 25 *native* | Opinion | #13 Permission Slip | "You're allowed to not discount on Black Friday." For premium boutiques: gift guides and bundles beat 30% off | text |
-| Thu Nov 26 - Mon Nov 30 | | | US Thanksgiving + BFCM. No posts. Reply to comments only | li-reply |
+**Real numbers only.** Experiment Logs report what actually happened, including zeros. A log
+that says "0 calls this week, here's what I'm changing" is a better post than a vague win.
 
-### Phase 3. FSA last call + Revenue Leak Sprint for January
+### Phase 1. Holiday Sales Sprint (deadline Nov 10)
 
-| Date | Type | Hook | Angle | Format / skill |
-|---|---|---|---|---|
-| **Tue Dec 1** | Proof | #2 Number Reveal | BFCM post-mortem: what we saw across the boutique campaign (real numbers only: replies, teardowns sent, client results if any) | text |
-| **Wed Dec 2** | Teach | #15 The Warning | *Revenue Leak starts.* "3 places a dental practice loses a new patient between the ad and the booking." | **carousel**, li-carousel |
-| **Thu Dec 3** | Opinion | #11 Myth Bust | "Your ads aren't broken. Your booking page is." Below 1.5x ROAS, look at the funnel before the targeting | text, li-repurpose of Notion "ROAS below 1.5x" draft |
-| **Tue Dec 8** | **Offer** | #21 Direct Value | Revenue Leak Sprint: 60 days, ads + offer + pricing + landing page + pipeline, $1,999/mo, month 3 free if it doesn't earn its fee back. Start Jan 5. Free "3 biggest leaks" first | text |
-| **Wed Dec 9** | Teach | #21 Direct Value | For optical shops: the exact "use your FSA before Dec 31" reminder email, given away. Steal it | text |
-| **Thu Dec 10** | Proof | #4 Before / After | The PKR 120,000 store: 6 leaks found, none of them the ads. Told as a Karachi fashion store (only use the ROAS figures if they're a real account) | text, li-repurpose |
-| **Tue Dec 15** | Teach | #17 Time Anchor | "How I find a business's revenue leaks in 20 minutes", the 25-point audit adapted for clinics | text |
-| **Wed Dec 16** | Story | #9 Story Cold Open | "The worst client taught me more than the best one" (Notion draft), reframed around what it taught you about leaks | text, li-repurpose |
-| **Thu Dec 17** | Opinion | #1 Contrarian Take | "January is the cheapest month to fix your funnel." Ad costs drop after the holidays and patients' benefits reset | text |
-| Tue Dec 22 *native* | Story | #4 Before / After | Year in numbers: 3 campaigns, 1,700+ businesses found, what you'd do differently | text |
-| **Tue Dec 29** | **Offer** | #15 The Warning | Last call for a January Revenue Leak Sprint start | text |
+| Date | Pillar | Hook | Angle |
+|---|---|---|---|
+| **Thu Oct 15** | Experiment kickoff | #18 The Unpopular Rule | "For the next 11 weeks I'm only working with store owners." Why (holiday season is the one window where a fixed store pays back fastest), what I'll measure, and that every Friday I'll post the real numbers. Passive: "if you own a store and want in, the teardown is free" |
+| **Tue Oct 20** | Teach | #15 The Warning | Meta ads need ~2 weeks to learn. Stores that start on Black Friday pay full price for the learning phase. Work back from Nov 27: set up by Nov 10 |
+| **Wed Oct 21** | Proof | #2 Number Reveal | **Carousel.** "We read 178 boutique websites in 21 US cities before Black Friday. 5 leaks kept showing up." (counts from the `outreach` research notes) |
+| **Thu Oct 22** | Opinion | #7 The Callout | "If your holiday plan is 'post more on Instagram and hope the regulars come back', stop." Example: a jewellery store |
+| **Fri Oct 23** | Experiment Log #1 | #10 The Receipt | Week 1 numbers: connection requests sent and accepted, AUDIT comments, teardown requests, emails sent and replies. Feedback: "Which would you rather get from an agency: a 5-min video of your store or a 20-point PDF?" (poll) |
+| **Tue Oct 27** | Teach | #21 Direct Value | The 25-point store audit, holiday edition. Comment AUDIT. Example: kids clothing |
+| **Wed Oct 28** | Proof | #9 Story Cold Open | The store audit case: "Hero banner promoting a Ramadan deal. In May." 6 leaks, none of them the ads, ROAS 1.2x to 2.9x on 30% less budget. Holiday version: the Halloween banner still up in December |
+| **Thu Oct 29** | **Offer** | #21 Direct Value | Holiday Sales Sprint said plainly: free teardown, the stack (ads, 5 store fixes, cart flow, 12 creatives, gift guide, weekly report), guarantee, Nov 10 setup. No scarcity claims |
+| **Fri Oct 30** | Experiment Log #2 | #2 Number Reveal | Week 2 numbers + the first teardown you recorded (what you found, store anonymised). Feedback: "Would you pay for this, or is free-then-pitch a turn-off?" |
+| **Tue Nov 3** | Teach | #21 Direct Value | The gift guide page: how a "gifts under $50 / for her / for kids" page lifts holiday order value. Example: toys or gift shop |
+| **Wed Nov 4** | Proof | #4 Before / After | The MYR case: MYR 923 to MYR 8,500 in 20 days, 6 to 75 orders, from fixing the funnel. Holiday angle: fix it before the traffic arrives. (Mention traffic grew too) |
+| **Thu Nov 5** | Opinion | #1 Contrarian Take | "Everyone says Black Friday starts on Black Friday. For your ads it starts Nov 10." Last call for Holiday Sprint setup |
+| **Fri Nov 6** | Experiment Log #3 | #10 The Receipt | Week 3 numbers. A/B result from the cold emails (Sprint line vs no Sprint line), if they've sent. Feedback: "Which subject line would you open?" (poll with two real subject lines) |
 
-That's 29 posts (27 through Typefully, 2 native), 4 carousels and 5 offer posts.
+### Phase 2. Revenue Leak Sprint before BFCM (Nov 10 - Nov 30)
+
+| Date | Pillar | Hook | Angle |
+|---|---|---|---|
+| **Tue Nov 10** | **Offer** | #15 The Warning | Holiday ads deadline is today. Missed it? The leaks can still be fixed before Black Friday: Revenue Leak Sprint, 2 weeks of store fixes. Free "3 biggest leaks" first |
+| **Wed Nov 11** | Teach | #5 The List Promise | **Carousel.** "7 leaks to fix before Black Friday": abandoned cart flow, mobile Add to Cart, shipping cut-off banner, gift guide, reviews, size guide, stale promos |
+| **Thu Nov 12** | Story | #3 Mistake Confession | The one-product lesson (your Oct 1 post, best engagement rate): half the business on one product. For store owners: don't let one bestseller carry your whole holiday. Include the Q3 results you promised if you have them |
+| **Fri Nov 13** | Experiment Log #4 | #2 Number Reveal | Week 4 numbers + mid-experiment honest check: what's working, what isn't, what changes. Feedback: "What's the one leak you know your store has?" |
+| **Tue Nov 17** | Opinion | #13 Permission Slip | "You're allowed to not discount 40% on Black Friday." Bundles and gift sets for premium boutiques and jewellery |
+| **Wed Nov 18** | Teach | #21 Direct Value | The exact 3-email abandoned cart flow for BFCM week, given away. Example: activewear |
+| **Thu Nov 19** | Story | #9 Story Cold Open | Personal: prepping US stores for Black Friday from Karachi at night, as a founder and a mum. One scene, one cost |
+| **Fri Nov 20** | Experiment Log #5 | #10 The Receipt | Week 5 numbers + what stores we're working with are doing for BFCM (with permission). Feedback: "Store owners, what's your BFCM plan in one line?" |
+| **Tue Nov 24** | Teach | #5 The List Promise | BFCM weekend checklist: what to check every few hours (ad frequency, site speed, stock, shipping banner, inbox) |
+| Wed Nov 25 *optional* | Opinion | #14 Pattern Interrupt | Short: "Close the laptop on Thursday." Thanksgiving |
+| Nov 26 - Nov 30 | | | Black Friday / Cyber Monday. No posts. Reply to comments only (li-reply). No Friday log on Nov 27 |
+
+### Phase 3. Year-End Growth (Dec 1 - Dec 31)
+
+| Date | Pillar | Hook | Angle |
+|---|---|---|---|
+| **Tue Dec 1** | Proof | #2 Number Reveal | BFCM post-mortem: real numbers from stores we worked with or tore down. If none, revisit 10 stores from the research and report what they actually did |
+| **Wed Dec 2** | Teach | #15 The Warning | "Your last shipping date is a sales tool." Shipping cut-off banners, then gift cards and local pickup after the cut-off. Example: flower shop or gift store |
+| **Thu Dec 3** | Opinion | #11 Myth Bust | "Your ads aren't broken. Your store is." Below 1.5x ROAS, look at the store before the targeting |
+| **Fri Dec 4** | Experiment Log #6 | #10 The Receipt | First post-BFCM numbers. Feedback: "Did Black Friday beat last year for you?" (poll: yes / about the same / no) |
+| **Tue Dec 8** | **Offer** | #15 The Warning | Year-End Growth: the Revenue Leak Sprint, 60 days from Jan 5, built on your own holiday data. Month 3 free if it doesn't earn its fee back. Free year-end audit first |
+| **Wed Dec 9** | Teach | #21 Direct Value | **Carousel.** "5 numbers to pull from Shopify before Jan 1": conversion rate, order value, repeat rate, cart abandonment, top product's share of sales |
+| **Thu Dec 10** | Proof | #4 Before / After | Best result of the experiment so far, told as a case (with permission). If there isn't one yet, the MYR case through a year-end lens |
+| **Fri Dec 11** | Experiment Log #7 | #2 Number Reveal | Week 8 numbers. Feedback: "If you could fix one thing in your store before January, what would it be?" |
+| **Tue Dec 15** | Teach | #17 Time Anchor | "How I find a store's leaks in 20 minutes", the audit walked through on one anonymised store |
+| **Wed Dec 16** | Story | #9 Story Cold Open | Your first client came back after 1.5 years. What she was missing elsewhere, and what it taught you about holding clients |
+| **Thu Dec 17** | Opinion | #1 Contrarian Take | "January is the cheapest month to fix your store." Ad costs fall after the holidays |
+| **Fri Dec 18** | Experiment Log #8 | #10 The Receipt | Week 9 numbers. Feedback: "What should I test in January?" |
+| Tue Dec 22 *native* | Experiment Log #9 | #4 Before / After | Year in numbers and the experiment so far, before Christmas |
+| **Tue Dec 29** | **Offer** | #15 The Warning | Last call for a Jan 5 Year-End Growth start |
+| Dec 24 - Jan 1 | | | Christmas and New Year. No other posts |
+| **Tue Jan 5** | Experiment results | #2 Number Reveal | The full 11-week results against the baseline: what worked, what didn't, deals closed. Feedback: "Should I run this again for Valentine's Day?" |
+
+That's 38 posts: 27 through Typefully (7 Oct incl. the kickoff, 10 Nov, 10 Dec) and 11 posted
+natively (the Friday Experiment Logs, two optional posts and the Jan 5 results), with 3 carousels
+and 5 offer posts.
 
 ### Daily and weekly routines (the other skills)
 
 | When | What | Skill |
 |---|---|---|
-| Daily, 20 min **before** posting | Comment on 2-3 posts from the engage list. Before they have 20 comments. Never pitch in a comment | li-comment |
-| First 60 min **after** each post | Reply to every comment; turn "AUDIT"/"leak" comments into a DM with the asset | li-reply |
-| Fridays | Inbox triage: connection requests and DMs sorted into leads / peers / spam | li-inbox |
-| Every weekday from Oct 19 | 10 connection requests a day (no ask, under 200 characters) to US owners from the lead sheets, starting with the buyers below. Your followers are 60%+ Pakistan, so this is how US buyers start seeing your posts | li-dm |
-| Every draft | li-human scripts, then linkedin-post-editor as the final gate, then save to Notion (linkedin-to-notion) and Typefully as a draft | li-human, li-post |
-| Nov 13, Dec 11 | Re-run the audit with the analytics export; adjust the remaining weeks | li-audit |
+| Every weekday from Oct 19 | 10 connection requests a day (no ask, under 200 characters) to US store owners from the lead sheets. Your followers are 60%+ Pakistan, so this is how US owners start seeing your posts | li-dm |
+| Daily, 20 min **before** posting | Comment on 2-3 posts from store owners and e-commerce voices. Before they have 20 comments. Never pitch in a comment | li-comment |
+| First 60 min **after** each post | Reply to every comment. AUDIT and TEARDOWN comments get a DM with the asset | li-reply |
+| Fridays, before the log | Fill in the week's numbers (scorecard below), then triage connection requests and DMs | li-inbox |
+| Every draft | li-human scripts, linkedin-post-editor as the final gate, then Typefully (unscheduled until you approve) and Notion | li-human, li-post |
+| Nov 13, Dec 11 | Mid-experiment audits with a fresh analytics export | li-audit |
 
 ### Engage list
 
-**Buyers (from your lead database, owners with LinkedIn):** Judy Ohki (Leaf & Petal, Palo Alto),
-Oliver Smith (Oliver Smith Boutique, Aspen), Martin Li (Komune, New York), Abigail Glass
-(Abbey Glass Boutique, Atlanta), Moorea Seal (Moorea Seal, Seattle), Arzu Ekbal (Raaz,
-Chicago). These people are also in the cold email sequence. LinkedIn is for being
-recognisable when the email lands. Comment for weeks before any DM.
+**Store owners already in your lead database (with LinkedIn):** Judy Ohki (Leaf & Petal, Palo
+Alto), Oliver Smith (Oliver Smith Boutique, Aspen), Martin Li (Komune, New York), Abigail Glass
+(Abbey Glass Boutique, Atlanta), Moorea Seal (Moorea Seal, Seattle), Arzu Ekbal (Raaz, Chicago).
+They're also in the cold email sequence. LinkedIn is for being recognisable when the email
+lands. Comment for weeks before any DM.
 
-**Optical buyers (fit 5, find their LinkedIn by name):** Dr. Kimberly Pham (Blink, Georgetown TX),
-Dr. Jonathan Nebb (Boca Family Eye Care), Dr. Jason Eugenides (Vanderbilt Optical, Naples),
-Dr. Lisa Lo (Standard Optometry, Palo Alto).
-
-**Reach (5) and peers (3):** I haven't named these because I'd be guessing. Pick Shopify/retail
-and optometry-practice-growth creators whose posts get comments from owners. I can find real
-ones with Crustdata post search (about 0.5 credit per post read; balance is ~11.6).
+**Reach (5) and peers (3):** not named yet. Pick e-commerce and Shopify voices whose posts get
+comments from store owners. I can find real ones with Crustdata post search (about 0.5 credit
+per post read; balance ~11.6).
 
 ---
 
-## 4. What needs you
+## 4. Experiment scorecard (review on Jan 1)
 
-1. Paste the profile rewrites in (about 20 minutes), and tell me what your banner, Featured
-   section and recommendations look like so I can score the last 28 points.
-2. Set the eyewear price and guarantee before the Nov 10 offer post.
-3. Confirm whether the "0.8x to 2.9x ROAS" and "5 discovery calls in 30 days" Notion stories
-   are real accounts. They're your strongest proof if they are.
-4. Say "write Thursday" and I'll draft the Oct 15 relaunch post and save it to Typefully as an
-   unscheduled draft.
+Fill in every Friday before the Experiment Log. Baseline is the 90 days before the experiment
+(Jul 17 - Oct 14), from your analytics export.
+
+| Metric | Baseline (90 days) | Target (Oct 15 - Dec 31) | Where it comes from |
+|---|---|---|---|
+| Posts published | ~8 | 37 by Dec 31 | LinkedIn |
+| Impressions | 657 | 4,000+ (about 100 a post, like your Oct posts) | Analytics export |
+| Average engagement rate | 3.2% (4 posts) | 4%+ | Analytics export |
+| New followers | 45 | 150+ | Analytics export |
+| US store-owner connections accepted | ~0 | 200+ (from ~550 requests) | My Network > Sent |
+| AUDIT requests (comments + DMs) | n/a | 30 | Comments, inbox |
+| TEARDOWN requests | n/a | 15 | DMs, email replies |
+| Teardown videos sent | n/a | 15 | Your log |
+| Calls booked | ? | 6 | Calendar |
+| Deals closed | ? | 1-2 | Your records |
+| Deals closed from LinkedIn vs cold email | ? | track separately | Ask each client how they found you |
+
+Targets are guesses for a first run. The Jan 5 results post reports actuals either way.
+
+---
+
+## 5. What needs you
+
+1. **Thursday Oct 15 is the experiment kickoff post.** Say "write Thursday" and I'll draft it
+   and replace the old relaunch draft in Typefully.
+2. Confirm the Revenue Leak Sprint price for stores ($1,999/mo for 60 days was the clinic
+   version).
+3. Do you have the Q3 results your Oct 1 post promised? They'd go into the Nov 12 post.
+4. Baseline: how many calls and deals came from LinkedIn in the last 90 days (even zero)?
+5. Paste the profile rewrites before Thursday. The kickoff post will send people to your profile.
