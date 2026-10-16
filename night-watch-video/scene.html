@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #050816; }
+  body { font-family: "Inter", sans-serif; color: #fff; }
+  #stage { position: absolute; inset: 0; overflow: hidden; }
+  .abs { position: absolute; }
+  .center { left: 0; right: 0; text-align: center; }
+  #bg { inset: 0; }
+  #stars { inset: 0; }
+  .star { position: absolute; border-radius: 50%; background: #fff; }
+  #moon { width: 220px; height: 220px; border-radius: 50%; right: 120px; top: 170px;
+    box-shadow: inset -56px 22px 0 0 #f3ebc6; filter: drop-shadow(0 0 40px rgba(255,248,214,.45)); }
+  #sun { width: 360px; height: 360px; border-radius: 50%; left: 360px;
+    background: radial-gradient(circle, #fff6d0 0%, #ffcf6b 45%, #ff9a3c 75%, rgba(255,120,40,0) 76%);
+    box-shadow: 0 0 260px 120px rgba(255,170,70,.45); }
+  .kicker { font-weight: 700; letter-spacing: .32em; font-size: 34px; color: #8fa3ff; text-transform: uppercase; }
+  .big { font-family: "Inter Display", "Inter"; font-weight: 900; letter-spacing: -.03em; line-height: .95; }
+  #clock { top: 560px; font-size: 230px; font-variant-numeric: tabular-nums; }
+  #clockLabel { top: 470px; }
+  #clockSub { top: 840px; font-size: 64px; font-weight: 600; color: #c9d2ff; }
+  .zzz { font-weight: 800; color: #8fa3ff; }
+  /* phone */
+  #phone { left: 170px; top: 380px; width: 740px; height: 1180px; border-radius: 80px;
+    background: linear-gradient(160deg, #141a3a, #0b0f26); border: 6px solid #2a3263;
+    box-shadow: 0 60px 160px rgba(0,0,0,.6), inset 0 0 0 2px rgba(255,255,255,.04); overflow: hidden; }
+  #phoneTop { left: 50px; right: 50px; top: 60px; display: flex; justify-content: space-between; align-items: baseline; }
+  #phoneTop .lbl { font-size: 30px; color: #8fa3ff; font-weight: 700; letter-spacing: .2em; }
+  #rev { font-size: 92px; font-weight: 900; font-variant-numeric: tabular-nums; }
+  #ordersCount { font-size: 34px; color: #9aa6d8; font-weight: 600; }
+  .notif { left: 40px; right: 40px; height: 128px; border-radius: 34px; background: rgba(255,255,255,.07);
+    border: 2px solid rgba(255,255,255,.08); display: flex; align-items: center; padding: 0 30px; gap: 26px; }
+  .notif .dot { width: 64px; height: 64px; border-radius: 20px; background: #3ddc97; flex: none;
+    display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 34px; color: #06281a; }
+  .notif .t1 { font-size: 34px; font-weight: 700; }
+  .notif .t2 { font-size: 26px; color: #9aa6d8; margin-top: 4px; }
+  .notif .amt { margin-left: auto; font-size: 38px; font-weight: 800; color: #3ddc97; }
+  /* alerts */
+  .alert { left: 90px; right: 90px; height: 250px; border-radius: 44px; padding: 40px 48px;
+    display: flex; align-items: center; gap: 40px; }
+  .alert .ico { width: 130px; height: 130px; border-radius: 36px; flex: none; display: flex;
+    align-items: center; justify-content: center; font-size: 80px; font-weight: 900; }
+  .alert .h { font-size: 52px; font-weight: 900; letter-spacing: -.01em; }
+  .alert .s { font-size: 32px; font-weight: 500; margin-top: 10px; opacity: .85; }
+  #vignette { inset: 0; background: radial-gradient(ellipse at center, rgba(255,0,40,0) 40%, rgba(255,20,60,.55) 100%); }
+  /* split */
+  .half { top: 0; bottom: 0; width: 540px; overflow: hidden; }
+  .half .city { font-size: 40px; font-weight: 800; letter-spacing: .25em; }
+  .half .time { font-size: 128px; font-weight: 900; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+  .half .state { font-size: 46px; font-weight: 700; }
+  /* kinetic text */
+  .line { left: 80px; right: 80px; font-family: "Inter Display", "Inter"; font-weight: 900; letter-spacing: -.035em; line-height: 1; }
+  .hl { background: linear-gradient(90deg, #7c8cff, #3ddc97); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* radar */
+  #radar { width: 820px; height: 820px; left: 130px; top: 1020px; border-radius: 50%;
+    border: 3px solid rgba(61,220,151,.35); }
+  #radar .ring { position: absolute; border-radius: 50%; border: 2px solid rgba(61,220,151,.2); }
+  #sweep { position: absolute; inset: 0; border-radius: 50%;
+    background: conic-gradient(from 0deg, rgba(61,220,151,.55), rgba(61,220,151,0) 70deg, rgba(61,220,151,0)); }
+  .blip { position: absolute; width: 28px; height: 28px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 30px #3ddc97; }
+  #report { left: 110px; right: 110px; top: 860px; border-radius: 50px; padding: 56px 60px;
+    background: rgba(255,255,255,.92); color: #141a3a; box-shadow: 0 50px 140px rgba(120,60,0,.35); }
+  #report .rk { font-size: 30px; font-weight: 800; letter-spacing: .25em; color: #e07a1f; }
+  #report .rt { font-size: 64px; font-weight: 900; margin-top: 14px; letter-spacing: -.02em; }
+  #report .row { display: flex; justify-content: space-between; font-size: 40px; font-weight: 600; margin-top: 30px; padding-top: 30px; border-top: 2px solid #eadfcf; }
+  #report .row b { font-weight: 900; }
+  .ok { color: #13a86b; }
+  #title { top: 1500px; }
+  #flash { inset: 0; background: #fff; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg" class="abs"></div>
+  <div id="stars" class="abs"></div>
+  <div id="sun" class="abs"></div>
+  <div id="moon" class="abs"></div>
+
+  <!-- S1: midnight clock -->
+  <div id="s1" class="abs" style="inset:0">
+    <div id="clockLabel" class="abs center kicker">Black Friday &middot; New York</div>
+    <div id="clock" class="abs center big">11:59</div>
+    <div id="clockSub" class="abs center">The orders start now.</div>
+    <div id="zzz" class="abs center" style="top:1180px;height:400px"></div>
+  </div>
+
+  <!-- S2: orders flooding phone -->
+  <div id="s2" class="abs" style="inset:0">
+    <div class="abs center kicker" id="s2k" style="top:220px">Meanwhile, owners sleep</div>
+    <div id="phone" class="abs">
+      <div id="phoneTop" class="abs">
+        <div><div class="lbl">TONIGHT</div><div id="rev">$0</div></div>
+        <div id="ordersCount">0 orders</div>
+      </div>
+      <div id="notifs"></div>
+    </div>
+  </div>
+
+  <!-- S3/S5: alerts -->
+  <div id="vignette" class="abs"></div>
+  <div id="s3" class="abs" style="inset:0">
+    <div id="s3k" class="abs center big" style="top:250px;font-size:110px">Then it breaks.</div>
+    <div id="alerts"></div>
+  </div>
+
+  <!-- S4: split time zones -->
+  <div id="s4" class="abs" style="inset:0">
+    <div id="leftHalf" class="abs half" style="left:0;background:linear-gradient(180deg,#050816,#0d1440)">
+      <div class="abs center city" style="top:560px;color:#8fa3ff">NEW YORK</div>
+      <div class="abs center time" id="nyTime" style="top:640px">2:14</div>
+      <div class="abs center" style="top:790px;font-size:44px;font-weight:700;color:#8fa3ff">AM</div>
+      <div class="abs center state" style="top:1080px;color:#c9d2ff">Asleep</div>
+      <div id="zzz2" class="abs center" style="top:1180px;height:300px"></div>
+    </div>
+    <div id="rightHalf" class="abs half" style="left:540px;background:linear-gradient(180deg,#ffb86b,#ff7a59)">
+      <div class="abs center city" style="top:560px;color:#5a1d00">YOU</div>
+      <div class="abs center time" id="meTime" style="top:640px;color:#2a0d00">12:14</div>
+      <div class="abs center" style="top:790px;font-size:44px;font-weight:700;color:#5a1d00">PM</div>
+      <div class="abs center state" style="top:1080px;color:#2a0d00">Wide awake</div>
+      <div id="miniSun" class="abs" style="left:170px;top:1190px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,#fff6d0,#ffd36b 60%,rgba(255,211,107,0) 61%);box-shadow:0 0 120px 40px rgba(255,240,180,.6)"></div>
+    </div>
+    <div id="divider" class="abs" style="left:537px;width:6px;top:0;bottom:0;background:#fff"></div>
+    <div id="s4cap" class="abs big" style="top:1500px;left:110px;right:110px;text-align:center;font-size:84px;background:#fff;color:#0b0f26;border-radius:40px;padding:40px 0;box-shadow:0 30px 90px rgba(0,0,0,.35)">Same night.<br>Different clock.</div>
+  </div>
+
+  <!-- S6: kinetic message -->
+  <div id="s6" class="abs" style="inset:0">
+    <div id="l1" class="abs line" style="top:300px;font-size:150px">While you<br>sleep,</div>
+    <div id="l2" class="abs line" style="top:660px;font-size:84px;color:#c9d2ff">someone is watching</div>
+    <div id="l3" class="abs line hl" style="top:800px;font-size:118px">your checkout.</div>
+    <div id="l4" class="abs line hl" style="top:940px;font-size:118px">your stock.</div>
+    <div id="l5" class="abs line hl" style="top:1080px;font-size:118px">your ad spend.</div>
+    <div id="radar" class="abs">
+      <div class="ring" style="inset:135px"></div>
+      <div class="ring" style="inset:270px"></div>
+      <div id="sweep"></div>
+      <div class="blip" id="b1" style="left:560px;top:230px"></div>
+      <div class="blip" id="b2" style="left:220px;top:470px"></div>
+      <div class="blip" id="b3" style="left:600px;top:580px"></div>
+    </div>
+  </div>
+
+  <!-- S7: dawn payoff -->
+  <div id="s7" class="abs" style="inset:0">
+    <div id="l6" class="abs line" style="top:250px;font-size:104px;color:#3a1200">And fixes what breaks</div>
+    <div id="l7" class="abs line" style="top:500px;font-size:104px;color:#fff;text-shadow:0 8px 40px rgba(140,50,0,.45)">before you wake up.</div>
+    <div id="report" class="abs">
+      <div class="rk">7:00 AM &middot; MORNING REPORT</div>
+      <div class="rt">Everything's running.</div>
+      <div class="row"><span>Orders overnight</span><b id="rOrders">1,284</b></div>
+      <div class="row"><span>Issues caught</span><b>3</b></div>
+      <div class="row"><span>Issues still open</span><b class="ok">0</b></div>
+    </div>
+    <div id="title" class="abs center">
+      <div class="kicker" style="color:#5a1d00;font-size:26px;letter-spacing:.22em">Black Friday coverage for US stores</div>
+      <div class="big" style="font-size:150px;margin-top:20px;color:#fff;text-shadow:0 10px 60px rgba(120,40,0,.4)">THE NIGHT<br>WATCH</div>
+    </div>
+  </div>
+
+  <div id="flash" class="abs"></div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, p) => a + (b - a) * p;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const easeOut = p => 1 - Math.pow(1 - p, 3);
+const easeInOut = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const back = p => { const c1 = 1.7, c3 = c1 + 1; return 1 + c3 * Math.pow(p - 1, 3) + c1 * Math.pow(p - 1, 2); };
+// visible window with fade in/out
+const win = (t, a, b, f = .4) => Math.min(prog(t, a, a + f), 1 - prog(t, b - f, b));
+// deterministic pseudo-random
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// stars
+const stars = [];
+for (let i = 0; i < 140; i++) {
+  const s = document.createElement('div'); s.className = 'star';
+  const size = rnd() * 4 + 1.5;
+  Object.assign(s.style, { width: size + 'px', height: size + 'px', left: rnd() * 1080 + 'px', top: rnd() * 1500 + 'px' });
+  $('stars').appendChild(s); stars.push({ el: s, ph: rnd() * 6.28, sp: rnd() * 2 + 1 });
+}
+
+// zzz
+function makeZ(parent, n) {
+  const arr = [];
+  for (let i = 0; i < n; i++) {
+    const z = document.createElement('div'); z.className = 'zzz abs'; z.textContent = 'Z';
+    parent.appendChild(z); arr.push(z);
+  }
+  return arr;
+}
+const z1 = makeZ($('zzz'), 4), z2 = makeZ($('zzz2'), 3);
+function animZ(arr, t, cx, size) {
+  arr.forEach((z, i) => {
+    const p = ((t * .45 + i / arr.length) % 1);
+    z.style.left = (cx + Math.sin(p * 6 + i) * 40 + p * 120) + 'px';
+    z.style.top = (260 - p * 260) + 'px';
+    z.style.fontSize = (size * (0.6 + p * .8)) + 'px';
+    z.style.opacity = Math.sin(p * Math.PI);
+  });
+}
+
+// order notifications
+const orders = [
+  ['Hoodie, size M', '$89.00'], ['2x Candle set', '$64.00'], ['Running shoes', '$142.00'],
+  ['Gift bundle', '$210.00'], ['Wireless earbuds', '$119.00'], ['Skincare kit', '$76.00'],
+  ['Leather wallet', '$58.00'], ['Desk lamp', '$94.00'],
+];
+const notifEls = orders.map((o, i) => {
+  const n = document.createElement('div'); n.className = 'notif abs';
+  n.innerHTML = `<div class="dot">$</div><div><div class="t1">New order #${1041 + i}</div><div class="t2">${o[0]}</div></div><div class="amt">${o[1]}</div>`;
+  $('notifs').appendChild(n); return n;
+});
+
+// alerts
+const alertData = [
+  { bad: ['Checkout down', 'Payment error 502 at 2:09 AM'], good: ['Checkout restored', 'Fixed at 2:21 AM'] },
+  { bad: ['Best seller: 0 left', 'Still taking orders it can’t ship'], good: ['Oversells blocked', 'Backup stock live at 2:34 AM'] },
+  { bad: ['Ad spend +340%', 'Cost per sale tripling'], good: ['Ad budget capped', 'Losing ads paused at 2:40 AM'] },
+];
+const alertEls = alertData.map((a, i) => {
+  const el = document.createElement('div'); el.className = 'alert abs';
+  el.style.top = (560 + i * 300) + 'px';
+  el.innerHTML = `<div class="ico"></div><div><div class="h"></div><div class="s"></div></div>`;
+  $('alerts').appendChild(el); return el;
+});
+
+function render(t) {
+  // ---------- sky ----------
+  const dawn = easeInOut(prog(t, 29.2, 31.5));
+  const skyTop = `rgb(${lerp(5, 255, dawn)},${lerp(8, 150, dawn)},${lerp(22, 90, dawn)})`;
+  const skyBot = `rgb(${lerp(16, 255, dawn)},${lerp(22, 214, dawn)},${lerp(64, 140, dawn)})`;
+  $('bg').style.background = `linear-gradient(180deg, ${skyTop}, ${skyBot})`;
+  document.documentElement.style.setProperty('--sky', skyTop);
+  stars.forEach(s => s.el.style.opacity = (0.35 + 0.65 * Math.abs(Math.sin(t * s.sp + s.ph))) * (1 - dawn));
+  $('moon').style.opacity = win(t, 0, 29.6, .8) * (1 - prog(t, 4.6, 5.2) * .7) * (t > 5.0 && t < 21.8 ? 0 : 1);
+  $('moon').style.transform = `translateY(${-t * 4 + dawn * -400}px)`;
+  $('sun').style.opacity = dawn;
+  $('sun').style.top = lerp(1900, 1000, dawn) + 'px';
+
+  // ---------- S1: clock 0 - 4.8 ----------
+  const s1 = win(t, 0, 4.8, .5);
+  $('s1').style.opacity = s1;
+  const tick = t < 2.2 ? '11:59' : '12:00';
+  $('clock').textContent = tick;
+  const tp = prog(t, 2.2, 2.6);
+  $('clock').style.transform = `scale(${1 + (1 - easeOut(tp)) * .18 * (t > 2.2 ? 1 : 0)})`;
+  $('clock').style.color = t > 2.2 ? '#ffffff' : '#c9d2ff';
+  const subP = easeOut(prog(t, 2.5, 3.2));
+  $('clockSub').style.opacity = subP;
+  $('clockSub').style.transform = `translateY(${(1 - subP) * 40}px)`;
+  $('clockLabel').style.opacity = easeOut(prog(t, .2, .9));
+  $('clockLabel').style.letterSpacing = lerp(.6, .32, easeOut(prog(t, .2, 1.4))) + 'em';
+  animZ(z1, t, 460, 90);
+  $('zzz').style.opacity = prog(t, .8, 1.6);
+
+  // ---------- S2: orders 4.6 - 9.6 ----------
+  const s2 = win(t, 4.6, 9.6, .5);
+  $('s2').style.opacity = s2;
+  const phP = back(prog(t, 4.6, 5.4));
+  $('phone').style.transform = `translateY(${(1 - phP) * 300}px)`;
+  $('s2k').style.opacity = easeOut(prog(t, 5.0, 5.6));
+  let count = 0, rev = 0;
+  notifEls.forEach((n, i) => {
+    const st = 5.4 + i * .48;
+    const p = easeOut(prog(t, st, st + .35));
+    if (t >= st) { count = i + 1; }
+    // newest on top, older pushed down
+    const shown = Math.max(0, Math.floor((t - 5.4) / .48) + 1);
+    const slot = Math.min(shown, notifEls.length) - 1 - i;
+    n.style.top = (260 + slot * 150) + 'px';
+    n.style.opacity = t < st ? 0 : p * (slot > 5 ? 0 : 1);
+    n.style.transform = `translateX(${(1 - p) * 120}px) scale(${lerp(.9, 1, p)})`;
+  });
+  // counters run faster than the cards, it is a flood
+  const flood = easeInOut(prog(t, 5.4, 9.4));
+  $('rev').textContent = '$' + Math.round(flood * 18640).toLocaleString('en-US');
+  $('ordersCount').textContent = Math.round(flood * 214) + ' orders';
+
+  // ---------- S3: alerts 9.6 - 13.6 ; S5 fixed 17.6 - 21.6 ----------
+  const s3 = win(t, 9.4, 13.8, .4), s5 = win(t, 17.4, 21.8, .4);
+  $('s3').style.opacity = Math.max(s3, s5);
+  const isFix = t > 15;
+  $('s3k').textContent = isFix ? 'You fix it.' : 'Then it breaks.';
+  $('s3k').style.color = isFix ? '#3ddc97' : '#ff4d6d';
+  const base = isFix ? 17.6 : 9.7;
+  const shake = !isFix && t > 10 && t < 13.4 ? Math.sin(t * 70) * 6 : 0;
+  $('s3').style.transform = `translateX(${shake}px)`;
+  $('vignette').style.opacity = s3 * (0.6 + 0.4 * Math.sin(t * 9)) ;
+  alertEls.forEach((el, i) => {
+    const st = base + .3 + i * .55;
+    const p = back(prog(t, st, st + .45));
+    const d = alertData[i][isFix ? 'good' : 'bad'];
+    el.querySelector('.h').textContent = d[0];
+    el.querySelector('.s').textContent = d[1];
+    const ico = el.querySelector('.ico');
+    if (isFix) {
+      // flip from red to green
+      const fp = prog(t, st, st + .4);
+      el.style.background = fp < .5 ? '#3a0d18' : '#0d3326';
+      el.style.border = `3px solid ${fp < .5 ? '#ff4d6d' : '#3ddc97'}`;
+      ico.style.background = fp < .5 ? '#ff4d6d' : '#3ddc97';
+      ico.style.color = fp < .5 ? '#fff' : '#06281a';
+      ico.textContent = fp < .5 ? '!' : '✓';
+      el.querySelector('.h').textContent = fp < .5 ? alertData[i].bad[0] : d[0];
+      el.querySelector('.s').textContent = fp < .5 ? alertData[i].bad[1] : d[1];
+      el.style.opacity = t < 17.6 ? 0 : 1;
+      el.style.transform = `rotateX(${Math.sin(fp * Math.PI) * 90}deg)`;
+    } else {
+      el.style.background = '#3a0d18';
+      el.style.border = '3px solid #ff4d6d';
+      ico.style.background = '#ff4d6d'; ico.style.color = '#fff'; ico.textContent = '!';
+      el.style.opacity = t < st ? 0 : 1;
+      el.style.transform = `scale(${lerp(.6, 1, p)}) rotate(${(1 - p) * -6}deg)`;
+    }
+  });
+
+  // ---------- S4: split 13.6 - 17.6 ----------
+  const s4 = win(t, 13.6, 17.6, .4);
+  $('s4').style.opacity = s4;
+  const sp = easeInOut(prog(t, 13.6, 14.4));
+  $('leftHalf').style.transform = `translateX(${(1 - sp) * -540}px)`;
+  $('rightHalf').style.transform = `translateX(${(1 - sp) * 540}px)`;
+  $('divider').style.transform = `scaleY(${easeOut(prog(t, 14.2, 14.7))})`;
+  const mins = 14 + Math.floor(prog(t, 14.4, 17.4) * 6);
+  $('nyTime').textContent = '2:' + String(mins).padStart(2, '0');
+  $('meTime').textContent = '12:' + String(mins).padStart(2, '0');
+  const capP = easeOut(prog(t, 14.6, 15.2));
+  $('s4cap').style.opacity = capP;
+  $('s4cap').style.transform = `translateY(${(1 - capP) * 50}px)`;
+  animZ(z2, t, 200, 70);
+  $('miniSun').style.transform = `rotate(${t * 20}deg) scale(${1 + Math.sin(t * 3) * .05})`;
+
+  // ---------- S6: kinetic 21.6 - 29.4 ----------
+  const s6 = win(t, 21.6, 29.4, .4);
+  $('s6').style.opacity = s6;
+  [['l1', 21.8], ['l2', 23.2], ['l3', 24.4], ['l4', 25.4], ['l5', 26.4]].forEach(([id, st]) => {
+    const p = easeOut(prog(t, st, st + .45));
+    $(id).style.opacity = p;
+    $(id).style.transform = `translateY(${(1 - p) * 70}px)`;
+    $(id).style.filter = `blur(${(1 - p) * 12}px)`;
+  });
+  const rp = easeOut(prog(t, 22.4, 23.2));
+  $('radar').style.opacity = rp;
+  $('radar').style.transform = `scale(${lerp(.7, 1, rp)})`;
+  const ang = (t * 160) % 360;
+  $('sweep').style.transform = `rotate(${ang}deg)`;
+  [['b1', 40], ['b2', 250], ['b3', 140]].forEach(([id, a]) => {
+    const diff = ((ang - a) % 360 + 360) % 360;
+    $(id).style.opacity = Math.max(0, 1 - diff / 220);
+  });
+
+  // ---------- S7: dawn 29.2 - end ----------
+  const s7 = prog(t, 29.4, 29.9);
+  $('s7').style.opacity = s7;
+  [['l6', 29.6], ['l7', 30.6]].forEach(([id, st]) => {
+    const p = easeOut(prog(t, st, st + .5));
+    $(id).style.opacity = p;
+    $(id).style.transform = `translateY(${(1 - p) * 60}px)`;
+  });
+  const repP = back(prog(t, 31.8, 32.5));
+  $('report').style.opacity = prog(t, 31.8, 32.1);
+  $('report').style.transform = `translateY(${(1 - repP) * 200}px)`;
+  const tiP = easeOut(prog(t, 33.4, 34.1));
+  $('title').style.opacity = tiP;
+  $('title').style.transform = `scale(${lerp(.85, 1, tiP)})`;
+
+  // white flash at the hard cuts
+  const flashes = [2.2, 9.6, 17.6];
+  let f = 0; flashes.forEach(ft => { if (t >= ft && t < ft + .25) f = Math.max(f, 1 - (t - ft) / .25); });
+  $('flash').style.opacity = f * .55;
+}
+render(0);
+</script>
+</body>
+</html>
