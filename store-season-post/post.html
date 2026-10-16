@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --purple: #AD49E1; --ink: #050516; --navy: #021644; --text: #C6C7D5; --text2: #A9AABA; --card: #191930; --line: rgba(255,255,255,.14); }
+  html, body { width: 1080px; height: 1350px; background: var(--ink); overflow: hidden; }
+  body { font-family: "Inter Tight", sans-serif; color: #fff; position: relative; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(120px); }
+  .g1 { width: 720px; height: 720px; background: rgba(173,73,225,.45); top: -260px; right: -220px; }
+  .g2 { width: 620px; height: 620px; background: rgba(2,22,68,.95); bottom: -180px; left: -200px; }
+  .grid { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 90px 90px; opacity: .18; -webkit-mask-image: radial-gradient(ellipse at 70% 20%, #000 0%, transparent 70%); }
+  .wrap { position: absolute; inset: 0; padding: 72px 76px; display: flex; flex-direction: column; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-family: "Red Hat Display"; font-weight: 700; font-size: 30px; letter-spacing: -.01em; }
+  .brand span { color: var(--purple); }
+  .pill { font-weight: 600; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: #fff;
+    border: 1.5px solid var(--line); background: rgba(255,255,255,.06); padding: 12px 22px; border-radius: 99px; display: flex; gap: 12px; align-items: center; }
+  .pill i { width: 12px; height: 12px; border-radius: 50%; background: #ff4d6d; box-shadow: 0 0 14px #ff4d6d; display: block; }
+  .eyebrow { margin-top: 64px; font-weight: 600; font-size: 26px; letter-spacing: .2em; text-transform: uppercase; color: var(--purple); }
+  h1 { font-family: "Red Hat Display"; font-weight: 900; font-size: 98px; line-height: .98; letter-spacing: -.035em; margin-top: 22px; }
+  h1 em { font-style: normal; color: var(--purple); }
+  .chips { display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 32px; }
+  .chip { font-size: 21px; font-weight: 500; color: var(--text); border: 1.5px solid var(--line); padding: 9px 16px; white-space: nowrap; border-radius: 99px; }
+  .results { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; }
+  .card { background: linear-gradient(160deg, rgba(25,25,48,.95), rgba(10,10,32,.95)); border: 1.5px solid var(--line); border-radius: 32px; padding: 32px 34px 30px; }
+  .card .k { font-size: 22px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text2); }
+  .card .v { font-family: "Red Hat Display"; font-weight: 900; font-size: 62px; letter-spacing: -.03em; margin-top: 16px; display: flex; align-items: center; gap: 14px; white-space: nowrap; }
+  .card .v .from { color: var(--text2); font-weight: 700; }
+  .card .v .arr { color: var(--purple); font-weight: 700; font-size: 52px; }
+  .card .d { font-size: 25px; line-height: 1.35; color: var(--text); margin-top: 16px; }
+  .card .d b { color: #fff; font-weight: 600; }
+  .timeline { margin-top: 46px; position: relative; height: 120px; margin-bottom: 36px; }
+  .track { position: absolute; left: 0; right: 0; top: 18px; height: 4px; background: var(--line); border-radius: 4px; }
+  .fill { position: absolute; left: 0; width: 6%; top: 18px; height: 4px; background: var(--purple); border-radius: 4px; box-shadow: 0 0 18px var(--purple); }
+  .stop { position: absolute; top: 0; transform: translateX(-50%); text-align: center; }
+  .stop .dot { width: 40px; height: 40px; border-radius: 50%; margin: 0 auto; background: var(--ink); border: 4px solid var(--line); }
+  .stop.on .dot { border-color: var(--purple); background: var(--purple); box-shadow: 0 0 24px var(--purple); }
+  .stop.bf .dot { border-color: #fff; }
+  .stop .t { font-family: "Red Hat Display"; font-weight: 700; font-size: 25px; margin-top: 14px; white-space: nowrap; }
+  .stop .s { font-size: 20px; color: var(--text2); margin-top: 4px; white-space: nowrap; }
+  .cta { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 30px;
+    background: var(--purple); border-radius: 32px; padding: 30px 36px; box-shadow: 0 30px 80px rgba(173,73,225,.35); }
+  .cta .l { font-size: 27px; font-weight: 500; line-height: 1.3; color: #fff; }
+  .cta .l b { font-family: "Red Hat Display"; font-weight: 900; font-size: 32px; display: block; margin-bottom: 4px; }
+  .cta .dm { flex: none; background: var(--ink); color: #fff; border-radius: 20px; padding: 18px 26px; font-family: "Red Hat Display"; font-weight: 900; font-size: 34px; letter-spacing: .04em; }
+  .cta .dm small { display: block; font-family: "Inter Tight"; font-weight: 600; font-size: 17px; letter-spacing: .16em; color: var(--text2); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">quixify<span>media</span>.com</div>
+      <div class="pill"><i></i>Public experiment</div>
+    </div>
+
+    <div class="eyebrow">The next 11 weeks</div>
+    <h1>I'm only working<br>with <em>store owners.</em></h1>
+
+    <div class="chips">
+      <div class="chip">Clothing</div><div class="chip">Jewellery</div><div class="chip">Activewear</div>
+      <div class="chip">Kids clothing</div><div class="chip">Toys</div><div class="chip">Flowers</div><div class="chip">Gifts</div>
+    </div>
+
+    <div class="results">
+      <div class="card">
+        <div class="k">Fashion brand &middot; 20 days</div>
+        <div class="v"><span class="from">$225</span><span class="arr">&rarr;</span><span>$2,080</span></div>
+        <div class="d">after we fixed <b>what happened after the click.</b></div>
+      </div>
+      <div class="card">
+        <div class="k">Store &middot; ad spend &minus;30%</div>
+        <div class="v"><span class="from">1.2x</span><span class="arr">&rarr;</span><span>2.9x</span></div>
+        <div class="d">ROAS. The problems were <b>on the site, not in the ads.</b></div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="track"></div><div class="fill"></div>
+      <div class="stop on" style="left:20px;transform:none;text-align:left"><div class="dot" style="margin:0"></div><div class="t">Now</div><div class="s">Traffic incoming</div></div>
+      <div class="stop" style="left:36%"><div class="dot"></div><div class="t">Every Friday</div><div class="s">Real numbers posted</div></div>
+      <div class="stop bf" style="left:66%"><div class="dot"></div><div class="t">Nov 27</div><div class="s">Black Friday</div></div>
+      <div class="stop" style="right:20px;left:auto;transform:none;text-align:right"><div class="dot" style="margin:0 0 0 auto"></div><div class="t">Jan 5</div><div class="s">Full results</div></div>
+    </div>
+
+    <div class="cta">
+      <div class="l"><b>Free 5-minute site teardown.</b>Recorded for any store owner who asks.</div>
+      <div class="dm"><small>DM ME</small>TEARDOWN</div>
+    </div>
+  </div>
+</body>
+</html>
