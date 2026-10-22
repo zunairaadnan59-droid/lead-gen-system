@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --purple: #AD49E1; --ink: #050516; --navy: #021644; --text: #C6C7D5; --text2: #A9AABA; --red: #ff4d6d; --line: rgba(255,255,255,.14); }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+  body { font-family: "Inter Tight", sans-serif; color: #fff; }
+  .abs { position: absolute; }
+  .H { font-family: "Red Hat Display"; font-weight: 900; letter-spacing: -.035em; line-height: .95; }
+  .center { left: 0; right: 0; text-align: center; }
+  #glow1, #glow2 { border-radius: 50%; filter: blur(140px); }
+  #glow1 { width: 900px; height: 900px; background: rgba(173,73,225,.5); }
+  #glow2 { width: 800px; height: 800px; background: rgba(2,22,68,1); }
+  #grid { inset: -200px; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 120px 120px; opacity: .22; }
+  .scene { inset: 0; }
+  .p { color: var(--purple); }
+  .chip { display: inline-block; font-weight: 600; font-size: 30px; letter-spacing: .14em; text-transform: uppercase; padding: 14px 26px; border-radius: 99px; border: 2px solid var(--line); background: rgba(255,255,255,.06); }
+  /* calendar */
+  #cal { left: 290px; top: 760px; width: 500px; height: 560px; border-radius: 56px; background: #fff; color: var(--ink); overflow: hidden;
+    box-shadow: 0 60px 140px rgba(0,0,0,.55), 0 0 0 10px rgba(173,73,225,.25); }
+  #cal .top { height: 140px; background: var(--purple); color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: "Red Hat Display"; font-weight: 900; font-size: 54px; letter-spacing: .12em; }
+  #cal .num { font-family: "Red Hat Display"; font-weight: 900; font-size: 300px; letter-spacing: -.05em; text-align: center; line-height: 1; margin-top: 20px; }
+  #cal .lbl { text-align: center; font-weight: 600; font-size: 34px; letter-spacing: .25em; color: #555; margin-top: -6px; }
+  #live { left: 680px; top: 700px; background: var(--red); color: #fff; font-weight: 800; font-size: 40px; letter-spacing: .12em; padding: 16px 30px; border-radius: 20px;
+    display: flex; gap: 14px; align-items: center; box-shadow: 0 20px 60px rgba(255,77,109,.5); }
+  #live i { width: 18px; height: 18px; border-radius: 50%; background: #fff; display: block; }
+  /* chart */
+  #chartBox { left: 90px; right: 90px; top: 700px; height: 640px; border-radius: 48px; background: rgba(25,25,48,.85); border: 2px solid var(--line); overflow: hidden; }
+  #chartBox .k { position: absolute; left: 48px; top: 44px; font-weight: 600; font-size: 28px; letter-spacing: .16em; color: var(--text2); text-transform: uppercase; }
+  #chartBox .big { position: absolute; right: 48px; top: 30px; font-family: "Red Hat Display"; font-weight: 900; font-size: 64px; color: var(--red); font-variant-numeric: tabular-nums; }
+  #learn { position: absolute; left: 48px; bottom: 44px; }
+  /* ring */
+  #ring { left: 240px; top: 640px; width: 600px; height: 600px; }
+  #ringNum { left: 0; right: 0; top: 790px; text-align: center; }
+  /* timeline */
+  .row { left: 90px; right: 90px; height: 210px; display: flex; align-items: center; gap: 40px; }
+  .row .date { flex: none; width: 250px; height: 150px; border-radius: 36px; background: #15152e; border: 2px solid var(--line);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .row .date .m { font-weight: 700; font-size: 26px; letter-spacing: .2em; color: var(--text2); }
+  .row .date .d { font-family: "Red Hat Display"; font-weight: 900; font-size: 84px; line-height: .9; letter-spacing: -.03em; }
+  .row .txt .a { font-family: "Red Hat Display"; font-weight: 900; font-size: 52px; letter-spacing: -.02em; line-height: 1.02; }
+  .row .txt .b { font-size: 30px; color: var(--text); margin-top: 10px; line-height: 1.25; }
+  .row.hot .date { background: var(--purple); border-color: var(--purple); box-shadow: 0 0 60px rgba(173,73,225,.7); }
+  .row.hot .date .m { color: #fff; }
+  #rail { left: 214px; width: 4px; top: 640px; height: 840px; background: var(--line); }
+  #railFill { left: 214px; width: 4px; top: 640px; background: var(--purple); box-shadow: 0 0 20px var(--purple); }
+  /* cta */
+  #ctaCard { left: 90px; right: 90px; top: 820px; border-radius: 48px; background: var(--purple); padding: 60px 56px; box-shadow: 0 50px 140px rgba(173,73,225,.45); }
+  #logo { left: 0; right: 0; display: flex; justify-content: center; }
+  #logo img { width: 540px; height: auto; display: block; }
+  #flash { inset: 0; background: #fff; }
+  #wipe { left: 0; right: 0; height: 1920px; background: var(--purple); }
+</style>
+</head>
+<body>
+  <div id="glow1" class="abs"></div><div id="glow2" class="abs"></div>
+  <div id="grid" class="abs"></div>
+
+  <!-- A: hook -->
+  <div id="A" class="abs scene">
+    <div id="a1" class="abs center H" style="top:330px;font-size:112px">Black Friday ads</div>
+    <div id="a2" class="abs center H" style="top:450px;font-size:112px">going live <span class="p">on</span></div>
+    <div id="a3" class="abs center H p" style="top:570px;font-size:112px">Black Friday?</div>
+    <div id="cal" class="abs"><div class="top">NOVEMBER</div><div class="num">27</div><div class="lbl">BLACK FRIDAY</div></div>
+    <div id="live" class="abs"><i></i>LIVE</div>
+    <div id="a4" class="abs center" style="top:1440px;font-size:46px;font-weight:600;color:var(--text)">Bad timing. Here's why.</div>
+  </div>
+
+  <!-- B: paying to teach -->
+  <div id="B" class="abs scene">
+    <div id="b1" class="abs center H" style="top:300px;font-size:96px">You're paying <span class="p">full price</span></div>
+    <div id="b2" class="abs center H" style="top:410px;font-size:96px">to teach Meta</div>
+    <div id="b3" class="abs center H" style="top:520px;font-size:96px">who your buyers are.</div>
+    <div id="chartBox" class="abs">
+      <div class="k">Cost per purchase</div>
+      <div class="big" id="cpp">$18</div>
+      <svg id="chart" width="900" height="640" style="position:absolute;left:0;top:0">
+        <path id="cline" d="" fill="none" stroke="#ff4d6d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle id="cdot" r="16" fill="#ff4d6d"/>
+      </svg>
+      <div id="learn" class="chip" style="color:#fff;border-color:var(--red);background:rgba(255,77,109,.15)">Learning phase</div>
+    </div>
+    <div id="b4" class="abs center" style="top:1420px;font-size:44px;font-weight:600;color:var(--text)">Costs jump around while it experiments.</div>
+  </div>
+
+  <!-- C: 50 purchases -->
+  <div id="C" class="abs scene">
+    <div id="c1" class="abs center H" style="top:300px;font-size:100px">Meta wants around</div>
+    <div id="c2" class="abs center H p" style="top:410px;font-size:100px">50 purchases a week</div>
+    <div id="c3" class="abs center H" style="top:520px;font-size:100px">before it settles.</div>
+    <svg id="ring" class="abs" viewBox="0 0 600 600">
+      <circle cx="300" cy="300" r="250" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="44"/>
+      <circle id="ringArc" cx="300" cy="300" r="250" fill="none" stroke="#AD49E1" stroke-width="44" stroke-linecap="round"
+        transform="rotate(-90 300 300)" stroke-dasharray="1570.8" stroke-dashoffset="1570.8" style="filter:drop-shadow(0 0 24px #AD49E1)"/>
+    </svg>
+    <div id="ringNum" class="abs"><div class="H" id="rn" style="font-size:220px;font-variant-numeric:tabular-nums">0</div><div style="font-size:28px;font-weight:600;letter-spacing:.14em;color:var(--text2);margin-top:4px">OF 50 PURCHASES</div></div>
+    <div id="c4" class="abs center" style="top:1380px"><span class="chip">Small stores: 1 to 2 weeks</span></div>
+  </div>
+
+  <!-- D: work backwards -->
+  <div id="D" class="abs scene">
+    <div id="d0" class="abs center H" style="top:300px;font-size:104px">So work <span class="p">backwards</span></div>
+    <div id="d00" class="abs center H" style="top:410px;font-size:104px">from Nov 27.</div>
+    <div id="rail" class="abs"></div><div id="railFill" class="abs"></div>
+    <div id="r1" class="abs row" style="top:600px"><div class="date"><div class="m">NOV</div><div class="d">10</div></div><div class="txt"><div class="a">Go live, small budget</div><div class="b">Learning from real buyers</div></div></div>
+    <div id="r2" class="abs row" style="top:830px"><div class="date"><div class="m">NOV</div><div class="d">17</div></div><div class="txt"><div class="a">Move money to winners</div><div class="b">You can see what sells</div></div></div>
+    <div id="r3" class="abs row" style="top:1060px"><div class="date"><div class="m">NOV</div><div class="d">24</div></div><div class="txt"><div class="a">Scale and retarget</div><div class="b">Everyone who visited</div></div></div>
+    <div id="r4" class="abs row hot" style="top:1290px"><div class="date"><div class="m">NOV</div><div class="d">27</div></div><div class="txt"><div class="a">Traffic meets ads that already know who buys</div></div></div>
+  </div>
+
+  <!-- E: CTA -->
+  <div id="E" class="abs scene">
+    <div id="e0" class="abs center" style="top:560px"><span class="chip">Do one thing this week</span></div>
+    <div id="ctaCard" class="abs">
+      <div class="H" style="font-size:88px;line-height:1">Start a small, always-on campaign for your best seller.</div>
+      <div style="font-size:38px;font-weight:500;margin-top:28px;line-height:1.3">So it has learned by the time the gift buyers show up.</div>
+    </div>
+    <div id="logo" class="abs" style="top:1500px"><img src="logo.png"></div>
+    <div id="url" class="abs center" style="top:1600px;font-size:34px;font-weight:600;letter-spacing:.12em;color:var(--text2)">QUIXIFYMEDIA.COM</div>
+  </div>
+
+  <div id="wipe" class="abs"></div>
+  <div id="flash" class="abs"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, p) => a + (b - a) * p;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const eo = p => 1 - Math.pow(1 - p, 3);
+const eio = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const back = p => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(p - 1, 3) + c1 * Math.pow(p - 1, 2); };
+const win = (t, a, b, f = .25) => Math.min(prog(t, a, a + f), 1 - prog(t, b - f, b));
+function pop(el, t, st, dist = 80, dur = .45) {
+  const p = eo(prog(t, st, st + dur));
+  el.style.opacity = p;
+  el.style.transform = `translateY(${(1 - p) * dist}px) scale(${lerp(.92, 1, p)})`;
+  el.style.filter = `blur(${(1 - p) * 14}px)`;
+}
+
+// jagged cost line, deterministic
+const pts = []; let s = 11;
+const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+for (let i = 0; i <= 24; i++) pts.push([60 + i * 32.5, 330 + (rnd() - .5) * 300 * (i % 2 ? 1 : -.7)]);
+
+const CUTS = [1.9, 3.9, 6.1, 11.3];
+
+function render(t) {
+  // background drift
+  $('glow1').style.transform = `translate(${380 + Math.sin(t * .6) * 120}px, ${-260 + Math.cos(t * .5) * 120}px)`;
+  $('glow2').style.transform = `translate(${-300 + Math.cos(t * .4) * 100}px, ${1300 + Math.sin(t * .7) * 100}px)`;
+  $('grid').style.transform = `translateY(${(t * 40) % 120}px)`;
+
+  // ---- A 0 - 1.9
+  const A = win(t, -1, 1.9, .2); $('A').style.opacity = A;
+  pop($('a1'), t, .05); pop($('a2'), t, .2); pop($('a3'), t, .35);
+  const cp = back(prog(t, .3, .85));
+  $('cal').style.transform = `translateY(${(1 - cp) * -900}px) rotate(${(1 - cp) * -18 + Math.sin(t * 3) * 1.5}deg)`;
+  const lp = back(prog(t, .8, 1.1));
+  $('live').style.transform = `scale(${lp}) rotate(8deg)`;
+  $('live').style.opacity = prog(t, .8, .85) * (0.75 + 0.25 * Math.sin(t * 14));
+  pop($('a4'), t, 1.1, 40);
+  // shake on landing
+  const sh = t > .85 && t < 1.1 ? Math.sin(t * 90) * 10 * (1 - prog(t, .85, 1.1)) : 0;
+  $('A').style.transform = `translateX(${sh}px)`;
+
+  // ---- B 1.9 - 3.9
+  $('B').style.opacity = win(t, 1.9, 3.9, .2);
+  pop($('b1'), t, 1.95); pop($('b2'), t, 2.08); pop($('b3'), t, 2.2);
+  const bx = eo(prog(t, 2.0, 2.4));
+  $('chartBox').style.transform = `translateY(${(1 - bx) * 200}px)`; $('chartBox').style.opacity = bx;
+  const draw = eio(prog(t, 2.3, 3.6));
+  const n = Math.max(1, Math.floor(draw * (pts.length - 1)));
+  const frac = draw * (pts.length - 1) - n + 1;
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for (let i = 1; i <= n && i < pts.length; i++) {
+    const [x, y] = pts[i];
+    if (i === n) { const [px, py] = pts[i - 1]; d += ` L${lerp(px, x, clamp(frac))},${lerp(py, y, clamp(frac))}`; }
+    else d += ` L${x},${y}`;
+  }
+  $('cline').setAttribute('d', d);
+  const last = d.split(' ').pop().replace(/[ML]/, '').split(',');
+  $('cdot').setAttribute('cx', last[0]); $('cdot').setAttribute('cy', last[1]);
+  $('cpp').textContent = '$' + Math.round(18 + Math.abs(Math.sin(t * 7)) * 46 * draw);
+  $('learn').style.opacity = 0.55 + 0.45 * Math.sin(t * 10);
+  pop($('b4'), t, 2.9, 40);
+
+  // ---- C 3.9 - 6.1
+  $('C').style.opacity = win(t, 3.9, 6.1, .2);
+  pop($('c1'), t, 3.95); pop($('c2'), t, 4.08); pop($('c3'), t, 4.2);
+  const rp = eio(prog(t, 4.2, 5.5));
+  $('ringArc').setAttribute('stroke-dashoffset', 1570.8 * (1 - rp));
+  const rs = back(prog(t, 4.0, 4.4));
+  $('ring').style.transform = `scale(${lerp(.6, 1, rs)}) rotate(${(1 - rs) * -40}deg)`; $('ring').style.opacity = prog(t, 4.0, 4.2);
+  $('rn').textContent = Math.round(rp * 50);
+  $('ringNum').style.opacity = prog(t, 4.1, 4.3);
+  const done = prog(t, 5.5, 5.7);
+  $('rn').style.color = done > 0 ? '#AD49E1' : '#fff';
+  $('ringNum').style.transform = `scale(${1 + Math.sin(done * Math.PI) * .12})`;
+  pop($('c4'), t, 5.0, 40);
+
+  // ---- D 6.1 - 11.3
+  $('D').style.opacity = win(t, 6.1, 11.3, .2);
+  pop($('d0'), t, 6.15); pop($('d00'), t, 6.3);
+  const rows = [['r1', 6.9], ['r2', 7.95], ['r3', 9.0], ['r4', 10.05]];
+  rows.forEach(([id, st]) => {
+    const p = back(prog(t, st, st + .5));
+    $(id).style.opacity = prog(t, st, st + .15);
+    $(id).style.transform = `translateX(${(1 - p) * 300}px)`;
+  });
+  $('rail').style.opacity = prog(t, 6.8, 7.0);
+  const fill = eio(prog(t, 6.9, 10.4));
+  $('railFill').style.height = (fill * 840) + 'px';
+  const hot = prog(t, 10.4, 10.6);
+  $('r4').style.transform += ` scale(${1 + Math.sin(hot * Math.PI) * .06})`;
+
+  // ---- E 11.3 - end
+  $('E').style.opacity = prog(t, 11.3, 11.5);
+  pop($('e0'), t, 11.35, 40);
+  const cc = back(prog(t, 11.45, 11.95));
+  $('ctaCard').style.transform = `scale(${lerp(.7, 1, cc)}) rotate(${(1 - cc) * 4}deg)`;
+  $('ctaCard').style.opacity = prog(t, 11.45, 11.6);
+  const lg = eo(prog(t, 12.4, 13.0));
+  $('logo').style.opacity = lg;
+  $('logo').style.transform = `translateY(${(1 - lg) * 40}px)`;
+  $('logo').style.clipPath = `inset(0 ${(1 - lg) * 50}% 0 ${(1 - lg) * 50}%)`;
+  pop($('url'), t, 12.8, 20);
+
+  // purple wipe between scenes
+  let w = -1;
+  CUTS.forEach(c => { if (t > c - .22 && t < c + .22) w = (t - (c - .22)) / .44; });
+  if (w >= 0) {
+    const e = eio(w);
+    $('wipe').style.display = 'block';
+    $('wipe').style.top = (w < .5 ? lerp(1920, 0, eio(w * 2)) : lerp(0, -1920, eio((w - .5) * 2))) + 'px';
+  } else $('wipe').style.display = 'none';
+  // brief flash on the calendar slam
+  $('flash').style.opacity = t > .85 && t < 1.05 ? (1 - prog(t, .85, 1.05)) * .35 : 0;
+}
+render(0);
+</script>
+</body>
+</html>
