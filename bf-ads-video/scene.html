@@ -124,6 +124,7 @@
     <div id="url" class="abs center" style="top:1600px;font-size:34px;font-weight:600;letter-spacing:.12em;color:var(--text2)">QUIXIFYMEDIA.COM</div>
   </div>
 
+  <div id="wm" class="abs" style="left:0;right:0;top:120px;display:flex;justify-content:center"><div style="background:rgba(5,5,22,.72);border:1.5px solid rgba(255,255,255,.12);border-radius:99px;padding:18px 34px"><img src="logo.png" style="width:300px;height:auto;display:block"></div></div>
   <div id="wipe" class="abs"></div>
   <div id="flash" class="abs"></div>
 
@@ -230,6 +231,11 @@ function render(t) {
   $('logo').style.transform = `translateY(${(1 - lg) * 40}px)`;
   $('logo').style.clipPath = `inset(0 ${(1 - lg) * 50}% 0 ${(1 - lg) * 50}%)`;
   pop($('url'), t, 12.8, 20);
+
+  // corner logo, on screen until the end card's logo takes over
+  const wmIn = eo(prog(t, .1, .5));
+  $('wm').style.opacity = wmIn * (1 - prog(t, 12.2, 12.5)) * .95;
+  $('wm').style.transform = `translateY(${(1 - wmIn) * -30}px)`;
 
   // purple wipe between scenes
   let w = -1;
